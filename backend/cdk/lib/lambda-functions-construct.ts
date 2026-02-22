@@ -261,6 +261,147 @@ export class LambdaFunctionsConstruct extends Construct {
     );
 
     // ========================================
+    // Cart Lambda Functions
+    // ========================================
+
+    // GET /cart
+    const getCartHandler = new lambda.Function(this, "GetCartFunction", {
+      ...commonProps,
+      functionName: "epicweave-get-cart",
+      handler: "cart/get-cart.handler",
+      code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+      description: "Get cart items for authenticated user",
+    });
+    props.table.grantReadData(getCartHandler);
+    props.apiGateway.addLambdaRoute(
+      "/cart",
+      apigateway.HttpMethod.GET,
+      getCartHandler,
+      true,
+    );
+
+    // POST /cart/items
+    const addToCartHandler = new lambda.Function(this, "AddToCartFunction", {
+      ...commonProps,
+      functionName: "epicweave-add-to-cart",
+      handler: "cart/add-to-cart.handler",
+      code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+      description: "Add item to cart (pre-designed or custom)",
+    });
+    props.table.grantReadWriteData(addToCartHandler);
+    props.apiGateway.addLambdaRoute(
+      "/cart/items",
+      apigateway.HttpMethod.POST,
+      addToCartHandler,
+      true,
+    );
+
+    // PATCH /cart/items/{itemId}
+    const updateCartItemHandler = new lambda.Function(
+      this,
+      "UpdateCartItemFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-update-cart-item",
+        handler: "cart/update-cart-item.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description: "Update cart item quantity",
+      },
+    );
+    props.table.grantReadWriteData(updateCartItemHandler);
+    props.apiGateway.addLambdaRoute(
+      "/cart/items/{itemId}",
+      apigateway.HttpMethod.PATCH,
+      updateCartItemHandler,
+      true,
+    );
+
+    // DELETE /cart/items/{itemId}
+    const removeCartItemHandler = new lambda.Function(
+      this,
+      "RemoveCartItemFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-remove-cart-item",
+        handler: "cart/remove-cart-item.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description: "Remove item from cart",
+      },
+    );
+    props.table.grantReadWriteData(removeCartItemHandler);
+    props.apiGateway.addLambdaRoute(
+      "/cart/items/{itemId}",
+      apigateway.HttpMethod.DELETE,
+      removeCartItemHandler,
+      true,
+    );
+
+    // ========================================
+    // Checkout & Order Lambda Functions
+    // ========================================
+
+    // POST /orders - Create order with Stripe payment
+    const createOrderHandler = new lambda.Function(
+      this,
+      "CreateOrderFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-create-order",
+        handler: "checkout/create-order.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description:
+          "Create order: validate stock, Stripe payment, DynamoDB transaction",
+        timeout: cdk.Duration.seconds(60),
+      },
+    );
+    props.table.grantReadWriteData(createOrderHandler);
+    createOrderHandler.addToRolePolicy(ssmReadPolicy);
+    createOrderHandler.addToRolePolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["secretsmanager:GetSecretValue"],
+        resources: [
+          `arn:aws:secretsmanager:${cdk.Stack.of(this).region}:${cdk.Stack.of(this).account}:secret:epicweave/*`,
+        ],
+      }),
+    );
+    props.apiGateway.addLambdaRoute(
+      "/orders",
+      apigateway.HttpMethod.POST,
+      createOrderHandler,
+      true,
+    );
+
+    // POST /orders/{orderId}/confirm - Send SES confirmation email
+    const sendConfirmationHandler = new lambda.Function(
+      this,
+      "SendConfirmationFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-send-confirmation",
+        handler: "checkout/send-confirmation.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description: "Send order confirmation email via SES",
+        environment: {
+          ...commonEnvironment,
+          FROM_EMAIL: "orders@epicweave.com",
+        },
+      },
+    );
+    props.table.grantReadData(sendConfirmationHandler);
+    sendConfirmationHandler.addToRolePolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["ses:SendEmail"],
+        resources: ["*"],
+      }),
+    );
+    props.apiGateway.addLambdaRoute(
+      "/orders/{orderId}/confirm",
+      apigateway.HttpMethod.POST,
+      sendConfirmationHandler,
+      true,
+    );
+
+    // ========================================
     // Outputs
     // ========================================
 
