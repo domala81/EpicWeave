@@ -1,4 +1,4 @@
-# MythWeave — Windsurf Workflow Implementation Approach
+# EpicWeave — Windsurf Workflow Implementation Approach
 
 > Extracted from [INTENT.md](./INTENT.md) Section 8.
 > Each phase follows BDD/TDD: write feature files → write failing tests → implement → pass tests.
@@ -8,7 +8,7 @@
 ## Phase 1: Foundation & Infrastructure
 
 1. **Project scaffolding** — Next.js frontend (React + TailwindCSS + shadcn/ui), AWS CDK (TypeScript) for IaC
-2. **AWS CDK stack** — DynamoDB table (MythWeaveTable + GSIs), S3 buckets, CloudFront distribution, API Gateway (HTTP API), Cognito User Pool, SQS queues, Parameter Store defaults, Secrets Manager placeholders
+2. **AWS CDK stack** — DynamoDB table (EpicWeaveTable + GSIs), S3 buckets, CloudFront distribution, API Gateway (HTTP API), Cognito User Pool, SQS queues, Parameter Store defaults, Secrets Manager placeholders
 3. **Authentication** — Cognito User Pool with email/password + OAuth (Google, GitHub), post-confirmation Lambda trigger to create DynamoDB user profile, Cognito authorizer on API Gateway
 4. **BDD test harness** — Cucumber.js + Vitest + Playwright setup, AWS SDK mocks (aws-sdk-client-mock), k6 config
 
