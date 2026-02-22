@@ -1,6 +1,6 @@
-# MythWeave — E-Commerce Application Intent Document
+# EpicWeave — E-Commerce Application Intent Document
 
-> **Project Codename:** MythWeave
+> **Project Codename:** EpicWeave
 > **Platform:** Browser-based Web Application
 > **Date:** 2026-02-16
 > **Version:** 0.2.0
@@ -10,7 +10,7 @@
 
 ## 1. Vision Statement
 
-MythWeave is a browser-based e-commerce platform that combines AI-powered image generation with custom apparel shopping. Users can browse pre-designed mythology-themed clothing **or** create their own designs through guided AI chat sessions — choosing Hindu or Greek mythology motifs rendered in modern/anime art styles — and have them printed on t-shirts.
+EpicWeave is a browser-based e-commerce platform that combines AI-powered image generation with custom apparel shopping. Users can browse pre-designed mythology-themed clothing **or** create their own designs through guided AI chat sessions — choosing Hindu or Greek mythology motifs rendered in modern/anime art styles — and have them printed on t-shirts.
 
 **Key business decisions:**
 
@@ -258,27 +258,27 @@ External Services:
 
 | Parameter                                         | Default       | Description                                          |
 | ------------------------------------------------- | ------------- | ---------------------------------------------------- |
-| `/mythweave/pricing/session-fee`                  | `2.00`        | AI design session fee (USD)                          |
-| `/mythweave/pricing/custom-tshirt-base`           | `20.00`       | Base price for custom t-shirt (USD)                  |
-| `/mythweave/pricing/both-placement-surcharge`     | `8.00`        | Surcharge for front+back printing (USD)              |
-| `/mythweave/pricing/complexity-multiplier-low`    | `1.0`         | Price multiplier for low complexity                  |
-| `/mythweave/pricing/complexity-multiplier-medium` | `1.3`         | Price multiplier for medium complexity               |
-| `/mythweave/pricing/complexity-multiplier-high`   | `1.6`         | Price multiplier for high complexity                 |
-| `/mythweave/session/max-iterations`               | `5`           | Max generation/modification attempts per session     |
-| `/mythweave/session/ttl-minutes`                  | `60`          | Session expiry in minutes                            |
-| `/mythweave/ai/image-resolution`                  | `1024x1024`   | DALL-E output resolution (print quality)             |
-| `/mythweave/shipping/flat-rate-base`              | `5.99`        | Base flat rate for shipping (USD)                    |
-| `/mythweave/mythology/allowed-types`              | `hindu,greek` | Comma-separated allowed mythology types (expandable) |
+| `/EpicWeave/pricing/session-fee`                  | `2.00`        | AI design session fee (USD)                          |
+| `/EpicWeave/pricing/custom-tshirt-base`           | `20.00`       | Base price for custom t-shirt (USD)                  |
+| `/EpicWeave/pricing/both-placement-surcharge`     | `8.00`        | Surcharge for front+back printing (USD)              |
+| `/EpicWeave/pricing/complexity-multiplier-low`    | `1.0`         | Price multiplier for low complexity                  |
+| `/EpicWeave/pricing/complexity-multiplier-medium` | `1.3`         | Price multiplier for medium complexity               |
+| `/EpicWeave/pricing/complexity-multiplier-high`   | `1.6`         | Price multiplier for high complexity                 |
+| `/EpicWeave/session/max-iterations`               | `5`           | Max generation/modification attempts per session     |
+| `/EpicWeave/session/ttl-minutes`                  | `60`          | Session expiry in minutes                            |
+| `/EpicWeave/ai/image-resolution`                  | `1024x1024`   | DALL-E output resolution (print quality)             |
+| `/EpicWeave/shipping/flat-rate-base`              | `5.99`        | Base flat rate for shipping (USD)                    |
+| `/EpicWeave/mythology/allowed-types`              | `hindu,greek` | Comma-separated allowed mythology types (expandable) |
 
 ---
 
 ## 5. Data Architecture (DynamoDB Single-Table Design)
 
-DynamoDB uses a single-table design with composite keys. All entities share one table (`MythWeaveTable`) with a partition key (`PK`) and sort key (`SK`). Global Secondary Indexes (GSIs) enable alternate access patterns.
+DynamoDB uses a single-table design with composite keys. All entities share one table (`EpicWeaveTable`) with a partition key (`PK`) and sort key (`SK`). Global Secondary Indexes (GSIs) enable alternate access patterns.
 
 ### 5.1 Table Schema
 
-**Table:** `MythWeaveTable`
+**Table:** `EpicWeaveTable`
 
 - **PK** (Partition Key): String
 - **SK** (Sort Key): String
@@ -515,7 +515,7 @@ Below is the textual BPMN definition describing the end-to-end business processe
 
 ### Process 1: User Registration & Authentication
 
-**Pool:** MythWeave Platform
+**Pool:** EpicWeave Platform
 **Lanes:** Customer, Frontend (React), AWS Cognito, Lambda, DynamoDB
 
 ```
@@ -551,7 +551,7 @@ START EVENT: User visits site
 
 ### Process 2: Browse & Purchase Pre-Designed Products
 
-**Pool:** MythWeave Platform
+**Pool:** EpicWeave Platform
 **Lanes:** Customer, Frontend (React), API Gateway, Lambda, DynamoDB, CloudFront
 
 ```
@@ -583,13 +583,13 @@ START EVENT: User navigates to catalog
 
 ### Process 3: AI Design Chat Session
 
-**Pool:** MythWeave Platform
+**Pool:** EpicWeave Platform
 **Lanes:** Customer, Frontend (React), API Gateway, Lambda, SQS, Lambda (AI Worker), OpenAI DALL-E, S3, DynamoDB, Stripe, Parameter Store
 
 ```
 START EVENT: User clicks "Create Custom Design"
   → TASK [Frontend]: Call API Gateway GET /config/session-fee
-  → TASK [Lambda]: Read /mythweave/pricing/session-fee from Parameter Store → return $2.00
+  → TASK [Lambda]: Read /EpicWeave/pricing/session-fee from Parameter Store → return $2.00
   → TASK [Frontend]: Display session fee ($2.00), terms (non-refundable), art style selector
   → TASK [Customer]: Select art style ("modern" or "anime"), confirm and pay
   → TASK [Frontend]: Call API Gateway POST /sessions/create (with Cognito JWT)
@@ -629,7 +629,7 @@ START EVENT: User clicks "Create Custom Design"
     │          → TASK [Lambda AI Worker]: Read image-resolution from Parameter Store (1024x1024)
     │          → TASK [Lambda AI Worker]: Call OpenAI DALL-E API with prompt + style enforcement
     │          → TASK [OpenAI DALL-E]: Return generated image
-    │          → TASK [Lambda AI Worker]: Upload image to S3 bucket (mythweave-designs/<sessionId>/<ulid>.png)
+    │          → TASK [Lambda AI Worker]: Upload image to S3 bucket (EpicWeave-designs/<sessionId>/<ulid>.png)
     │          → TASK [Lambda AI Worker]: PUT DesignMessage {PK: SESSION#<id>, SK: MSG#<ts>#<ulid>,
     │                                     role: 'assistant', imageUrl: S3 URL}
     │          → TASK [Lambda AI Worker]: INCREMENT iterationCount on DesignSession
@@ -669,12 +669,12 @@ START EVENT: User clicks "Create Custom Design"
 
 ### Process 4: Content Rule Enforcement (Called Sub-Process)
 
-**Pool:** MythWeave Platform
+**Pool:** EpicWeave Platform
 **Lanes:** Lambda, Parameter Store
 
 ```
 START EVENT: Prompt received for validation (called by Process 3 Lambda)
-  → TASK [Lambda]: Read /mythweave/mythology/allowed-types from Parameter Store → "hindu,greek"
+  → TASK [Lambda]: Read /EpicWeave/mythology/allowed-types from Parameter Store → "hindu,greek"
   → TASK [Lambda]: Run keyword/classifier check against allowed mythology types
   → EXCLUSIVE GATEWAY: Contains reference to an allowed mythology type?
     ── [No] → TASK [Lambda]: Return rejection — "Must relate to Hindu or Greek mythology"
@@ -697,7 +697,7 @@ START EVENT: Prompt received for validation (called by Process 3 Lambda)
 
 ### Process 5: Checkout & Payment
 
-**Pool:** MythWeave Platform
+**Pool:** EpicWeave Platform
 **Lanes:** Customer, Frontend (React), API Gateway, Lambda, DynamoDB, Stripe, SES, Parameter Store
 
 ```
@@ -707,7 +707,7 @@ START EVENT: User navigates to checkout
   → TASK [Frontend]: Display cart summary (items, quantities, prices, colors, sizes)
   → TASK [Customer]: Review cart, update quantities if needed
   → TASK [Frontend]: Call API Gateway POST /checkout/calculate
-  → TASK [Lambda]: Read /mythweave/shipping/flat-rate-base from Parameter Store ($5.99)
+  → TASK [Lambda]: Read /EpicWeave/shipping/flat-rate-base from Parameter Store ($5.99)
   → TASK [Lambda]: Calculate totals (subtotal + tax + flat-rate + carrier rate estimate)
   → TASK [Frontend]: Display order summary with total
   → TASK [Customer]: Enter/select US shipping address
@@ -741,7 +741,7 @@ START EVENT: User navigates to checkout
 
 ### Process 6: Order Fulfillment (Admin — In-House Printing)
 
-**Pool:** MythWeave Platform
+**Pool:** EpicWeave Platform
 **Lanes:** Admin, Frontend (Admin Panel), API Gateway, Lambda, DynamoDB, S3, SES, Step Functions
 
 ```
@@ -780,7 +780,7 @@ START EVENT: New order with status=paid (Step Functions triggered by DynamoDB St
 
 ### Process 7: Refund / Cancellation
 
-**Pool:** MythWeave Platform
+**Pool:** EpicWeave Platform
 **Lanes:** Customer, Admin, Frontend, API Gateway, Lambda, DynamoDB, Stripe, SES
 
 > **Rule:** Session fees ($2) are **non-refundable**. Only order payments are eligible for refund.
@@ -982,7 +982,7 @@ Each phase follows BDD/TDD: write feature files → write failing tests → impl
 ### Phase 1: Foundation & Infrastructure
 
 1. **Project scaffolding** — Next.js frontend (React + TailwindCSS + shadcn/ui), AWS CDK (TypeScript) for IaC
-2. **AWS CDK stack** — DynamoDB table (MythWeaveTable + GSIs), S3 buckets, CloudFront distribution, API Gateway (HTTP API), Cognito User Pool, SQS queues, Parameter Store defaults, Secrets Manager placeholders
+2. **AWS CDK stack** — DynamoDB table (EpicWeaveTable + GSIs), S3 buckets, CloudFront distribution, API Gateway (HTTP API), Cognito User Pool, SQS queues, Parameter Store defaults, Secrets Manager placeholders
 3. **Authentication** — Cognito User Pool with email/password + OAuth (Google, GitHub), post-confirmation Lambda trigger to create DynamoDB user profile, Cognito authorizer on API Gateway
 4. **BDD test harness** — Cucumber.js + Vitest + Playwright setup, AWS SDK mocks (aws-sdk-client-mock), k6 config
 
