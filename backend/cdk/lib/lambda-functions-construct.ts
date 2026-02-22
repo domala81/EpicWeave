@@ -32,7 +32,7 @@ export class LambdaFunctionsConstruct extends Construct {
       NODE_ENV: "production",
     };
 
-    const commonProps: Partial<lambda.FunctionProps> = {
+    const commonProps = {
       runtime: lambda.Runtime.NODEJS_20_X,
       timeout: cdk.Duration.seconds(30),
       memorySize: 256,

@@ -19,7 +19,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1022624
+              "duration": 1198915
             },
             "embeddings": [
               {
@@ -38,7 +38,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 87375
+              "duration": 83749
             },
             "embeddings": [
               {
@@ -57,7 +57,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 54459
+              "duration": 52457
             },
             "embeddings": [
               {
@@ -76,7 +76,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 114500
+              "duration": 121582
             },
             "embeddings": [
               {
@@ -106,7 +106,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 67708
+              "duration": 58457
             },
             "embeddings": [
               {
@@ -125,7 +125,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 51833
+              "duration": 47708
             },
             "embeddings": [
               {
@@ -173,7 +173,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 118875
+              "duration": 117415
             },
             "embeddings": [
               {
@@ -211,7 +211,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 61208
+              "duration": 48041
             },
             "embeddings": [
               {
@@ -230,7 +230,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 125667
+              "duration": 129999
             },
             "embeddings": [
               {
@@ -249,7 +249,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 111834
+              "duration": 125541
             },
             "embeddings": [
               {
@@ -268,7 +268,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 133625
+              "duration": 144042
             },
             "embeddings": [
               {
@@ -287,7 +287,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 110667
+              "duration": 107833
             },
             "embeddings": [
               {
@@ -317,7 +317,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45707
+              "duration": 49458
             },
             "embeddings": [
               {
@@ -336,7 +336,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 44167
+              "duration": 72375
             },
             "embeddings": [
               {
@@ -355,7 +355,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 111834
+              "duration": 109916
             },
             "embeddings": [
               {
@@ -374,7 +374,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42207
+              "duration": 47208
             },
             "embeddings": [
               {
@@ -404,7 +404,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 85124
+              "duration": 137499
             },
             "embeddings": [
               {
@@ -423,7 +423,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42583
+              "duration": 61832
             },
             "embeddings": [
               {
@@ -442,7 +442,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34332
+              "duration": 42167
             },
             "embeddings": [
               {
@@ -461,7 +461,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33666
+              "duration": 47040
             },
             "embeddings": [
               {
@@ -491,7 +491,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34083
+              "duration": 38333
             },
             "embeddings": [
               {
@@ -510,7 +510,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 39541
+              "duration": 48292
             },
             "embeddings": [
               {
@@ -529,7 +529,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 30957
+              "duration": 31291
             },
             "embeddings": [
               {
@@ -548,7 +548,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 43457
+              "duration": 59667
             },
             "embeddings": [
               {
@@ -578,7 +578,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28166
+              "duration": 30749
             },
             "embeddings": [
               {
@@ -597,7 +597,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33291
+              "duration": 34291
             },
             "embeddings": [
               {
@@ -616,7 +616,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29290
+              "duration": 30250
             },
             "embeddings": [
               {
@@ -646,7 +646,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26957
+              "duration": 29707
             },
             "embeddings": [
               {
@@ -665,7 +665,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32458
+              "duration": 33666
             },
             "embeddings": [
               {
@@ -684,7 +684,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29083
+              "duration": 29042
             },
             "embeddings": [
               {
@@ -703,7 +703,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 31041
+              "duration": 33415
             },
             "embeddings": [
               {
@@ -733,7 +733,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 56500
+              "duration": 30624
             },
             "embeddings": [
               {
@@ -752,7 +752,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 92166
+              "duration": 70667
             },
             "embeddings": [
               {
@@ -771,7 +771,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 85208
+              "duration": 58540
             }
           },
           {
@@ -784,7 +784,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 147792
+              "duration": 33041
             },
             "embeddings": [
               {
@@ -814,7 +814,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 69250
+              "duration": 35542
             },
             "embeddings": [
               {
@@ -833,7 +833,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 53459
+              "duration": 36958
             },
             "embeddings": [
               {
@@ -852,7 +852,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29124
+              "duration": 25291
             }
           },
           {
@@ -865,7 +865,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 37041
+              "duration": 30833
             },
             "embeddings": [
               {
@@ -895,7 +895,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36540
+              "duration": 31332
             },
             "embeddings": [
               {
@@ -914,7 +914,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 54000
+              "duration": 38541
             },
             "embeddings": [
               {
@@ -933,7 +933,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36750
+              "duration": 33375
             },
             "embeddings": [
               {
@@ -952,7 +952,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45541
+              "duration": 39542
             },
             "embeddings": [
               {
@@ -982,7 +982,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 49375
+              "duration": 38875
             },
             "embeddings": [
               {
@@ -1001,7 +1001,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 30665
+              "duration": 27166
             },
             "embeddings": [
               {
@@ -1020,7 +1020,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 38624
+              "duration": 34708
             },
             "embeddings": [
               {
@@ -1039,7 +1039,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 31582
+              "duration": 28832
             },
             "embeddings": [
               {
@@ -1058,7 +1058,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27249
+              "duration": 25707
             },
             "embeddings": [
               {
@@ -1099,7 +1099,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 46124
+              "duration": 44250
             },
             "embeddings": [
               {
@@ -1118,7 +1118,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 50333
+              "duration": 42291
             },
             "embeddings": [
               {
@@ -1137,7 +1137,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34749
+              "duration": 31125
             },
             "embeddings": [
               {
@@ -1156,7 +1156,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 43999
+              "duration": 41917
             },
             "embeddings": [
               {
@@ -1175,7 +1175,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32875
+              "duration": 32625
             },
             "embeddings": [
               {
@@ -1205,7 +1205,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28708
+              "duration": 28082
             },
             "embeddings": [
               {
@@ -1224,7 +1224,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 41957
+              "duration": 42958
             },
             "embeddings": [
               {
@@ -1243,7 +1243,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28832
+              "duration": 26417
             },
             "embeddings": [
               {
@@ -1262,7 +1262,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 39999
+              "duration": 28874
             },
             "embeddings": [
               {
@@ -1292,7 +1292,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29458
+              "duration": 27750
             },
             "embeddings": [
               {
@@ -1311,7 +1311,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33833
+              "duration": 40750
             },
             "embeddings": [
               {
@@ -1330,7 +1330,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33457
+              "duration": 31208
             },
             "embeddings": [
               {
@@ -1349,7 +1349,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 50415
+              "duration": 36917
             },
             "embeddings": [
               {
@@ -1379,7 +1379,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 80833
+              "duration": 26875
             },
             "embeddings": [
               {
@@ -1398,7 +1398,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45292
+              "duration": 31834
             },
             "embeddings": [
               {
@@ -1417,7 +1417,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 51291
+              "duration": 32209
             },
             "embeddings": [
               {
@@ -1436,7 +1436,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 43250
+              "duration": 32249
             },
             "embeddings": [
               {
@@ -1455,7 +1455,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34915
+              "duration": 254291
             },
             "embeddings": [
               {
@@ -1485,7 +1485,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26166
+              "duration": 95583
             },
             "embeddings": [
               {
@@ -1504,7 +1504,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34874
+              "duration": 61542
             },
             "embeddings": [
               {
@@ -1523,7 +1523,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42375
+              "duration": 67790
             },
             "embeddings": [
               {
@@ -1542,7 +1542,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 143958
+              "duration": 40958
             },
             "embeddings": [
               {
@@ -1561,7 +1561,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 158165
+              "duration": 43416
             },
             "embeddings": [
               {
@@ -1580,7 +1580,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 173958
+              "duration": 56540
             },
             "embeddings": [
               {
@@ -1610,7 +1610,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 110791
+              "duration": 31790
             },
             "embeddings": [
               {
@@ -1629,7 +1629,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 145957
+              "duration": 33499
             },
             "embeddings": [
               {
@@ -1648,7 +1648,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 50000
+              "duration": 32457
             },
             "embeddings": [
               {
@@ -1667,7 +1667,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 44332
+              "duration": 36999
             },
             "embeddings": [
               {
@@ -1697,7 +1697,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32374
+              "duration": 36708
             },
             "embeddings": [
               {
@@ -1716,7 +1716,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32542
+              "duration": 32166
             },
             "embeddings": [
               {
@@ -1735,7 +1735,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29292
+              "duration": 32375
             },
             "embeddings": [
               {
@@ -1754,7 +1754,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27708
+              "duration": 31625
             },
             "embeddings": [
               {
@@ -1784,7 +1784,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24208
+              "duration": 26916
             },
             "embeddings": [
               {
@@ -1803,7 +1803,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28749
+              "duration": 30499
             },
             "embeddings": [
               {
@@ -1822,7 +1822,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28749
+              "duration": 27709
             },
             "embeddings": [
               {
@@ -1841,7 +1841,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 39167
+              "duration": 34041
             },
             "embeddings": [
               {
@@ -1882,7 +1882,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32374
+              "duration": 156083
             }
           },
           {
@@ -1895,7 +1895,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 72917
+              "duration": 159708
             },
             "embeddings": [
               {
@@ -1914,7 +1914,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 47041
+              "duration": 112374
             },
             "embeddings": [
               {
@@ -1933,7 +1933,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24791
+              "duration": 60457
             }
           },
           {
@@ -1946,7 +1946,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25542
+              "duration": 90750
             }
           },
           {
@@ -1959,7 +1959,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26290
+              "duration": 37209
             },
             "embeddings": [
               {
@@ -1989,7 +1989,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17374
+              "duration": 20666
             }
           },
           {
@@ -2002,7 +2002,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28500
+              "duration": 31291
             },
             "embeddings": [
               {
@@ -2021,7 +2021,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 48542
+              "duration": 50666
             },
             "embeddings": [
               {
@@ -2040,7 +2040,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 31000
+              "duration": 33541
             }
           },
           {
@@ -2053,7 +2053,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25665
+              "duration": 25832
             }
           }
         ],
@@ -2077,7 +2077,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16833
+              "duration": 17416
             }
           },
           {
@@ -2090,7 +2090,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 56458
+              "duration": 29207
             },
             "embeddings": [
               {
@@ -2109,7 +2109,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25665
+              "duration": 27667
             },
             "embeddings": [
               {
@@ -2128,7 +2128,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17333
+              "duration": 25666
             }
           },
           {
@@ -2141,7 +2141,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14458
+              "duration": 16292
             }
           }
         ],
@@ -2165,7 +2165,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21625
+              "duration": 16291
             }
           },
           {
@@ -2178,7 +2178,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25749
+              "duration": 29667
             },
             "embeddings": [
               {
@@ -2197,7 +2197,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32917
+              "duration": 99792
             },
             "embeddings": [
               {
@@ -2216,7 +2216,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24917
+              "duration": 35583
             },
             "embeddings": [
               {
@@ -2235,7 +2235,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16875
+              "duration": 17667
             }
           },
           {
@@ -2248,7 +2248,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26208
+              "duration": 25916
             },
             "embeddings": [
               {
@@ -2278,7 +2278,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13166
+              "duration": 35749
             }
           },
           {
@@ -2291,7 +2291,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23749
+              "duration": 24041
             },
             "embeddings": [
               {
@@ -2310,7 +2310,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22957
+              "duration": 21667
             },
             "embeddings": [
               {
@@ -2329,7 +2329,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19541
+              "duration": 20625
             }
           },
           {
@@ -2342,7 +2342,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22874
+              "duration": 21957
             },
             "embeddings": [
               {
@@ -2361,7 +2361,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20334
+              "duration": 20082
             }
           },
           {
@@ -2374,7 +2374,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22124
+              "duration": 42292
             },
             "embeddings": [
               {
@@ -2404,7 +2404,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11875
+              "duration": 17459
             }
           },
           {
@@ -2417,7 +2417,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24084
+              "duration": 27500
             },
             "embeddings": [
               {
@@ -2436,7 +2436,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20709
+              "duration": 26416
             },
             "embeddings": [
               {
@@ -2455,7 +2455,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18667
+              "duration": 53791
             }
           },
           {
@@ -2468,7 +2468,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17250
+              "duration": 27666
             },
             "embeddings": [
               {
@@ -2487,7 +2487,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13540
+              "duration": 17416
             }
           },
           {
@@ -2500,7 +2500,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18166
+              "duration": 114665
             },
             "embeddings": [
               {
@@ -2530,7 +2530,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12042
+              "duration": 15833
             }
           },
           {
@@ -2543,7 +2543,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22417
+              "duration": 28582
             },
             "embeddings": [
               {
@@ -2562,7 +2562,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29749
+              "duration": 33291
             },
             "embeddings": [
               {
@@ -2581,7 +2581,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20624
+              "duration": 21458
             },
             "embeddings": [
               {
@@ -2600,7 +2600,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26457
+              "duration": 33417
             },
             "embeddings": [
               {
@@ -2619,7 +2619,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23083
+              "duration": 21625
             },
             "embeddings": [
               {
@@ -2638,7 +2638,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21874
+              "duration": 20666
             },
             "embeddings": [
               {
@@ -2679,7 +2679,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 63917
+              "duration": 11250
             }
           },
           {
@@ -2692,7 +2692,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 97374
+              "duration": 53666
             },
             "embeddings": [
               {
@@ -2711,7 +2711,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 53499
+              "duration": 20916
             }
           },
           {
@@ -2724,7 +2724,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 31333
+              "duration": 16792
             }
           },
           {
@@ -2737,7 +2737,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23832
+              "duration": 15999
             }
           },
           {
@@ -2750,7 +2750,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16749
+              "duration": 11250
             }
           },
           {
@@ -2763,7 +2763,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 63042
+              "duration": 28999
             },
             "embeddings": [
               {
@@ -2793,7 +2793,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16250
+              "duration": 10999
             }
           },
           {
@@ -2806,7 +2806,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33500
+              "duration": 26708
             },
             "embeddings": [
               {
@@ -2825,7 +2825,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 42665
+              "duration": 36375
             }
           },
           {
@@ -2838,7 +2838,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18375
+              "duration": 16041
             }
           },
           {
@@ -2851,7 +2851,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17209
+              "duration": 17291
             }
           }
         ],
@@ -2875,7 +2875,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11749
+              "duration": 11208
             }
           },
           {
@@ -2888,7 +2888,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16707
+              "duration": 14957
             }
           },
           {
@@ -2901,7 +2901,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13374
+              "duration": 13207
             }
           },
           {
@@ -2914,7 +2914,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10416
+              "duration": 10041
             }
           }
         ],
@@ -2938,7 +2938,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10791
+              "duration": 10584
             }
           },
           {
@@ -2951,7 +2951,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18833
+              "duration": 15124
             }
           },
           {
@@ -2964,7 +2964,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21749
+              "duration": 11833
             }
           },
           {
@@ -2977,7 +2977,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10208
+              "duration": 9417
             }
           }
         ],
@@ -3001,7 +3001,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12042
+              "duration": 11334
             }
           },
           {
@@ -3014,7 +3014,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 35624
+              "duration": 1364749
             },
             "embeddings": [
               {
@@ -3033,7 +3033,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11958
+              "duration": 24458
             }
           },
           {
@@ -3046,7 +3046,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16334
+              "duration": 20500
             },
             "embeddings": [
               {
@@ -3065,7 +3065,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10624
+              "duration": 11874
             }
           },
           {
@@ -3078,7 +3078,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19875
+              "duration": 24041
             },
             "embeddings": [
               {
@@ -3108,7 +3108,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15874
+              "duration": 19624
             }
           },
           {
@@ -3121,7 +3121,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24000
+              "duration": 40584
             },
             "embeddings": [
               {
@@ -3140,7 +3140,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11916
+              "duration": 11042
             }
           },
           {
@@ -3153,7 +3153,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16124
+              "duration": 16250
             },
             "embeddings": [
               {
@@ -3172,7 +3172,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36084
+              "duration": 10250
             }
           },
           {
@@ -3185,7 +3185,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19124
+              "duration": 17708
             },
             "embeddings": [
               {
@@ -3226,7 +3226,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18582
+              "duration": 17333
             },
             "embeddings": [
               {
@@ -3245,7 +3245,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25207
+              "duration": 30082
             },
             "embeddings": [
               {
@@ -3264,7 +3264,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36499
+              "duration": 35791
             },
             "embeddings": [
               {
@@ -3283,7 +3283,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 30166
+              "duration": 31334
             },
             "embeddings": [
               {
@@ -3302,7 +3302,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27084
+              "duration": 23875
             },
             "embeddings": [
               {
@@ -3321,7 +3321,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28625
+              "duration": 18832
             },
             "embeddings": [
               {
@@ -3340,7 +3340,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 31750
+              "duration": 24457
             },
             "embeddings": [
               {
@@ -3412,7 +3412,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 86916
+              "duration": 74207
             },
             "embeddings": [
               {
@@ -3455,7 +3455,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32375
+              "duration": 27291
             },
             "embeddings": [
               {
@@ -3474,7 +3474,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 31375
+              "duration": 26999
             },
             "embeddings": [
               {
@@ -3504,7 +3504,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21874
+              "duration": 17790
             },
             "embeddings": [
               {
@@ -3523,7 +3523,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 114708
+              "duration": 13667
             },
             "embeddings": [
               {
@@ -3542,7 +3542,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 37250
+              "duration": 21083
             },
             "embeddings": [
               {
@@ -3561,7 +3561,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40708
+              "duration": 31332
             },
             "embeddings": [
               {
@@ -3580,7 +3580,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18167
+              "duration": 13792
             },
             "embeddings": [
               {
@@ -3640,7 +3640,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 101291
+              "duration": 46333
             },
             "embeddings": [
               {
@@ -3675,7 +3675,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45499
+              "duration": 18917
             },
             "embeddings": [
               {
@@ -3694,7 +3694,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 38708
+              "duration": 24041
             },
             "embeddings": [
               {
@@ -3724,7 +3724,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23166
+              "duration": 17207
             },
             "embeddings": [
               {
@@ -3743,7 +3743,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16958
+              "duration": 13374
             },
             "embeddings": [
               {
@@ -3762,7 +3762,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 38707
+              "duration": 31708
             },
             "embeddings": [
               {
@@ -3781,7 +3781,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29707
+              "duration": 55332
             },
             "embeddings": [
               {
@@ -3800,7 +3800,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26916
+              "duration": 37791
             },
             "embeddings": [
               {
@@ -3819,7 +3819,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32166
+              "duration": 23332
             },
             "embeddings": [
               {
@@ -3838,7 +3838,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24917
+              "duration": 26416
             },
             "embeddings": [
               {
@@ -3868,7 +3868,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20249
+              "duration": 19582
             },
             "embeddings": [
               {
@@ -3887,7 +3887,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15707
+              "duration": 15166
             },
             "embeddings": [
               {
@@ -3906,7 +3906,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 39958
+              "duration": 43250
             },
             "embeddings": [
               {
@@ -3925,7 +3925,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24666
+              "duration": 24792
             },
             "embeddings": [
               {
@@ -3944,7 +3944,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22666
+              "duration": 22167
             },
             "embeddings": [
               {
@@ -3963,7 +3963,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25042
+              "duration": 87334
             },
             "embeddings": [
               {
@@ -3982,7 +3982,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23375
+              "duration": 22083
             },
             "embeddings": [
               {
@@ -4001,7 +4001,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19917
+              "duration": 18332
             },
             "embeddings": [
               {
@@ -4031,7 +4031,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20750
+              "duration": 17916
             },
             "embeddings": [
               {
@@ -4050,7 +4050,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15334
+              "duration": 13500
             },
             "embeddings": [
               {
@@ -4069,7 +4069,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19416
+              "duration": 18916
             },
             "embeddings": [
               {
@@ -4088,7 +4088,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18875
+              "duration": 17042
             },
             "embeddings": [
               {
@@ -4107,7 +4107,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20082
+              "duration": 17583
             },
             "embeddings": [
               {
@@ -4126,7 +4126,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19083
+              "duration": 17416
             },
             "embeddings": [
               {
@@ -4167,7 +4167,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12332
+              "duration": 12624
             }
           },
           {
@@ -4180,7 +4180,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27333
+              "duration": 24790
             },
             "embeddings": [
               {
@@ -4199,7 +4199,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19334
+              "duration": 19165
             },
             "embeddings": [
               {
@@ -4218,7 +4218,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21167
+              "duration": 17041
             },
             "embeddings": [
               {
@@ -4237,7 +4237,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18332
+              "duration": 17207
             },
             "embeddings": [
               {
@@ -4256,7 +4256,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18833
+              "duration": 17083
             },
             "embeddings": [
               {
@@ -4286,7 +4286,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10042
+              "duration": 10333
             }
           },
           {
@@ -4299,7 +4299,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15708
+              "duration": 14874
             },
             "embeddings": [
               {
@@ -4318,7 +4318,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19083
+              "duration": 20874
             },
             "embeddings": [
               {
@@ -4337,7 +4337,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45334
+              "duration": 36000
             },
             "embeddings": [
               {
@@ -4356,7 +4356,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21667
+              "duration": 19374
             },
             "embeddings": [
               {
@@ -4375,7 +4375,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19290
+              "duration": 17499
             },
             "embeddings": [
               {
@@ -4405,7 +4405,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10000
+              "duration": 9624
             }
           },
           {
@@ -4418,7 +4418,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15124
+              "duration": 13957
             },
             "embeddings": [
               {
@@ -4437,7 +4437,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27292
+              "duration": 23540
             },
             "embeddings": [
               {
@@ -4456,7 +4456,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26667
+              "duration": 23499
             },
             "embeddings": [
               {
@@ -4475,7 +4475,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19917
+              "duration": 17083
             },
             "embeddings": [
               {
@@ -4505,7 +4505,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9665
+              "duration": 9250
             }
           },
           {
@@ -4518,7 +4518,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15292
+              "duration": 13499
             },
             "embeddings": [
               {
@@ -4537,7 +4537,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24415
+              "duration": 22292
             },
             "embeddings": [
               {
@@ -4556,7 +4556,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 95125
+              "duration": 17457
             },
             "embeddings": [
               {
@@ -4575,7 +4575,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18959
+              "duration": 17540
             },
             "embeddings": [
               {
@@ -4605,7 +4605,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10667
+              "duration": 9332
             }
           },
           {
@@ -4618,7 +4618,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15042
+              "duration": 13999
             },
             "embeddings": [
               {
@@ -4637,7 +4637,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24166
+              "duration": 24250
             },
             "embeddings": [
               {
@@ -4656,7 +4656,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25457
+              "duration": 30957
             },
             "embeddings": [
               {
@@ -4675,7 +4675,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18792
+              "duration": 17083
             },
             "embeddings": [
               {
@@ -4705,7 +4705,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9790
+              "duration": 9166
             }
           },
           {
@@ -4718,7 +4718,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14541
+              "duration": 14542
             },
             "embeddings": [
               {
@@ -4737,7 +4737,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23290
+              "duration": 22790
             },
             "embeddings": [
               {
@@ -4756,7 +4756,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18457
+              "duration": 17250
             },
             "embeddings": [
               {
@@ -4775,7 +4775,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15916
+              "duration": 15124
             },
             "embeddings": [
               {
@@ -4794,7 +4794,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17874
+              "duration": 18000
             },
             "embeddings": [
               {
@@ -4824,7 +4824,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9582
+              "duration": 9250
             }
           },
           {
@@ -4837,7 +4837,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15041
+              "duration": 13957
             },
             "embeddings": [
               {
@@ -4856,7 +4856,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19792
+              "duration": 18958
             },
             "embeddings": [
               {
@@ -4875,7 +4875,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16458
+              "duration": 16124
             },
             "embeddings": [
               {
@@ -4894,7 +4894,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25834
+              "duration": 22625
             },
             "embeddings": [
               {
@@ -4913,7 +4913,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20792
+              "duration": 18249
             },
             "embeddings": [
               {
@@ -4932,7 +4932,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17749
+              "duration": 16958
             },
             "embeddings": [
               {
@@ -4962,7 +4962,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9916
+              "duration": 9416
             }
           },
           {
@@ -4975,7 +4975,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22666
+              "duration": 14459
             },
             "embeddings": [
               {
@@ -4994,7 +4994,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25333
+              "duration": 18666
             },
             "embeddings": [
               {
@@ -5013,7 +5013,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19667
+              "duration": 17624
             },
             "embeddings": [
               {
@@ -5032,7 +5032,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18208
+              "duration": 17333
             },
             "embeddings": [
               {
@@ -5051,7 +5051,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19124
+              "duration": 17000
             },
             "embeddings": [
               {
@@ -5081,7 +5081,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9874
+              "duration": 9082
             }
           },
           {
@@ -5094,7 +5094,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14542
+              "duration": 13584
             },
             "embeddings": [
               {
@@ -5113,7 +5113,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20040
+              "duration": 17374
             },
             "embeddings": [
               {
@@ -5132,7 +5132,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17541
+              "duration": 16458
             },
             "embeddings": [
               {
@@ -5151,7 +5151,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17875
+              "duration": 17333
             },
             "embeddings": [
               {
@@ -5170,7 +5170,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16749
+              "duration": 17165
             },
             "embeddings": [
               {
@@ -5200,7 +5200,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9624
+              "duration": 9250
             }
           },
           {
@@ -5213,7 +5213,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13999
+              "duration": 13584
             },
             "embeddings": [
               {
@@ -5232,7 +5232,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28125
+              "duration": 30042
             },
             "embeddings": [
               {
@@ -5251,7 +5251,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18333
+              "duration": 17084
             },
             "embeddings": [
               {
@@ -5270,7 +5270,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18000
+              "duration": 16666
             },
             "embeddings": [
               {
@@ -5289,7 +5289,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18417
+              "duration": 18709
             },
             "embeddings": [
               {
@@ -5330,7 +5330,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18249
+              "duration": 16874
             },
             "embeddings": [
               {
@@ -5349,7 +5349,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20916
+              "duration": 20792
             },
             "embeddings": [
               {
@@ -5368,7 +5368,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17875
+              "duration": 17709
             },
             "embeddings": [
               {
@@ -5387,7 +5387,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16707
+              "duration": 16417
             },
             "embeddings": [
               {
@@ -5466,7 +5466,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 70667
+              "duration": 67082
             },
             "embeddings": [
               {
@@ -5485,7 +5485,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18750
+              "duration": 18541
             },
             "embeddings": [
               {
@@ -5504,7 +5504,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17582
+              "duration": 17499
             },
             "embeddings": [
               {
@@ -5523,7 +5523,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17749
+              "duration": 17957
             },
             "embeddings": [
               {
@@ -5542,7 +5542,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17624
+              "duration": 16749
             },
             "embeddings": [
               {
@@ -5561,7 +5561,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22165
+              "duration": 21541
             },
             "embeddings": [
               {
@@ -5580,7 +5580,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17083
+              "duration": 16916
             },
             "embeddings": [
               {
@@ -5640,7 +5640,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 47834
+              "duration": 114749
             },
             "embeddings": [
               {
@@ -5675,7 +5675,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17416
+              "duration": 22208
             },
             "embeddings": [
               {
@@ -5694,7 +5694,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17167
+              "duration": 18540
             },
             "embeddings": [
               {
@@ -5713,7 +5713,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26499
+              "duration": 25958
             },
             "embeddings": [
               {
@@ -5743,7 +5743,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15082
+              "duration": 17333
             },
             "embeddings": [
               {
@@ -5781,7 +5781,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12792
+              "duration": 13500
             },
             "embeddings": [
               {
@@ -5800,7 +5800,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18291
+              "duration": 17374
             },
             "embeddings": [
               {
@@ -5819,7 +5819,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18208
+              "duration": 23582
             },
             "embeddings": [
               {
@@ -5838,7 +5838,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12625
+              "duration": 13291
             },
             "embeddings": [
               {
@@ -5857,7 +5857,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16917
+              "duration": 17625
             },
             "embeddings": [
               {
@@ -5876,7 +5876,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16499
+              "duration": 17542
             },
             "embeddings": [
               {
@@ -5895,7 +5895,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16208
+              "duration": 17333
             },
             "embeddings": [
               {
@@ -5914,7 +5914,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16667
+              "duration": 17416
             },
             "embeddings": [
               {
@@ -5933,7 +5933,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16582
+              "duration": 20791
             },
             "embeddings": [
               {
@@ -5963,7 +5963,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14250
+              "duration": 13791
             },
             "embeddings": [
               {
@@ -5982,7 +5982,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12041
+              "duration": 40708
             },
             "embeddings": [
               {
@@ -6001,7 +6001,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12124
+              "duration": 80874
             },
             "embeddings": [
               {
@@ -6020,7 +6020,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15708
+              "duration": 240749
             },
             "embeddings": [
               {
@@ -6039,7 +6039,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15416
+              "duration": 66791
             },
             "embeddings": [
               {
@@ -6058,7 +6058,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16499
+              "duration": 34124
             },
             "embeddings": [
               {
@@ -6077,7 +6077,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21083
+              "duration": 37875
             },
             "embeddings": [
               {
@@ -6096,7 +6096,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16583
+              "duration": 21542
             },
             "embeddings": [
               {
@@ -6115,7 +6115,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20666
+              "duration": 38916
             },
             "embeddings": [
               {
@@ -6134,7 +6134,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16125
+              "duration": 19792
             },
             "embeddings": [
               {
@@ -6164,7 +6164,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12709
+              "duration": 20667
             },
             "embeddings": [
               {
@@ -6183,7 +6183,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11958
+              "duration": 15040
             },
             "embeddings": [
               {
@@ -6202,7 +6202,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11875
+              "duration": 14208
             },
             "embeddings": [
               {
@@ -6221,7 +6221,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18917
+              "duration": 23582
             },
             "embeddings": [
               {
@@ -6240,7 +6240,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22541
+              "duration": 29250
             },
             "embeddings": [
               {
@@ -6259,7 +6259,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17791
+              "duration": 21832
             },
             "embeddings": [
               {
@@ -6308,7 +6308,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 37374
+              "duration": 47708
             },
             "embeddings": [
               {
@@ -6350,7 +6350,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13792
+              "duration": 16334
             },
             "embeddings": [
               {
@@ -6369,7 +6369,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12707
+              "duration": 15416
             },
             "embeddings": [
               {
@@ -6388,7 +6388,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12415
+              "duration": 13457
             },
             "embeddings": [
               {
@@ -6407,7 +6407,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27041
+              "duration": 23582
             },
             "embeddings": [
               {
@@ -6426,7 +6426,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16832
+              "duration": 18208
             },
             "embeddings": [
               {
@@ -6445,7 +6445,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16790
+              "duration": 17958
             },
             "embeddings": [
               {
@@ -6475,7 +6475,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13708
+              "duration": 14959
             },
             "embeddings": [
               {
@@ -6494,7 +6494,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29416
+              "duration": 12374
             },
             "embeddings": [
               {
@@ -6513,7 +6513,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 188457
+              "duration": 12708
             },
             "embeddings": [
               {
@@ -6532,7 +6532,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 143415
+              "duration": 28917
             },
             "embeddings": [
               {
@@ -6551,7 +6551,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 36458
+              "duration": 21082
             },
             "embeddings": [
               {
@@ -6570,7 +6570,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21500
+              "duration": 18083
             },
             "embeddings": [
               {
@@ -6589,7 +6589,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19750
+              "duration": 18625
             },
             "embeddings": [
               {
@@ -6608,7 +6608,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 67749
+              "duration": 17583
             },
             "embeddings": [
               {
@@ -6649,7 +6649,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 57833
+              "duration": 13999
             },
             "embeddings": [
               {
@@ -6668,7 +6668,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 47166
+              "duration": 32416
             },
             "embeddings": [
               {
@@ -6687,7 +6687,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 72999
+              "duration": 22291
             },
             "embeddings": [
               {
@@ -6706,7 +6706,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 58708
+              "duration": 65999
             },
             "embeddings": [
               {
@@ -6725,7 +6725,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 87124
+              "duration": 48458
             },
             "embeddings": [
               {
@@ -6744,7 +6744,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19583
+              "duration": 17624
             },
             "embeddings": [
               {
@@ -6763,7 +6763,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18042
+              "duration": 17499
             },
             "embeddings": [
               {
@@ -6782,7 +6782,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25374
+              "duration": 26375
             },
             "embeddings": [
               {
@@ -6801,7 +6801,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18666
+              "duration": 16958
             },
             "embeddings": [
               {
@@ -6820,7 +6820,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24499
+              "duration": 24291
             },
             "embeddings": [
               {
@@ -6839,7 +6839,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18415
+              "duration": 18416
             },
             "embeddings": [
               {
@@ -6858,7 +6858,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25750
+              "duration": 23792
             },
             "embeddings": [
               {
@@ -6877,7 +6877,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22665
+              "duration": 24583
             },
             "embeddings": [
               {
@@ -6896,7 +6896,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23916
+              "duration": 23208
             },
             "embeddings": [
               {
@@ -6915,7 +6915,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17707
+              "duration": 18583
             },
             "embeddings": [
               {
@@ -6934,7 +6934,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17791
+              "duration": 19124
             },
             "embeddings": [
               {
@@ -6964,7 +6964,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26333
+              "duration": 21957
             },
             "embeddings": [
               {
@@ -6983,7 +6983,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19249
+              "duration": 15583
             },
             "embeddings": [
               {
@@ -7002,7 +7002,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16624
+              "duration": 15249
             },
             "embeddings": [
               {
@@ -7021,7 +7021,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17208
+              "duration": 14416
             },
             "embeddings": [
               {
@@ -7040,7 +7040,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16375
+              "duration": 15124
             },
             "embeddings": [
               {
@@ -7059,7 +7059,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20292
+              "duration": 17500
             },
             "embeddings": [
               {
@@ -7078,7 +7078,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22250
+              "duration": 18749
             },
             "embeddings": [
               {
@@ -7097,7 +7097,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22791
+              "duration": 21625
             },
             "embeddings": [
               {
@@ -7116,7 +7116,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 90291
+              "duration": 285959
             },
             "embeddings": [
               {
@@ -7135,7 +7135,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24582
+              "duration": 97750
             },
             "embeddings": [
               {
@@ -7165,7 +7165,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45834
+              "duration": 22833
             },
             "embeddings": [
               {
@@ -7184,7 +7184,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19542
+              "duration": 15709
             },
             "embeddings": [
               {
@@ -7203,7 +7203,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18416
+              "duration": 15625
             },
             "embeddings": [
               {
@@ -7222,7 +7222,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16999
+              "duration": 15542
             },
             "embeddings": [
               {
@@ -7241,7 +7241,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20499
+              "duration": 20166
             },
             "embeddings": [
               {
@@ -7260,7 +7260,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17292
+              "duration": 15250
             },
             "embeddings": [
               {
@@ -7279,7 +7279,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25332
+              "duration": 27625
             },
             "embeddings": [
               {
@@ -7298,7 +7298,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23874
+              "duration": 22500
             },
             "embeddings": [
               {
@@ -7317,7 +7317,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18790
+              "duration": 19791
             },
             "embeddings": [
               {
@@ -7336,7 +7336,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18332
+              "duration": 17209
             },
             "embeddings": [
               {
@@ -7366,7 +7366,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16375
+              "duration": 15207
             },
             "embeddings": [
               {
@@ -7385,7 +7385,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21333
+              "duration": 16041
             },
             "embeddings": [
               {
@@ -7404,7 +7404,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15916
+              "duration": 14708
             },
             "embeddings": [
               {
@@ -7423,7 +7423,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14750
+              "duration": 13833
             },
             "embeddings": [
               {
@@ -7442,7 +7442,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28124
+              "duration": 21832
             },
             "embeddings": [
               {
@@ -7461,7 +7461,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18000
+              "duration": 17791
             },
             "embeddings": [
               {
@@ -7480,7 +7480,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26583
+              "duration": 29749
             },
             "embeddings": [
               {
@@ -7499,7 +7499,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17499
+              "duration": 15791
             },
             "embeddings": [
               {
@@ -7518,7 +7518,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19791
+              "duration": 19625
             },
             "embeddings": [
               {
@@ -7537,7 +7537,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17834
+              "duration": 16709
             },
             "embeddings": [
               {
@@ -7567,7 +7567,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17666
+              "duration": 13959
             },
             "embeddings": [
               {
@@ -7586,7 +7586,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15166
+              "duration": 14374
             },
             "embeddings": [
               {
@@ -7605,7 +7605,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16499
+              "duration": 17250
             },
             "embeddings": [
               {
@@ -7624,7 +7624,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14708
+              "duration": 16292
             },
             "embeddings": [
               {
@@ -7643,7 +7643,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28416
+              "duration": 25249
             },
             "embeddings": [
               {
@@ -7662,7 +7662,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18917
+              "duration": 17333
             },
             "embeddings": [
               {
@@ -7681,7 +7681,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17833
+              "duration": 16832
             },
             "embeddings": [
               {
@@ -7700,7 +7700,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24333
+              "duration": 72249
             },
             "embeddings": [
               {
@@ -7719,7 +7719,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15957
+              "duration": 15333
             },
             "embeddings": [
               {
@@ -7738,7 +7738,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23207
+              "duration": 22375
             },
             "embeddings": [
               {
@@ -7768,7 +7768,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14584
+              "duration": 13792
             },
             "embeddings": [
               {
@@ -7787,7 +7787,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14625
+              "duration": 14375
             },
             "embeddings": [
               {
@@ -7806,7 +7806,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14957
+              "duration": 14917
             },
             "embeddings": [
               {
@@ -7825,7 +7825,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18707
+              "duration": 14834
             },
             "embeddings": [
               {
@@ -7844,7 +7844,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20999
+              "duration": 101749
             },
             "embeddings": [
               {
@@ -7863,7 +7863,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17374
+              "duration": 24624
             },
             "embeddings": [
               {
@@ -7882,7 +7882,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 107375
+              "duration": 21832
             },
             "embeddings": [
               {
@@ -7901,7 +7901,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17291
+              "duration": 21875
             },
             "embeddings": [
               {
@@ -7920,7 +7920,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18166
+              "duration": 41833
             },
             "embeddings": [
               {
@@ -7950,7 +7950,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15916
+              "duration": 21666
             },
             "embeddings": [
               {
@@ -7969,7 +7969,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 46458
+              "duration": 19375
             },
             "embeddings": [
               {
@@ -7988,7 +7988,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15375
+              "duration": 17166
             },
             "embeddings": [
               {
@@ -8007,7 +8007,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14082
+              "duration": 27292
             },
             "embeddings": [
               {
@@ -8026,7 +8026,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25084
+              "duration": 33041
             },
             "embeddings": [
               {
@@ -8045,7 +8045,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18417
+              "duration": 24665
             },
             "embeddings": [
               {
@@ -8064,7 +8064,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23874
+              "duration": 29624
             },
             "embeddings": [
               {
@@ -8083,7 +8083,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17250
+              "duration": 19000
             },
             "embeddings": [
               {
@@ -8102,7 +8102,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17583
+              "duration": 22790
             },
             "embeddings": [
               {
@@ -8132,7 +8132,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15209
+              "duration": 21832
             },
             "embeddings": [
               {
@@ -8151,7 +8151,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15874
+              "duration": 17583
             },
             "embeddings": [
               {
@@ -8170,7 +8170,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15083
+              "duration": 16209
             },
             "embeddings": [
               {
@@ -8189,7 +8189,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13957
+              "duration": 14625
             },
             "embeddings": [
               {
@@ -8208,7 +8208,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22749
+              "duration": 25874
             },
             "embeddings": [
               {
@@ -8227,7 +8227,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17250
+              "duration": 17917
             },
             "embeddings": [
               {
@@ -8246,7 +8246,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17709
+              "duration": 20041
             },
             "embeddings": [
               {
@@ -8265,7 +8265,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21916
+              "duration": 24667
             },
             "embeddings": [
               {
@@ -8284,7 +8284,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16957
+              "duration": 21457
             },
             "embeddings": [
               {
@@ -8303,7 +8303,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17207
+              "duration": 17125
             },
             "embeddings": [
               {
@@ -8333,7 +8333,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13333
+              "duration": 15374
             },
             "embeddings": [
               {
@@ -8352,7 +8352,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15291
+              "duration": 16749
             },
             "embeddings": [
               {
@@ -8371,7 +8371,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14708
+              "duration": 15333
             },
             "embeddings": [
               {
@@ -8390,7 +8390,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13458
+              "duration": 14832
             },
             "embeddings": [
               {
@@ -8409,7 +8409,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17166
+              "duration": 18832
             },
             "embeddings": [
               {
@@ -8428,7 +8428,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22750
+              "duration": 1006791
             },
             "embeddings": [
               {
@@ -8447,7 +8447,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20166
+              "duration": 25125
             },
             "embeddings": [
               {
@@ -8466,7 +8466,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20999
+              "duration": 29083
             },
             "embeddings": [
               {
@@ -8485,7 +8485,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25166
+              "duration": 109708
             },
             "embeddings": [
               {
@@ -8504,7 +8504,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18208
+              "duration": 26374
             },
             "embeddings": [
               {
@@ -8523,7 +8523,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17790
+              "duration": 18249
             },
             "embeddings": [
               {
@@ -8564,7 +8564,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14750
+              "duration": 18542
             },
             "embeddings": [
               {
@@ -8583,7 +8583,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23875
+              "duration": 24416
             },
             "embeddings": [
               {
@@ -8602,7 +8602,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17874
+              "duration": 19207
             },
             "embeddings": [
               {
@@ -8621,7 +8621,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21999
+              "duration": 24333
             },
             "embeddings": [
               {
@@ -8640,7 +8640,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22749
+              "duration": 22124
             },
             "embeddings": [
               {
@@ -8659,7 +8659,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28375
+              "duration": 29833
             },
             "embeddings": [
               {
@@ -8678,7 +8678,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20499
+              "duration": 22749
             },
             "embeddings": [
               {
@@ -8697,7 +8697,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 81166
+              "duration": 16874
             },
             "embeddings": [
               {
@@ -8716,7 +8716,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21042
+              "duration": 17374
             },
             "embeddings": [
               {
@@ -8735,7 +8735,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 35084
+              "duration": 21833
             },
             "embeddings": [
               {
@@ -8754,7 +8754,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23208
+              "duration": 17541
             },
             "embeddings": [
               {
@@ -8814,7 +8814,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 58083
+              "duration": 56291
             },
             "embeddings": [
               {
@@ -8849,7 +8849,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26334
+              "duration": 25667
             },
             "embeddings": [
               {
@@ -8868,7 +8868,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18457
+              "duration": 17250
             },
             "embeddings": [
               {
@@ -8898,7 +8898,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17917
+              "duration": 18083
             },
             "embeddings": [
               {
@@ -8917,7 +8917,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19124
+              "duration": 17749
             },
             "embeddings": [
               {
@@ -8936,7 +8936,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13583
+              "duration": 12874
             },
             "embeddings": [
               {
@@ -8955,7 +8955,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16375
+              "duration": 43124
             },
             "embeddings": [
               {
@@ -8974,7 +8974,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13833
+              "duration": 16457
             },
             "embeddings": [
               {
@@ -8993,7 +8993,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12415
+              "duration": 12499
             },
             "embeddings": [
               {
@@ -9012,7 +9012,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13000
+              "duration": 13417
             },
             "embeddings": [
               {
@@ -9031,7 +9031,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20833
+              "duration": 25250
             },
             "embeddings": [
               {
@@ -9050,7 +9050,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17125
+              "duration": 17416
             },
             "embeddings": [
               {
@@ -9069,7 +9069,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16833
+              "duration": 17207
             },
             "embeddings": [
               {
@@ -9099,7 +9099,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13417
+              "duration": 15417
             },
             "embeddings": [
               {
@@ -9118,7 +9118,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14542
+              "duration": 15165
             },
             "embeddings": [
               {
@@ -9137,7 +9137,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12249
+              "duration": 12708
             },
             "embeddings": [
               {
@@ -9156,7 +9156,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14249
+              "duration": 14915
             },
             "embeddings": [
               {
@@ -9175,7 +9175,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18749
+              "duration": 18208
             },
             "embeddings": [
               {
@@ -9194,7 +9194,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12417
+              "duration": 12499
             },
             "embeddings": [
               {
@@ -9213,7 +9213,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12207
+              "duration": 12917
             },
             "embeddings": [
               {
@@ -9232,7 +9232,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14290
+              "duration": 17499
             },
             "embeddings": [
               {
@@ -9251,7 +9251,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12208
+              "duration": 13082
             },
             "embeddings": [
               {
@@ -9281,7 +9281,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14375
+              "duration": 64166
             },
             "embeddings": [
               {
@@ -9300,7 +9300,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24416
+              "duration": 80499
             },
             "embeddings": [
               {
@@ -9319,7 +9319,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21542
+              "duration": 41625
             },
             "embeddings": [
               {
@@ -9338,7 +9338,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12333
+              "duration": 17665
             },
             "embeddings": [
               {
@@ -9357,7 +9357,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20249
+              "duration": 27459
             },
             "embeddings": [
               {
@@ -9376,7 +9376,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22333
+              "duration": 30208
             },
             "embeddings": [
               {
@@ -9406,7 +9406,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13291
+              "duration": 17665
             },
             "embeddings": [
               {
@@ -9425,7 +9425,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14916
+              "duration": 16499
             },
             "embeddings": [
               {
@@ -9444,7 +9444,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19041
+              "duration": 168915
             },
             "embeddings": [
               {
@@ -9463,7 +9463,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16958
+              "duration": 29874
             },
             "embeddings": [
               {
@@ -9482,7 +9482,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20124
+              "duration": 33874
             },
             "embeddings": [
               {
@@ -9501,7 +9501,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17250
+              "duration": 20458
             },
             "embeddings": [
               {
@@ -9531,7 +9531,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14666
+              "duration": 27166
             },
             "embeddings": [
               {
@@ -9550,7 +9550,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15042
+              "duration": 20874
             },
             "embeddings": [
               {
@@ -9569,7 +9569,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17499
+              "duration": 42999
             },
             "embeddings": [
               {
@@ -9588,7 +9588,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23999
+              "duration": 35291
             },
             "embeddings": [
               {
@@ -9607,7 +9607,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20165
+              "duration": 23917
             },
             "embeddings": [
               {
@@ -9648,7 +9648,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19583
+              "duration": 26541
             },
             "embeddings": [
               {
@@ -9667,7 +9667,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22708
+              "duration": 23250
             },
             "embeddings": [
               {
@@ -9686,7 +9686,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16749
+              "duration": 23957
             },
             "embeddings": [
               {
@@ -9705,7 +9705,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 30541
+              "duration": 50292
             },
             "embeddings": [
               {
@@ -9735,7 +9735,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14791
+              "duration": 18458
             },
             "embeddings": [
               {
@@ -9754,7 +9754,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17541
+              "duration": 24333
             },
             "embeddings": [
               {
@@ -9773,7 +9773,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24834
+              "duration": 28041
             },
             "embeddings": [
               {
@@ -9792,7 +9792,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22290
+              "duration": 181334
             },
             "embeddings": [
               {
@@ -9811,7 +9811,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21625
+              "duration": 25833
             },
             "embeddings": [
               {
@@ -9841,7 +9841,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14458
+              "duration": 21874
             },
             "embeddings": [
               {
@@ -9860,7 +9860,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29290
+              "duration": 32541
             },
             "embeddings": [
               {
@@ -9879,7 +9879,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20833
+              "duration": 27457
             },
             "embeddings": [
               {
@@ -9898,7 +9898,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19999
+              "duration": 27207
             },
             "embeddings": [
               {
@@ -9917,7 +9917,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21082
+              "duration": 24875
             },
             "embeddings": [
               {
@@ -9936,7 +9936,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16790
+              "duration": 22750
             },
             "embeddings": [
               {
@@ -9966,7 +9966,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13458
+              "duration": 14833
             },
             "embeddings": [
               {
@@ -9985,7 +9985,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17250
+              "duration": 18625
             },
             "embeddings": [
               {
@@ -10004,7 +10004,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24500
+              "duration": 26667
             },
             "embeddings": [
               {
@@ -10023,7 +10023,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25208
+              "duration": 42333
             },
             "embeddings": [
               {
@@ -10042,7 +10042,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17042
+              "duration": 18790
             },
             "embeddings": [
               {
@@ -10061,7 +10061,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22083
+              "duration": 21417
             },
             "embeddings": [
               {
@@ -10091,7 +10091,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13334
+              "duration": 18374
             },
             "embeddings": [
               {
@@ -10110,7 +10110,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16624
+              "duration": 18249
             },
             "embeddings": [
               {
@@ -10129,7 +10129,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14792
+              "duration": 17540
             },
             "embeddings": [
               {
@@ -10148,7 +10148,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14584
+              "duration": 15790
             },
             "embeddings": [
               {
@@ -10178,7 +10178,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13166
+              "duration": 16666
             },
             "embeddings": [
               {
@@ -10197,7 +10197,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16458
+              "duration": 17959
             },
             "embeddings": [
               {
@@ -10216,7 +10216,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28583
+              "duration": 38916
             },
             "embeddings": [
               {
@@ -10235,7 +10235,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18583
+              "duration": 31167
             }
           },
           {
@@ -10248,7 +10248,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20625
+              "duration": 34999
             },
             "embeddings": [
               {
@@ -10278,7 +10278,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12958
+              "duration": 14291
             },
             "embeddings": [
               {
@@ -10297,7 +10297,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16125
+              "duration": 19541
             },
             "embeddings": [
               {
@@ -10316,7 +10316,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20166
+              "duration": 27333
             },
             "embeddings": [
               {
@@ -10335,7 +10335,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23624
+              "duration": 27625
             },
             "embeddings": [
               {
@@ -10354,7 +10354,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17124
+              "duration": 22334
             },
             "embeddings": [
               {
@@ -10373,7 +10373,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19958
+              "duration": 25958
             },
             "embeddings": [
               {
@@ -10392,7 +10392,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18666
+              "duration": 21542
             },
             "embeddings": [
               {
@@ -10411,7 +10411,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 133625
+              "duration": 27208
             },
             "embeddings": [
               {
@@ -10441,7 +10441,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 32750
+              "duration": 15707
             },
             "embeddings": [
               {
@@ -10460,7 +10460,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33874
+              "duration": 19875
             },
             "embeddings": [
               {
@@ -10479,7 +10479,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 115083
+              "duration": 23792
             },
             "embeddings": [
               {
@@ -10498,7 +10498,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25166
+              "duration": 20958
             },
             "embeddings": [
               {
@@ -10517,7 +10517,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19208
+              "duration": 18290
             },
             "embeddings": [
               {
@@ -10536,7 +10536,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17916
+              "duration": 19332
             },
             "embeddings": [
               {
@@ -10555,7 +10555,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25207
+              "duration": 26000
             },
             "embeddings": [
               {
@@ -10585,7 +10585,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15915
+              "duration": 15666
             },
             "embeddings": [
               {
@@ -10604,7 +10604,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18290
+              "duration": 19416
             },
             "embeddings": [
               {
@@ -10623,7 +10623,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18749
+              "duration": 24167
             },
             "embeddings": [
               {
@@ -10642,7 +10642,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20792
+              "duration": 28707
             },
             "embeddings": [
               {
@@ -10683,7 +10683,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 34374
+              "duration": 21332
             },
             "embeddings": [
               {
@@ -10702,7 +10702,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 27957
+              "duration": 35875
             },
             "embeddings": [
               {
@@ -10721,7 +10721,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19917
+              "duration": 26542
             },
             "embeddings": [
               {
@@ -10740,7 +10740,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19000
+              "duration": 19834
             },
             "embeddings": [
               {
@@ -10759,7 +10759,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 21374
+              "duration": 19665
             },
             "embeddings": [
               {
@@ -10789,7 +10789,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16292
+              "duration": 15874
             },
             "embeddings": [
               {
@@ -10808,7 +10808,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13291
+              "duration": 14291
             },
             "embeddings": [
               {
@@ -10827,7 +10827,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 38208
+              "duration": 48124
             },
             "embeddings": [
               {
@@ -10846,7 +10846,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25332
+              "duration": 168250
             },
             "embeddings": [
               {
@@ -10865,7 +10865,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17959
+              "duration": 27791
             },
             "embeddings": [
               {
@@ -10884,7 +10884,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20916
+              "duration": 22665
             },
             "embeddings": [
               {
@@ -10903,7 +10903,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18208
+              "duration": 22084
             },
             "embeddings": [
               {
@@ -10922,7 +10922,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17416
+              "duration": 22042
             },
             "embeddings": [
               {
@@ -10952,7 +10952,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 69708
+              "duration": 18708
             },
             "embeddings": [
               {
@@ -10971,7 +10971,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15209
+              "duration": 14374
             },
             "embeddings": [
               {
@@ -10990,7 +10990,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23041
+              "duration": 31749
             },
             "embeddings": [
               {
@@ -11009,7 +11009,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 17542
+              "duration": 21166
             },
             "embeddings": [
               {
@@ -11028,7 +11028,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16541
+              "duration": 85750
             },
             "embeddings": [
               {
@@ -11047,7 +11047,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24166
+              "duration": 65083
             },
             "embeddings": [
               {
@@ -11077,7 +11077,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13041
+              "duration": 27665
             },
             "embeddings": [
               {
@@ -11096,7 +11096,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13749
+              "duration": 18416
             },
             "embeddings": [
               {
@@ -11115,7 +11115,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16417
+              "duration": 26625
             },
             "embeddings": [
               {
@@ -11134,7 +11134,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12250
+              "duration": 14750
             },
             "embeddings": [
               {
@@ -11153,7 +11153,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23541
+              "duration": 32042
             },
             "embeddings": [
               {
@@ -11172,7 +11172,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19375
+              "duration": 25583
             },
             "embeddings": [
               {
@@ -11202,7 +11202,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13249
+              "duration": 16875
             },
             "embeddings": [
               {
@@ -11221,7 +11221,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12207
+              "duration": 14290
             },
             "embeddings": [
               {
@@ -11240,7 +11240,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16250
+              "duration": 17958
             },
             "embeddings": [
               {
@@ -11259,7 +11259,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12750
+              "duration": 12958
             },
             "embeddings": [
               {
@@ -11278,7 +11278,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16375
+              "duration": 19291
             },
             "embeddings": [
               {
@@ -11297,7 +11297,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23334
+              "duration": 33916
             },
             "embeddings": [
               {
@@ -11338,7 +11338,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19958
+              "duration": 362249
             },
             "embeddings": [
               {
@@ -11357,7 +11357,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16207
+              "duration": 36458
             },
             "embeddings": [
               {
@@ -11376,7 +11376,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20374
+              "duration": 51000
             },
             "embeddings": [
               {
@@ -11395,7 +11395,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 24000
+              "duration": 44208
             },
             "embeddings": [
               {
@@ -11414,7 +11414,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16624
+              "duration": 23625
             },
             "embeddings": [
               {
@@ -11444,7 +11444,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13500
+              "duration": 23458
             },
             "embeddings": [
               {
@@ -11463,7 +11463,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12084
+              "duration": 15458
             },
             "embeddings": [
               {
@@ -11482,7 +11482,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16583
+              "duration": 23875
             },
             "embeddings": [
               {
@@ -11501,7 +11501,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20291
+              "duration": 125874
             },
             "embeddings": [
               {
@@ -11520,7 +11520,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18875
+              "duration": 21332
             },
             "embeddings": [
               {
@@ -11539,6 +11539,623 @@
         "keyword": "Scenario",
         "line": 20,
         "name": "Lambda cold start is acceptable",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the EpicWeave AWS serverless stack is deployed",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:534"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13999
+            },
+            "embeddings": [
+              {
+                "data": "QVdTIHN0YWNrIGRlcGxveWVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Lambda functions are warmed up",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:541"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11875
+            },
+            "embeddings": [
+              {
+                "data": "TGFtYmRhIGZ1bmN0aW9ucyB3YXJtZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 21,
+            "name": "a Lambda function has not been invoked recently",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:587"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16332
+            },
+            "embeddings": [
+              {
+                "data": "Q29sZCBMYW1iZGE=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 22,
+            "name": "the function is invoked for the first time",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:594"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16874
+            },
+            "embeddings": [
+              {
+                "data": "Rmlyc3QgaW52b2NhdGlvbiAoY29sZCBzdGFydCk=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "the cold start latency should be under 2 seconds",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:601"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23416
+            },
+            "embeddings": [
+              {
+                "data": "Q29sZCBzdGFydCA8IDJz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "subsequent invocations should be under 200ms",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:608"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20666
+            },
+            "embeddings": [
+              {
+                "data": "V2FybSBpbnZvY2F0aW9ucyA8IDIwMG1z",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "api-response-time-performance;cloudfront-serves-static-assets-quickly",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "CloudFront serves static assets quickly",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the EpicWeave AWS serverless stack is deployed",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:534"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13625
+            },
+            "embeddings": [
+              {
+                "data": "QVdTIHN0YWNrIGRlcGxveWVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Lambda functions are warmed up",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:541"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11750
+            },
+            "embeddings": [
+              {
+                "data": "TGFtYmRhIGZ1bmN0aW9ucyB3YXJtZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "I request a product image from CloudFront",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:615"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16582
+            },
+            "embeddings": [
+              {
+                "data": "UmVxdWVzdGluZyBpbWFnZSBmcm9tIENsb3VkRnJvbnQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "the image should be served within 200ms",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:622"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24124
+            },
+            "embeddings": [
+              {
+                "data": "SW1hZ2Ugc2VydmVkIHdpdGhpbiAyMDBtcw==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "it should come from the nearest edge location",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:629"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16582
+            },
+            "embeddings": [
+              {
+                "data": "U2VydmVkIGZyb20gbmVhcmVzdCBlZGdl",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "api-response-time-performance;api-gateway-handles-concurrent-requests",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "API Gateway handles concurrent requests",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the EpicWeave AWS serverless stack is deployed",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:534"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13166
+            },
+            "embeddings": [
+              {
+                "data": "QVdTIHN0YWNrIGRlcGxveWVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Lambda functions are warmed up",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:541"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11708
+            },
+            "embeddings": [
+              {
+                "data": "TGFtYmRhIGZ1bmN0aW9ucyB3YXJtZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "100 concurrent requests hit \"/products\"",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:636"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25249
+            },
+            "embeddings": [
+              {
+                "data": "MTAwIGNvbmN1cnJlbnQgcmVxdWVzdHMgdG8gL3Byb2R1Y3Rz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "all requests should complete successfully",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:643"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15583
+            },
+            "embeddings": [
+              {
+                "data": "QWxsIHJlcXVlc3RzIHN1Y2NlZWRlZA==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "the P95 latency should be under 500ms",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:650"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19999
+            },
+            "embeddings": [
+              {
+                "data": "UDk1IDwgNTAwbXM=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "no requests should be throttled",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:657"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17624
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gdGhyb3R0bGluZw==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "api-response-time-performance",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "API Response Time Performance",
+    "tags": [],
+    "uri": "features/non-functional/performance/api-response-time.feature"
+  },
+  {
+    "description": "  As a platform operator\n  I need the system to handle high concurrent load\n  So that users have a reliable experience during peak traffic",
+    "elements": [
+      {
+        "description": "",
+        "id": "load-testing;500-concurrent-users-browsing-products",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "500 concurrent users browsing products",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the EpicWeave AWS serverless stack is deployed",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:534"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13999
+            },
+            "embeddings": [
+              {
+                "data": "QVdTIHN0YWNrIGRlcGxveWVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Lambda functions are warmed up",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:541"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12083
+            },
+            "embeddings": [
+              {
+                "data": "TGFtYmRhIGZ1bmN0aW9ucyB3YXJtZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "500 concurrent users request the product catalog",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31250
+            },
+            "embeddings": [
+              {
+                "data": "NTAwIGNvbmN1cnJlbnQgdXNlcnMgcmVxdWVzdGluZyBwcm9kdWN0IGNhdGFsb2c=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "all requests should complete within 2 seconds",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19500
+            },
+            "embeddings": [
+              {
+                "data": "QWxsIHJlcXVlc3RzIGNvbXBsZXRlZCB3aXRoaW4gMnM=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the error rate should be below 1 percent",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26124
+            },
+            "embeddings": [
+              {
+                "data": "RXJyb3IgcmF0ZSBiZWxvdyAxJQ==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "no Lambda throttling should occur",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16541
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gTGFtYmRhIHRocm90dGxpbmcgZGV0ZWN0ZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "load-testing;50-tps-checkout-throughput",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "50 TPS checkout throughput",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the EpicWeave AWS serverless stack is deployed",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:534"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15209
+            },
+            "embeddings": [
+              {
+                "data": "QVdTIHN0YWNrIGRlcGxveWVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Lambda functions are warmed up",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:541"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12625
+            },
+            "embeddings": [
+              {
+                "data": "TGFtYmRhIGZ1bmN0aW9ucyB3YXJtZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "50 transactions per second hit the checkout endpoint",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22833
+            },
+            "embeddings": [
+              {
+                "data": "NTAgVFBTIGhpdHRpbmcgY2hlY2tvdXQgZW5kcG9pbnQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "all transactions should complete within 5 seconds",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22541
+            },
+            "embeddings": [
+              {
+                "data": "QWxsIHRyYW5zYWN0aW9ucyBjb21wbGV0ZWQgd2l0aGluIDVz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the DynamoDB consumed capacity should remain within provisioned limits",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16541
+            },
+            "embeddings": [
+              {
+                "data": "RHluYW1vREIgY2FwYWNpdHkgd2l0aGluIGxpbWl0cw==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "no orders should be lost or duplicated",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15708
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gb3JkZXJzIGxvc3Qgb3IgZHVwbGljYXRlZA==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "load-testing;sqs-queue-handles-ai-generation-load",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "SQS queue handles AI generation load",
         "steps": [
           {
             "arguments": [],
@@ -11569,7 +12186,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12125
+              "duration": 11667
             },
             "embeddings": [
               {
@@ -11580,76 +12197,76 @@
           },
           {
             "arguments": [],
-            "keyword": "Given ",
-            "line": 21,
-            "name": "a Lambda function has not been invoked recently",
-            "match": {
-              "location": "step-definitions/shared.steps.ts:587"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16000
-            },
-            "embeddings": [
-              {
-                "data": "Q29sZCBMYW1iZGE=",
-                "mime_type": "text/plain"
-              }
-            ]
-          },
-          {
-            "arguments": [],
             "keyword": "When ",
-            "line": 22,
-            "name": "the function is invoked for the first time",
-            "match": {
-              "location": "step-definitions/shared.steps.ts:594"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 15583
-            },
-            "embeddings": [
-              {
-                "data": "Rmlyc3QgaW52b2NhdGlvbiAoY29sZCBzdGFydCk=",
-                "mime_type": "text/plain"
-              }
-            ]
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
             "line": 23,
-            "name": "the cold start latency should be under 2 seconds",
+            "name": "200 concurrent AI design generation requests are queued",
             "match": {
-              "location": "step-definitions/shared.steps.ts:601"
+              "location": "step-definitions/load-testing.steps.ts:41"
             },
             "result": {
               "status": "passed",
-              "duration": 20291
+              "duration": 23416
             },
             "embeddings": [
               {
-                "data": "Q29sZCBzdGFydCA8IDJz",
+                "data": "MjAwIEFJIGdlbmVyYXRpb24gcmVxdWVzdHMgcXVldWVk",
                 "mime_type": "text/plain"
               }
             ]
           },
           {
             "arguments": [],
-            "keyword": "And ",
+            "keyword": "Then ",
             "line": 24,
-            "name": "subsequent invocations should be under 200ms",
+            "name": "the SQS queue depth should increase gracefully",
             "match": {
-              "location": "step-definitions/shared.steps.ts:608"
+              "location": "step-definitions/load-testing.steps.ts:45"
             },
             "result": {
               "status": "passed",
-              "duration": 20041
+              "duration": 15999
             },
             "embeddings": [
               {
-                "data": "V2FybSBpbnZvY2F0aW9ucyA8IDIwMG1z",
+                "data": "U1FTIHF1ZXVlIGRlcHRoIGluY3JlYXNpbmcgZ3JhY2VmdWxseQ==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "the dead letter queue should remain empty",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:49"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15749
+            },
+            "embeddings": [
+              {
+                "data": "RExRIHJlbWFpbnMgZW1wdHk=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "all messages should be processed within 10 minutes",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19457
+            },
+            "embeddings": [
+              {
+                "data": "QWxsIG1lc3NhZ2VzIHByb2Nlc3NlZCB3aXRoaW4gMTAgbWludXRlcw==",
                 "mime_type": "text/plain"
               }
             ]
@@ -11660,10 +12277,10 @@
       },
       {
         "description": "",
-        "id": "api-response-time-performance;cloudfront-serves-static-assets-quickly",
+        "id": "load-testing;dynamodb-handles-concurrent-writes",
         "keyword": "Scenario",
-        "line": 26,
-        "name": "CloudFront serves static assets quickly",
+        "line": 28,
+        "name": "DynamoDB handles concurrent writes",
         "steps": [
           {
             "arguments": [],
@@ -11675,7 +12292,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 14332
+              "duration": 12917
             },
             "embeddings": [
               {
@@ -11694,7 +12311,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11792
+              "duration": 11791
             },
             "embeddings": [
               {
@@ -11706,56 +12323,56 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 27,
-            "name": "I request a product image from CloudFront",
-            "match": {
-              "location": "step-definitions/shared.steps.ts:615"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 16167
-            },
-            "embeddings": [
-              {
-                "data": "UmVxdWVzdGluZyBpbWFnZSBmcm9tIENsb3VkRnJvbnQ=",
-                "mime_type": "text/plain"
-              }
-            ]
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 28,
-            "name": "the image should be served within 200ms",
-            "match": {
-              "location": "step-definitions/shared.steps.ts:622"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 19499
-            },
-            "embeddings": [
-              {
-                "data": "SW1hZ2Ugc2VydmVkIHdpdGhpbiAyMDBtcw==",
-                "mime_type": "text/plain"
-              }
-            ]
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
             "line": 29,
-            "name": "it should come from the nearest edge location",
+            "name": "100 concurrent cart add operations occur",
             "match": {
-              "location": "step-definitions/shared.steps.ts:629"
+              "location": "step-definitions/load-testing.steps.ts:57"
             },
             "result": {
               "status": "passed",
-              "duration": 16083
+              "duration": 22250
             },
             "embeddings": [
               {
-                "data": "U2VydmVkIGZyb20gbmVhcmVzdCBlZGdl",
+                "data": "MTAwIGNvbmN1cnJlbnQgY2FydCBhZGQgb3BlcmF0aW9ucw==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "all operations should succeed without conflicts",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15957
+            },
+            "embeddings": [
+              {
+                "data": "QWxsIGNhcnQgb3BlcmF0aW9ucyBzdWNjZWVkZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "DynamoDB conditional check failures should be retried",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16582
+            },
+            "embeddings": [
+              {
+                "data": "Q29uZGl0aW9uYWwgY2hlY2sgZmFpbHVyZXMgcmV0cmllZA==",
                 "mime_type": "text/plain"
               }
             ]
@@ -11766,10 +12383,10 @@
       },
       {
         "description": "",
-        "id": "api-response-time-performance;api-gateway-handles-concurrent-requests",
+        "id": "load-testing;cloudfront-caches-static-assets-under-load",
         "keyword": "Scenario",
-        "line": 31,
-        "name": "API Gateway handles concurrent requests",
+        "line": 33,
+        "name": "CloudFront caches static assets under load",
         "steps": [
           {
             "arguments": [],
@@ -11781,7 +12398,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13290
+              "duration": 12292
             },
             "embeddings": [
               {
@@ -11800,7 +12417,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12125
+              "duration": 12084
             },
             "embeddings": [
               {
@@ -11812,18 +12429,18 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 32,
-            "name": "100 concurrent requests hit \"/products\"",
+            "line": 34,
+            "name": "1000 concurrent requests hit product images",
             "match": {
-              "location": "step-definitions/shared.steps.ts:636"
+              "location": "step-definitions/load-testing.steps.ts:69"
             },
             "result": {
               "status": "passed",
-              "duration": 23959
+              "duration": 26124
             },
             "embeddings": [
               {
-                "data": "MTAwIGNvbmN1cnJlbnQgcmVxdWVzdHMgdG8gL3Byb2R1Y3Rz",
+                "data": "MTAwMCBjb25jdXJyZW50IHJlcXVlc3RzIGZvciBwcm9kdWN0IGltYWdlcw==",
                 "mime_type": "text/plain"
               }
             ]
@@ -11831,56 +12448,143 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 33,
-            "name": "all requests should complete successfully",
-            "match": {
-              "location": "step-definitions/shared.steps.ts:643"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 18208
-            },
-            "embeddings": [
-              {
-                "data": "QWxsIHJlcXVlc3RzIHN1Y2NlZWRlZA==",
-                "mime_type": "text/plain"
-              }
-            ]
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 34,
-            "name": "the P95 latency should be under 500ms",
-            "match": {
-              "location": "step-definitions/shared.steps.ts:650"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 21334
-            },
-            "embeddings": [
-              {
-                "data": "UDk1IDwgNTAwbXM=",
-                "mime_type": "text/plain"
-              }
-            ]
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
             "line": 35,
-            "name": "no requests should be throttled",
+            "name": "the CloudFront cache hit ratio should be above 90 percent",
             "match": {
-              "location": "step-definitions/shared.steps.ts:657"
+              "location": "step-definitions/load-testing.steps.ts:73"
             },
             "result": {
               "status": "passed",
-              "duration": 17625
+              "duration": 19542
             },
             "embeddings": [
               {
-                "data": "Tm8gdGhyb3R0bGluZw==",
+                "data": "Q2xvdWRGcm9udCBjYWNoZSBoaXQgcmF0aW8gPiA5MCU=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "origin requests should remain minimal",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16208
+            },
+            "embeddings": [
+              {
+                "data": "TWluaW1hbCBvcmlnaW4gcmVxdWVzdHM=",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "load-testing;api-gateway-handles-burst-traffic",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "API Gateway handles burst traffic",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the EpicWeave AWS serverless stack is deployed",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:534"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14249
+            },
+            "embeddings": [
+              {
+                "data": "QVdTIHN0YWNrIGRlcGxveWVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Lambda functions are warmed up",
+            "match": {
+              "location": "step-definitions/shared.steps.ts:541"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12875
+            },
+            "embeddings": [
+              {
+                "data": "TGFtYmRhIGZ1bmN0aW9ucyB3YXJtZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "a burst of 500 requests hits the API in 1 second",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 88541
+            },
+            "embeddings": [
+              {
+                "data": "QnVyc3Qgb2YgNTAwIHJlcXVlc3RzIGluIDFz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "API Gateway should not return 429 errors",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:85"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25917
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gNDI5IGVycm9ycyBmcm9tIEFQSSBHYXRld2F5",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "the P99 latency should remain under 3 seconds",
+            "match": {
+              "location": "step-definitions/load-testing.steps.ts:89"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23541
+            },
+            "embeddings": [
+              {
+                "data": "UDk5IGxhdGVuY3kgPCAzcw==",
                 "mime_type": "text/plain"
               }
             ]
@@ -11890,11 +12594,873 @@
         "type": "scenario"
       }
     ],
-    "id": "api-response-time-performance",
+    "id": "load-testing",
     "line": 1,
     "keyword": "Feature",
-    "name": "API Response Time Performance",
+    "name": "Load Testing",
     "tags": [],
-    "uri": "features/non-functional/performance/api-response-time.feature"
+    "uri": "features/non-functional/performance/load-testing.feature"
+  },
+  {
+    "description": "  As a platform operator\n  I want robust security measures in place\n  So that the platform is protected against common attacks",
+    "elements": [
+      {
+        "description": "",
+        "id": "security-hardening;waf-blocks-sql-injection-attempts",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "WAF blocks SQL injection attempts",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the AWS WAF is configured on API Gateway",
+            "match": {
+              "location": "step-definitions/security.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23334
+            },
+            "embeddings": [
+              {
+                "data": "V0FGIGNvbmZpZ3VyZWQgb24gQVBJIEdhdGV3YXk=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "a request containing SQL injection payload is sent",
+            "match": {
+              "location": "step-definitions/security.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17791
+            },
+            "embeddings": [
+              {
+                "data": "U2VuZGluZyBTUUwgaW5qZWN0aW9uIHBheWxvYWQ6IFNFTEVDVCAqIEZST00gdXNlcnM=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the WAF should block the request",
+            "match": {
+              "location": "step-definitions/security.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17832
+            },
+            "embeddings": [
+              {
+                "data": "V0FGIGJsb2NrZWQgdGhlIG1hbGljaW91cyByZXF1ZXN0",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "return a 403 Forbidden response",
+            "match": {
+              "location": "step-definitions/security.steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17291
+            },
+            "embeddings": [
+              {
+                "data": "UmVjZWl2ZWQgNDAzIEZvcmJpZGRlbg==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;waf-blocks-xss-attempts",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "WAF blocks XSS attempts",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "the AWS WAF is configured on API Gateway",
+            "match": {
+              "location": "step-definitions/security.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28958
+            },
+            "embeddings": [
+              {
+                "data": "V0FGIGNvbmZpZ3VyZWQgb24gQVBJIEdhdGV3YXk=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "a request containing XSS script tags is sent",
+            "match": {
+              "location": "step-definitions/security.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 81458
+            },
+            "embeddings": [
+              {
+                "data": "U2VuZGluZyBYU1MgcGF5bG9hZDogPHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "the WAF should block the request",
+            "match": {
+              "location": "step-definitions/security.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15083
+            },
+            "embeddings": [
+              {
+                "data": "V0FGIGJsb2NrZWQgdGhlIG1hbGljaW91cyByZXF1ZXN0",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "return a 403 Forbidden response",
+            "match": {
+              "location": "step-definitions/security.steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27832
+            },
+            "embeddings": [
+              {
+                "data": "UmVjZWl2ZWQgNDAzIEZvcmJpZGRlbg==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;waf-rate-limiting-prevents-abuse",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "WAF rate limiting prevents abuse",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "the AWS WAF rate limiting rule is active",
+            "match": {
+              "location": "step-definitions/security.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46875
+            },
+            "embeddings": [
+              {
+                "data": "V0FGIHJhdGUgbGltaXRpbmcgcnVsZSBhY3RpdmU=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "more than 1000 requests are sent from one IP in 5 minutes",
+            "match": {
+              "location": "step-definitions/security.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40959
+            },
+            "embeddings": [
+              {
+                "data": "U2VuZGluZyAxMDAwIHJlcXVlc3RzIGluIDUgbWludXRlcyBmcm9tIHNpbmdsZSBJUA==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "subsequent requests should be blocked",
+            "match": {
+              "location": "step-definitions/security.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22583
+            },
+            "embeddings": [
+              {
+                "data": "U3Vic2VxdWVudCByZXF1ZXN0cyBibG9ja2VkIGJ5IHJhdGUgbGltaXRlcg==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "a 429 Too Many Requests response should be returned",
+            "match": {
+              "location": "step-definitions/security.steps.ts:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19208
+            },
+            "embeddings": [
+              {
+                "data": "UmVjZWl2ZWQgNDI5IFRvbyBNYW55IFJlcXVlc3Rz",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;cognito-advanced-security-detects-compromised-credentials",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Cognito advanced security detects compromised credentials",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "Cognito advanced security is enabled",
+            "match": {
+              "location": "step-definitions/security.steps.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26542
+            },
+            "embeddings": [
+              {
+                "data": "Q29nbml0byBhZHZhbmNlZCBzZWN1cml0eSBlbmFibGVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "a login attempt uses known compromised credentials",
+            "match": {
+              "location": "step-definitions/security.steps.ts:49"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1530790
+            },
+            "embeddings": [
+              {
+                "data": "TG9naW4gd2l0aCBjb21wcm9taXNlZCBjcmVkZW50aWFscw==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "the login should be blocked or challenged",
+            "match": {
+              "location": "step-definitions/security.steps.ts:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 76249
+            },
+            "embeddings": [
+              {
+                "data": "TG9naW4gYmxvY2tlZCBvciBNRkEgY2hhbGxlbmdlZA==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "an admin notification should be triggered",
+            "match": {
+              "location": "step-definitions/security.steps.ts:57"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22457
+            },
+            "embeddings": [
+              {
+                "data": "QWRtaW4gbm90aWZpZWQgb2Ygc2VjdXJpdHkgZXZlbnQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;input-sanitization-on-product-search",
+        "keyword": "Scenario",
+        "line": 30,
+        "name": "Input sanitization on product search",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 31,
+            "name": "the catalog search endpoint is available",
+            "match": {
+              "location": "step-definitions/security.steps.ts:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23125
+            },
+            "embeddings": [
+              {
+                "data": "Q2F0YWxvZyBzZWFyY2ggZW5kcG9pbnQgYXZhaWxhYmxl",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "I search with a payload containing script tags",
+            "match": {
+              "location": "step-definitions/security.steps.ts:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17416
+            },
+            "embeddings": [
+              {
+                "data": "U2VhcmNoIHdpdGggWFNTIHBheWxvYWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "the input should be sanitized before processing",
+            "match": {
+              "location": "step-definitions/security.steps.ts:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21791
+            },
+            "embeddings": [
+              {
+                "data": "SW5wdXQgc2FuaXRpemVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "the response should not reflect unsanitized input",
+            "match": {
+              "location": "step-definitions/security.steps.ts:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17333
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gcmVmbGVjdGVkIFhTUyBpbiByZXNwb25zZQ==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;api-gateway-validates-request-body-schema",
+        "keyword": "Scenario",
+        "line": 36,
+        "name": "API Gateway validates request body schema",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 37,
+            "name": "the API Gateway request validation is enabled",
+            "match": {
+              "location": "step-definitions/security.steps.ts:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18750
+            },
+            "embeddings": [
+              {
+                "data": "QVBJIEdhdGV3YXkgcmVxdWVzdCB2YWxpZGF0aW9uIGVuYWJsZWQ=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "a request with invalid JSON schema is sent to a POST endpoint",
+            "match": {
+              "location": "step-definitions/security.steps.ts:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16124
+            },
+            "embeddings": [
+              {
+                "data": "U2VuZGluZyBpbnZhbGlkIEpTT04gc2NoZW1h",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "the request should be rejected with 400 Bad Request",
+            "match": {
+              "location": "step-definitions/security.steps.ts:85"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16375
+            },
+            "embeddings": [
+              {
+                "data": "UmVqZWN0ZWQgd2l0aCA0MDAgQmFkIFJlcXVlc3Q=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "the error should describe the validation failure",
+            "match": {
+              "location": "step-definitions/security.steps.ts:89"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16125
+            },
+            "embeddings": [
+              {
+                "data": "VmFsaWRhdGlvbiBlcnJvciBtZXNzYWdlIHJldHVybmVk",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;cors-policy-restricts-origins",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "CORS policy restricts origins",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "CORS is configured on API Gateway",
+            "match": {
+              "location": "step-definitions/security.steps.ts:93"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16292
+            },
+            "embeddings": [
+              {
+                "data": "Q09SUyBjb25maWd1cmVkIG9uIEFQSSBHYXRld2F5",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "a request comes from an unauthorized origin",
+            "match": {
+              "location": "step-definitions/security.steps.ts:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17333
+            },
+            "embeddings": [
+              {
+                "data": "UmVxdWVzdCBmcm9tIHVuYXV0aG9yaXplZCBvcmlnaW46IGV2aWwuY29t",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "the preflight response should not include Access-Control-Allow-Origin",
+            "match": {
+              "location": "step-definitions/security.steps.ts:101"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16375
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gQUNBTyBoZWFkZXIgZm9yIHVuYXV0aG9yaXplZCBvcmlnaW4=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "the request should be rejected",
+            "match": {
+              "location": "step-definitions/security.steps.ts:105"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21290
+            },
+            "embeddings": [
+              {
+                "data": "UmVxdWVzdCByZWplY3RlZCBieSBDT1JTIHBvbGljeQ==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;sensitive-headers-are-not-exposed",
+        "keyword": "Scenario",
+        "line": 48,
+        "name": "Sensitive headers are not exposed",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 49,
+            "name": "the API is serving responses",
+            "match": {
+              "location": "step-definitions/security.steps.ts:109"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18624
+            },
+            "embeddings": [
+              {
+                "data": "QVBJIHNlcnZpbmcgcmVzcG9uc2Vz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "I inspect the response headers",
+            "match": {
+              "location": "step-definitions/security.steps.ts:113"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15832
+            },
+            "embeddings": [
+              {
+                "data": "SW5zcGVjdGluZyByZXNwb25zZSBoZWFkZXJz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 51,
+            "name": "server version headers should not be present",
+            "match": {
+              "location": "step-definitions/security.steps.ts:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18665
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gc2VydmVyIHZlcnNpb24gaGVhZGVycyAoWC1Qb3dlcmVkLUJ5LCBTZXJ2ZXIp",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "internal infrastructure details should not leak",
+            "match": {
+              "location": "step-definitions/security.steps.ts:121"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16291
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gaW50ZXJuYWwgaW5mcmFzdHJ1Y3R1cmUgZGV0YWlscyBpbiBoZWFkZXJz",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;jwt-tokens-are-validated-on-every-request",
+        "keyword": "Scenario",
+        "line": 54,
+        "name": "JWT tokens are validated on every request",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 55,
+            "name": "the Cognito authorizer is configured on protected routes",
+            "match": {
+              "location": "step-definitions/security.steps.ts:125"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18958
+            },
+            "embeddings": [
+              {
+                "data": "Q29nbml0byBhdXRob3JpemVyIG9uIHByb3RlY3RlZCByb3V0ZXM=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 56,
+            "name": "a request is made without a valid JWT token",
+            "match": {
+              "location": "step-definitions/security.steps.ts:129"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15165
+            },
+            "embeddings": [
+              {
+                "data": "UmVxdWVzdCB3aXRob3V0IEpXVCB0b2tlbg==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "the request should receive a 401 Unauthorized response",
+            "match": {
+              "location": "step-definitions/security.steps.ts:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15833
+            },
+            "embeddings": [
+              {
+                "data": "UmVjZWl2ZWQgNDAxIFVuYXV0aG9yaXplZA==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "security-hardening;admin-routes-require-admin-role",
+        "keyword": "Scenario",
+        "line": 59,
+        "name": "Admin routes require admin role",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 60,
+            "name": "I am authenticated as a regular customer",
+            "match": {
+              "location": "step-definitions/security.steps.ts:137"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17457
+            },
+            "embeddings": [
+              {
+                "data": "QXV0aGVudGljYXRlZCBhcyByZWd1bGFyIGN1c3RvbWVy",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 61,
+            "name": "I try to access an admin-only endpoint",
+            "match": {
+              "location": "step-definitions/security.steps.ts:141"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 141458
+            },
+            "embeddings": [
+              {
+                "data": "QWNjZXNzaW5nIGFkbWluIGVuZHBvaW50IGFzIGN1c3RvbWVy",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 62,
+            "name": "I should receive a 403 Forbidden response",
+            "match": {
+              "location": "step-definitions/order-management.steps.ts:391"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36958
+            },
+            "embeddings": [
+              {
+                "data": "UmVjZWl2ZWQgNDAzIEZvcmJpZGRlbg==",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "no admin data should be returned",
+            "match": {
+              "location": "step-definitions/security.steps.ts:145"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23416
+            },
+            "embeddings": [
+              {
+                "data": "Tm8gYWRtaW4gZGF0YSBpbiByZXNwb25zZQ==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "security-hardening",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Security Hardening",
+    "tags": [],
+    "uri": "features/non-functional/security/security-hardening.feature"
   }
 ]

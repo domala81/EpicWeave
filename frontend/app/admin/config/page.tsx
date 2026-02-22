@@ -1,12 +1,11 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { toast } from 'sonner';
+import { useState, useEffect, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { toast } from "sonner";
 
 interface ConfigParam {
   name: string;
@@ -17,48 +16,52 @@ interface ConfigParam {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
-  pricing: 'Pricing',
-  session: 'Session Settings',
-  mythology: 'Mythology',
-  ai: 'AI Configuration',
-  shipping: 'Shipping',
+  pricing: "Pricing",
+  session: "Session Settings",
+  mythology: "Mythology",
+  ai: "AI Configuration",
+  shipping: "Shipping",
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  pricing: 'bg-green-100 text-green-800',
-  session: 'bg-blue-100 text-blue-800',
-  mythology: 'bg-purple-100 text-purple-800',
-  ai: 'bg-orange-100 text-orange-800',
-  shipping: 'bg-yellow-100 text-yellow-800',
+  pricing: "bg-green-100 text-green-800",
+  session: "bg-blue-100 text-blue-800",
+  mythology: "bg-purple-100 text-purple-800",
+  ai: "bg-orange-100 text-orange-800",
+  shipping: "bg-yellow-100 text-yellow-800",
 };
 
 export default function AdminConfigPage() {
   const [grouped, setGrouped] = useState<Record<string, ConfigParam[]>>({});
   const [loading, setLoading] = useState(true);
   const [editingParam, setEditingParam] = useState<string | null>(null);
-  const [editValue, setEditValue] = useState('');
+  const [editValue, setEditValue] = useState("");
   const [saving, setSaving] = useState(false);
 
-  const apiEndpoint = process.env.NEXT_PUBLIC_API_ENDPOINT || 'http://localhost:3001';
-  const authHeader = { 'Authorization': `Bearer ${typeof window !== 'undefined' ? localStorage.getItem('idToken') : ''}` };
+  const apiEndpoint =
+    process.env.NEXT_PUBLIC_API_ENDPOINT || "http://localhost:3001";
 
-  useEffect(() => {
-    fetchConfig();
-  }, []);
-
-  const fetchConfig = async () => {
+  const fetchConfig = useCallback(async () => {
+    const token =
+      typeof window !== "undefined" ? localStorage.getItem("idToken") : "";
     try {
-      const res = await fetch(`${apiEndpoint}/admin/config`, { headers: authHeader });
-      if (!res.ok) throw new Error('Failed to fetch config');
+      const res = await fetch(`${apiEndpoint}/admin/config`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (!res.ok) throw new Error("Failed to fetch config");
       const data = await res.json();
       setGrouped(data.grouped || {});
     } catch (error) {
-      console.error('Error fetching config:', error);
-      toast.error('Failed to load configuration');
+      console.error("Error fetching config:", error);
+      toast.error("Failed to load configuration");
     } finally {
       setLoading(false);
     }
-  };
+  }, [apiEndpoint]);
+
+  useEffect(() => {
+    fetchConfig();
+  }, [fetchConfig]);
 
   const startEdit = (param: ConfigParam) => {
     setEditingParam(param.name);
@@ -67,21 +70,24 @@ export default function AdminConfigPage() {
 
   const cancelEdit = () => {
     setEditingParam(null);
-    setEditValue('');
+    setEditValue("");
   };
 
   const saveParam = async (paramName: string) => {
     setSaving(true);
     try {
       const res = await fetch(`${apiEndpoint}/admin/config`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json', ...authHeader },
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${typeof window !== "undefined" ? localStorage.getItem("idToken") : ""}`,
+        },
         body: JSON.stringify({ parameter: paramName, value: editValue }),
       });
 
       if (!res.ok) {
         const err = await res.json();
-        toast.error(err.error || 'Failed to update');
+        toast.error(err.error || "Failed to update");
         return;
       }
 
@@ -90,19 +96,29 @@ export default function AdminConfigPage() {
       setEditingParam(null);
       fetchConfig();
     } catch (error) {
-      console.error('Error saving config:', error);
-      toast.error('Failed to save');
+      console.error("Error saving config:", error);
+      toast.error("Failed to save");
     } finally {
       setSaving(false);
     }
   };
 
   const getParamLabel = (name: string) => {
-    return name.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) || name;
+    return (
+      name
+        .split("/")
+        .pop()
+        ?.replace(/-/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase()) || name
+    );
   };
 
   if (loading) {
-    return <div className="container mx-auto px-4 py-8 text-center"><p className="text-muted-foreground">Loading configuration...</p></div>;
+    return (
+      <div className="container mx-auto px-4 py-8 text-center">
+        <p className="text-muted-foreground">Loading configuration...</p>
+      </div>
+    );
   }
 
   return (
@@ -113,7 +129,8 @@ export default function AdminConfigPage() {
       </div>
 
       <p className="text-muted-foreground mb-8">
-        Manage pricing, session limits, and platform settings. Changes take effect immediately.
+        Manage pricing, session limits, and platform settings. Changes take
+        effect immediately.
       </p>
 
       <div className="space-y-6">
@@ -126,19 +143,29 @@ export default function AdminConfigPage() {
               <CardHeader>
                 <div className="flex items-center gap-2">
                   <CardTitle>{label}</CardTitle>
-                  <Badge className={CATEGORY_COLORS[cat] || ''}>{params.length}</Badge>
+                  <Badge className={CATEGORY_COLORS[cat] || ""}>
+                    {params.length}
+                  </Badge>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {params.map(param => (
-                    <div key={param.name} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                  {params.map((param) => (
+                    <div
+                      key={param.name}
+                      className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                    >
                       <div className="flex-1 min-w-0">
-                        <p className="font-medium">{getParamLabel(param.name)}</p>
-                        <p className="text-xs text-muted-foreground font-mono">{param.name}</p>
+                        <p className="font-medium">
+                          {getParamLabel(param.name)}
+                        </p>
+                        <p className="text-xs text-muted-foreground font-mono">
+                          {param.name}
+                        </p>
                         {param.lastModified && (
                           <p className="text-xs text-muted-foreground mt-1">
-                            Last modified: {new Date(param.lastModified).toLocaleString()}
+                            Last modified:{" "}
+                            {new Date(param.lastModified).toLocaleString()}
                           </p>
                         )}
                       </div>
@@ -152,17 +179,31 @@ export default function AdminConfigPage() {
                               className="w-40"
                               autoFocus
                             />
-                            <Button size="sm" onClick={() => saveParam(param.name)} disabled={saving}>
-                              {saving ? '...' : 'Save'}
+                            <Button
+                              size="sm"
+                              onClick={() => saveParam(param.name)}
+                              disabled={saving}
+                            >
+                              {saving ? "..." : "Save"}
                             </Button>
-                            <Button size="sm" variant="ghost" onClick={cancelEdit}>Cancel</Button>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={cancelEdit}
+                            >
+                              Cancel
+                            </Button>
                           </>
                         ) : (
                           <>
                             <code className="bg-background px-3 py-1 rounded border text-sm">
                               {param.value}
                             </code>
-                            <Button size="sm" variant="outline" onClick={() => startEdit(param)}>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => startEdit(param)}
+                            >
                               Edit
                             </Button>
                           </>
