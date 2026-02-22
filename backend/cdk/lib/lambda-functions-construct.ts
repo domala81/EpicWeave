@@ -402,6 +402,182 @@ export class LambdaFunctionsConstruct extends Construct {
     );
 
     // ========================================
+    // Order Management Lambda Functions
+    // ========================================
+
+    // GET /orders - Customer order history
+    const getOrdersHandler = new lambda.Function(this, "GetOrdersFunction", {
+      ...commonProps,
+      functionName: "epicweave-get-orders",
+      handler: "orders/get-orders.handler",
+      code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+      description: "Get order history for authenticated user",
+    });
+    props.table.grantReadData(getOrdersHandler);
+    props.apiGateway.addLambdaRoute(
+      "/orders",
+      apigateway.HttpMethod.GET,
+      getOrdersHandler,
+      true,
+    );
+
+    // GET /orders/{orderId} - Order detail
+    const getOrderDetailHandler = new lambda.Function(
+      this,
+      "GetOrderDetailFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-get-order-detail",
+        handler: "orders/get-order-detail.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description: "Get order detail with items",
+      },
+    );
+    props.table.grantReadData(getOrderDetailHandler);
+    props.apiGateway.addLambdaRoute(
+      "/orders/{orderId}",
+      apigateway.HttpMethod.GET,
+      getOrderDetailHandler,
+      true,
+    );
+
+    // ========================================
+    // Admin Lambda Functions
+    // ========================================
+
+    // GET /admin/orders - Admin order dashboard
+    const getAdminOrdersHandler = new lambda.Function(
+      this,
+      "GetAdminOrdersFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-get-admin-orders",
+        handler: "admin/get-admin-orders.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description: "Admin: list orders filtered by status via GSI2",
+      },
+    );
+    props.table.grantReadData(getAdminOrdersHandler);
+    props.apiGateway.addLambdaRoute(
+      "/admin/orders",
+      apigateway.HttpMethod.GET,
+      getAdminOrdersHandler,
+      true,
+    );
+
+    // PATCH /admin/orders/{orderId} - Update order status
+    const updateOrderStatusHandler = new lambda.Function(
+      this,
+      "UpdateOrderStatusFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-update-order-status",
+        handler: "admin/update-order-status.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description: "Admin: update order status with transition validation",
+        environment: {
+          ...commonEnvironment,
+          FROM_EMAIL: "orders@epicweave.com",
+        },
+      },
+    );
+    props.table.grantReadWriteData(updateOrderStatusHandler);
+    updateOrderStatusHandler.addToRolePolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["ses:SendEmail"],
+        resources: ["*"],
+      }),
+    );
+    props.apiGateway.addLambdaRoute(
+      "/admin/orders/{orderId}",
+      apigateway.HttpMethod.PATCH,
+      updateOrderStatusHandler,
+      true,
+    );
+
+    // POST /admin/orders/{orderId}/refund - Process refund
+    const processRefundHandler = new lambda.Function(
+      this,
+      "ProcessRefundFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-process-refund",
+        handler: "admin/process-refund.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description: "Admin: process Stripe refund, restore stock",
+        timeout: cdk.Duration.seconds(60),
+      },
+    );
+    props.table.grantReadWriteData(processRefundHandler);
+    processRefundHandler.addToRolePolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["secretsmanager:GetSecretValue"],
+        resources: [
+          `arn:aws:secretsmanager:${cdk.Stack.of(this).region}:${cdk.Stack.of(this).account}:secret:epicweave/*`,
+        ],
+      }),
+    );
+    props.apiGateway.addLambdaRoute(
+      "/admin/orders/{orderId}/refund",
+      apigateway.HttpMethod.POST,
+      processRefundHandler,
+      true,
+    );
+
+    // ========================================
+    // Admin Configuration Lambda Functions
+    // ========================================
+
+    // GET /admin/config - Read Parameter Store values
+    const getConfigHandler = new lambda.Function(this, "GetConfigFunction", {
+      ...commonProps,
+      functionName: "epicweave-get-config",
+      handler: "admin/get-config.handler",
+      code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+      description: "Admin: read Parameter Store values grouped by category",
+    });
+    getConfigHandler.addToRolePolicy(ssmReadPolicy);
+    props.apiGateway.addLambdaRoute(
+      "/admin/config",
+      apigateway.HttpMethod.GET,
+      getConfigHandler,
+      true,
+    );
+
+    // PUT /admin/config - Update Parameter Store value
+    const updateConfigHandler = new lambda.Function(
+      this,
+      "UpdateConfigFunction",
+      {
+        ...commonProps,
+        functionName: "epicweave-update-config",
+        handler: "admin/update-config.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "../../lambda")),
+        description:
+          "Admin: update Parameter Store value with validation and audit log",
+      },
+    );
+    props.table.grantReadWriteData(updateConfigHandler);
+    updateConfigHandler.addToRolePolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: [
+          "ssm:GetParameter",
+          "ssm:GetParametersByPath",
+          "ssm:PutParameter",
+        ],
+        resources: [
+          `arn:aws:ssm:${cdk.Stack.of(this).region}:${cdk.Stack.of(this).account}:parameter/EpicWeave/*`,
+        ],
+      }),
+    );
+    props.apiGateway.addLambdaRoute(
+      "/admin/config",
+      apigateway.HttpMethod.PUT,
+      updateConfigHandler,
+      true,
+    );
+
+    // ========================================
     // Outputs
     // ========================================
 
