@@ -1,0 +1,32 @@
+{
+  "name": "@epicweave/tests",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:unit && npm run test:bdd",
+    "test:bdd": "cucumber-js",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:load": "k6 run load/scenarios/checkout.js",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@playwright/test": "^1.41.1",
+    "@types/node": "^20.11.0",
+    "@vitest/coverage-v8": "^1.2.1",
+    "aws-sdk-client-mock": "^3.0.1",
+    "k6": "^0.0.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.499.0",
+    "@aws-sdk/client-dynamodb": "^3.499.0",
+    "@aws-sdk/client-s3": "^3.499.0",
+    "@aws-sdk/client-sqs": "^3.499.0",
+    "@aws-sdk/lib-dynamodb": "^3.499.0"
+  }
+}

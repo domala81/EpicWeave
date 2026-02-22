@@ -1,0 +1,26 @@
+{
+  "name": "epicweave",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend/cdk",
+    "backend/lambda",
+    "tests"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "dev:cdk": "npm run watch --workspace=backend/cdk",
+    "deploy:cdk": "npm run deploy --workspace=backend/cdk",
+    "test": "npm run test --workspace=tests",
+    "test:unit": "npm run test:unit --workspace=tests",
+    "test:e2e": "npm run test:e2e --workspace=tests",
+    "test:load": "npm run test:load --workspace=tests",
+    "test:bdd": "npm run test:bdd --workspace=tests"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}
