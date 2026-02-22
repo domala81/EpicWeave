@@ -317,6 +317,8 @@ export class EpicWeaveStack extends cdk.Stack {
     new LambdaFunctionsConstruct(this, "LambdaFunctions", {
       table: this.table,
       apiGateway,
+      aiJobQueue: this.aiJobQueue,
+      designsBucket: this.designsBucket,
     });
   }
 }
