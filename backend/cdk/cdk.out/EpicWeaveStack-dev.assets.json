@@ -1,0 +1,36 @@
+{
+  "version": "50.0.0",
+  "files": {
+    "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d": {
+      "displayName": "LambdaFunctions/ListProductsFunction/Code",
+      "source": {
+        "path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "364453382854-us-east-1-4c7e1f21": {
+          "bucketName": "cdk-hnb659fds-assets-364453382854-us-east-1",
+          "objectKey": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::364453382854:role/cdk-hnb659fds-file-publishing-role-364453382854-us-east-1"
+        }
+      }
+    },
+    "d771bf8a863e5adadcd3cd52d1405e478fae4c95867b6ae53d928e7f40057f07": {
+      "displayName": "EpicWeaveStack-dev Template",
+      "source": {
+        "path": "EpicWeaveStack-dev.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "364453382854-us-east-1-dc72aaf6": {
+          "bucketName": "cdk-hnb659fds-assets-364453382854-us-east-1",
+          "objectKey": "d771bf8a863e5adadcd3cd52d1405e478fae4c95867b6ae53d928e7f40057f07.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::364453382854:role/cdk-hnb659fds-file-publishing-role-364453382854-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

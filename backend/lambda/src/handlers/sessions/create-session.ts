@@ -25,17 +25,15 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     }
 
     const body = JSON.parse(event.body || '{}');
-    const { artStyleChoice, paymentMethodId } = body;
+    const { artStyleChoice, paymentMethodId, skipPayment } = body;
 
     if (!artStyleChoice || !['modern', 'anime'].includes(artStyleChoice)) {
       return ERROR_RESPONSE(400, 'Invalid art style. Must be "modern" or "anime"');
     }
 
-    // Read session fee from Parameter Store
-    const sessionFeeParam = await ssm.send(
-      new GetParameterCommand({ Name: '/EpicWeave/pricing/session-fee' })
-    );
-    const sessionFee = parseFloat(sessionFeeParam.Parameter?.Value || '2.00');
+    // Feature flag: allow bypassing payment for testing
+    const feeBypassEnabled = process.env.SKIP_SESSION_FEE === 'true';
+    const shouldSkipPayment = feeBypassEnabled && skipPayment === true;
 
     // Read max iterations and TTL from Parameter Store
     const maxIterParam = await ssm.send(
@@ -48,21 +46,29 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     );
     const ttlMinutes = parseInt(ttlParam.Parameter?.Value || '60');
 
-    // Create Stripe PaymentIntent
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: Math.round(sessionFee * 100), // Convert to cents
-      currency: 'usd',
-      payment_method: paymentMethodId,
-      confirm: true,
-      automatic_payment_methods: { enabled: true, allow_redirects: 'never' },
-      metadata: {
-        type: 'session_fee',
-        userId,
-      },
-    });
+    let paymentIntentId = 'skipped_test';
 
-    if (paymentIntent.status !== 'succeeded') {
-      return ERROR_RESPONSE(402, 'Payment failed');
+    if (!shouldSkipPayment) {
+      // Read session fee from Parameter Store
+      const sessionFeeParam = await ssm.send(
+        new GetParameterCommand({ Name: '/EpicWeave/pricing/session-fee' })
+      );
+      const sessionFee = parseFloat(sessionFeeParam.Parameter?.Value || '2.00');
+
+      // Create Stripe PaymentIntent
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: Math.round(sessionFee * 100),
+        currency: 'usd',
+        payment_method: paymentMethodId,
+        confirm: true,
+        automatic_payment_methods: { enabled: true, allow_redirects: 'never' },
+        metadata: { type: 'session_fee', userId },
+      });
+
+      if (paymentIntent.status !== 'succeeded') {
+        return ERROR_RESPONSE(402, 'Payment failed');
+      }
+      paymentIntentId = paymentIntent.id;
     }
 
     // Create session in DynamoDB
@@ -89,23 +95,24 @@ export const handler: APIGatewayProxyHandler = async (event) => {
       })
     );
 
-    // Save payment record
-    await ddb.send(
-      new PutCommand({
-        TableName: TABLE_NAME,
-        Item: {
-          PK: `USER#${userId}`,
-          SK: `PAYMENT#${paymentIntent.id}`,
-          paymentId: paymentIntent.id,
-          userId,
-          type: 'session_fee',
-          amount: sessionFee,
-          currency: 'usd',
-          status: 'succeeded',
-          createdAt: now,
-        },
-      })
-    );
+    // Save payment record (skip if payment was bypassed)
+    if (!shouldSkipPayment) {
+      await ddb.send(
+        new PutCommand({
+          TableName: TABLE_NAME,
+          Item: {
+            PK: `USER#${userId}`,
+            SK: `PAYMENT#${paymentIntentId}`,
+            paymentId: paymentIntentId,
+            userId,
+            type: 'session_fee',
+            currency: 'usd',
+            status: 'succeeded',
+            createdAt: now,
+          },
+        })
+      );
+    }
 
     return SUCCESS_RESPONSE({
       sessionId,

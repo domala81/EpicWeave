@@ -23,7 +23,7 @@ export class ApiGatewayConstruct extends Construct {
       apiName: 'epicweave-api-dev',
       description: 'EpicWeave E-Commerce API',
       corsPreflight: {
-        allowOrigins: ['http://localhost:3000', 'https://*.epicweave.com'],
+        allowOrigins: ['http://localhost:3000'],
         allowMethods: [
           apigateway.CorsHttpMethod.GET,
           apigateway.CorsHttpMethod.POST,

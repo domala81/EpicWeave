@@ -1,0 +1,1547 @@
+{
+  "version": "50.0.0",
+  "artifacts": {
+    "EpicWeaveStack-dev.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "EpicWeaveStack-dev.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "EpicWeaveStack-dev": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://364453382854/us-east-1",
+      "properties": {
+        "templateFile": "EpicWeaveStack-dev.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "Environment": "dev",
+          "ManagedBy": "CDK",
+          "Project": "EpicWeave"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::364453382854:role/cdk-hnb659fds-deploy-role-364453382854-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::364453382854:role/cdk-hnb659fds-cfn-exec-role-364453382854-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-364453382854-us-east-1/d771bf8a863e5adadcd3cd52d1405e478fae4c95867b6ae53d928e7f40057f07.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "EpicWeaveStack-dev.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::364453382854:role/cdk-hnb659fds-lookup-role-364453382854-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "EpicWeaveStack-dev.assets"
+      ],
+      "metadata": {
+        "/EpicWeaveStack-dev": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "Environment",
+                "Value": "dev"
+              },
+              {
+                "Key": "ManagedBy",
+                "Value": "CDK"
+              },
+              {
+                "Key": "Project",
+                "Value": "EpicWeave"
+              }
+            ]
+          }
+        ],
+        "/EpicWeaveStack-dev/EpicWeaveTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "EpicWeaveTableBDE9225D"
+            }
+          }
+        ],
+        "/EpicWeaveStack-dev/EpicWeaveTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EpicWeaveTableBDE9225D"
+          }
+        ],
+        "/EpicWeaveStack-dev/DesignsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DesignsBucket6E20C4BA"
+          }
+        ],
+        "/EpicWeaveStack-dev/DesignsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DesignsBucketPolicy25C571F4"
+          }
+        ],
+        "/EpicWeaveStack-dev/ProductsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductsBucket62395B91"
+          }
+        ],
+        "/EpicWeaveStack-dev/ProductsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductsBucketPolicyD15E4BC7"
+          }
+        ],
+        "/EpicWeaveStack-dev/AssetsDistribution/Origin1/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetsDistributionOrigin1S3Origin8A1E1785"
+          }
+        ],
+        "/EpicWeaveStack-dev/AssetsDistribution/Origin2/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetsDistributionOrigin2S3Origin24F3033E"
+          }
+        ],
+        "/EpicWeaveStack-dev/AssetsDistribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetsDistribution16B90841"
+          }
+        ],
+        "/EpicWeaveStack-dev/UserPool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPool6BA7E5F2"
+          }
+        ],
+        "/EpicWeaveStack-dev/UserPool/WebClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolWebClient4C9370B0"
+          }
+        ],
+        "/EpicWeaveStack-dev/UserPool/CognitoDomain/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolCognitoDomainD6C7F9FA"
+          }
+        ],
+        "/EpicWeaveStack-dev/AIJobDLQ/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AIJobDLQ6BDBB71C"
+          }
+        ],
+        "/EpicWeaveStack-dev/AIJobQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AIJobQueue2EA29381"
+          }
+        ],
+        "/EpicWeaveStack-dev/SessionFee/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SessionFee4BFD7D0D"
+          }
+        ],
+        "/EpicWeaveStack-dev/CustomTshirtBase/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomTshirtBaseDEE0003C"
+          }
+        ],
+        "/EpicWeaveStack-dev/BothPlacementSurcharge/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BothPlacementSurcharge4EB926F5"
+          }
+        ],
+        "/EpicWeaveStack-dev/MaxIterations/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaxIterations896A0A36"
+          }
+        ],
+        "/EpicWeaveStack-dev/SessionTTL/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SessionTTLA63DB56B"
+          }
+        ],
+        "/EpicWeaveStack-dev/ImageResolution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ImageResolutionA503D03A"
+          }
+        ],
+        "/EpicWeaveStack-dev/ShippingFlatRate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShippingFlatRateD841D03E"
+          }
+        ],
+        "/EpicWeaveStack-dev/AllowedMythologies/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AllowedMythologies4F083964"
+          }
+        ],
+        "/EpicWeaveStack-dev/StripeSecret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StripeSecret80A38A68"
+          }
+        ],
+        "/EpicWeaveStack-dev/OpenAISecret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OpenAISecretAD3AE700"
+          }
+        ],
+        "/EpicWeaveStack-dev/TableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableName"
+          }
+        ],
+        "/EpicWeaveStack-dev/UserPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolId"
+          }
+        ],
+        "/EpicWeaveStack-dev/UserPoolClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolClientId"
+          }
+        ],
+        "/EpicWeaveStack-dev/DesignsBucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DesignsBucketName"
+          }
+        ],
+        "/EpicWeaveStack-dev/ProductsBucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductsBucketName"
+          }
+        ],
+        "/EpicWeaveStack-dev/CloudFrontDomain": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CloudFrontDomain"
+          }
+        ],
+        "/EpicWeaveStack-dev/AIJobQueueUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AIJobQueueUrl"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApi7F9ADE06"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/DefaultStage/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiDefaultStageDC778B38"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products/-products-GET-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETproductsproductsGETIntegration61EF218B"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products/-products-GET-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETproductsproductsGETIntegrationPermissionA2CC7941"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETproductsE1A0490F"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products--{productId}/-products-{productId}-GET-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETproductsproductIdproductsproductIdGETIntegrationF6E5005B"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products--{productId}/-products-{productId}-GET-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETproductsproductIdproductsproductIdGETIntegrationPermission30414ACE"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products--{productId}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETproductsproductIdE209D6BD"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--products/-admin-products-POST-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTadminproductsadminproductsPOSTIntegration24D739BA"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--products/-admin-products-POST-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTadminproductsadminproductsPOSTIntegrationPermission6120C84F"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--products/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTadminproducts81E735DA"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/CognitoAuthorizer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--create/-sessions-create-POST-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionscreatesessionscreatePOSTIntegrationB3EEC73B"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--create/-sessions-create-POST-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionscreatesessionscreatePOSTIntegrationPermission0C34CA51"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--create/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionscreate2404142B"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--generate/-sessions-{sessionId}-generate-POST-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionssessionIdgeneratesessionssessionIdgeneratePOSTIntegration05D36238"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--generate/-sessions-{sessionId}-generate-POST-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionssessionIdgeneratesessionssessionIdgeneratePOSTIntegrationPermissionCCAA091C"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--generate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionssessionIdgenerate7579869C"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--sessions--{sessionId}--status/-sessions-{sessionId}-status-GET-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETsessionssessionIdstatussessionssessionIdstatusGETIntegrationC42E3C3B"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--sessions--{sessionId}--status/-sessions-{sessionId}-status-GET-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETsessionssessionIdstatussessionssessionIdstatusGETIntegrationPermission5837894D"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--sessions--{sessionId}--status/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETsessionssessionIdstatusF05ACC9D"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--finalize/-sessions-{sessionId}-finalize-POST-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionssessionIdfinalizesessionssessionIdfinalizePOSTIntegrationB363EEBB"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--finalize/-sessions-{sessionId}-finalize-POST-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionssessionIdfinalizesessionssessionIdfinalizePOSTIntegrationPermission475A667F"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--finalize/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTsessionssessionIdfinalize781BC442"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--cart/-cart-GET-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETcartcartGETIntegrationE63D2153"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--cart/-cart-GET-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETcartcartGETIntegrationPermissionE4A2611D"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--cart/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETcartA6761343"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--cart--items/-cart-items-POST-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTcartitemscartitemsPOSTIntegration3D805DFB"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--cart--items/-cart-items-POST-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTcartitemscartitemsPOSTIntegrationPermission5588FB55"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--cart--items/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTcartitems90E4FC67"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--cart--items--{itemId}/-cart-items-{itemId}-PATCH-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPATCHcartitemsitemIdcartitemsitemIdPATCHIntegration6C4517C8"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--cart--items--{itemId}/-cart-items-{itemId}-PATCH-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPATCHcartitemsitemIdcartitemsitemIdPATCHIntegrationPermission1C05C7ED"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--cart--items--{itemId}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPATCHcartitemsitemId371C3380"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/DELETE--cart--items--{itemId}/-cart-items-{itemId}-DELETE-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiDELETEcartitemsitemIdcartitemsitemIdDELETEIntegrationEC5E3731"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/DELETE--cart--items--{itemId}/-cart-items-{itemId}-DELETE-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiDELETEcartitemsitemIdcartitemsitemIdDELETEIntegrationPermission5C3BA0C3"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/DELETE--cart--items--{itemId}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiDELETEcartitemsitemId17EE8BD0"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders/-orders-POST-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTordersordersPOSTIntegrationD2CAB03B"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders/-orders-POST-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTordersordersPOSTIntegrationPermission33776D9A"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTordersDA03C51E"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders--{orderId}--confirm/-orders-{orderId}-confirm-POST-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTordersorderIdconfirmordersorderIdconfirmPOSTIntegrationED32D188"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders--{orderId}--confirm/-orders-{orderId}-confirm-POST-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTordersorderIdconfirmordersorderIdconfirmPOSTIntegrationPermission9F472784"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders--{orderId}--confirm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTordersorderIdconfirm8AD5D628"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders/-orders-GET-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETordersordersGETIntegration2CA95947"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders/-orders-GET-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETordersordersGETIntegrationPermissionF54DCCCD"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETordersB4B9D2FB"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders--{orderId}/-orders-{orderId}-GET-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETordersorderIdordersorderIdGETIntegrationE6CC2E44"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders--{orderId}/-orders-{orderId}-GET-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETordersorderIdordersorderIdGETIntegrationPermission27D9A01A"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders--{orderId}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETordersorderIdED7AFAD9"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--orders/-admin-orders-GET-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETadminordersadminordersGETIntegration266D7F89"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--orders/-admin-orders-GET-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETadminordersadminordersGETIntegrationPermissionF61A0CC7"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--orders/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETadminorders7BA36787"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--admin--orders--{orderId}/-admin-orders-{orderId}-PATCH-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPATCHadminordersorderIdadminordersorderIdPATCHIntegration3F55723C"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--admin--orders--{orderId}/-admin-orders-{orderId}-PATCH-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPATCHadminordersorderIdadminordersorderIdPATCHIntegrationPermission720C10E3"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--admin--orders--{orderId}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPATCHadminordersorderIdD63E6915"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--orders--{orderId}--refund/-admin-orders-{orderId}-refund-POST-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTadminordersorderIdrefundadminordersorderIdrefundPOSTIntegration7CF972AB"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--orders--{orderId}--refund/-admin-orders-{orderId}-refund-POST-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTadminordersorderIdrefundadminordersorderIdrefundPOSTIntegrationPermissionEA12577D"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--orders--{orderId}--refund/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPOSTadminordersorderIdrefund0D582E35"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--config/-admin-config-GET-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETadminconfigadminconfigGETIntegration9FDA32FD"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--config/-admin-config-GET-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETadminconfigadminconfigGETIntegrationPermissionBBFC116C"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--config/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiGETadminconfig99324342"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PUT--admin--config/-admin-config-PUT-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPUTadminconfigadminconfigPUTIntegration65AAA8C8"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PUT--admin--config/-admin-config-PUT-Integration-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPUTadminconfigadminconfigPUTIntegrationPermission3558D9A3"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PUT--admin--config/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayEpicWeaveApiPUTadminconfigD3D0AB95"
+          }
+        ],
+        "/EpicWeaveStack-dev/ApiGateway/ApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewayApiEndpoint015055E7"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/ListProductsFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsListProductsFunctionServiceRole3249FA08"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/ListProductsFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsListProductsFunctionServiceRoleDefaultPolicy4C564C2C"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/ListProductsFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsListProductsFunctionDDFEFE76"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetProductFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetProductFunctionServiceRoleF56A1620"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetProductFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetProductFunctionServiceRoleDefaultPolicyCE721A82"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetProductFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetProductFunction6CCFB82D"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateProductFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateProductFunctionServiceRoleE0665B14"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateProductFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateProductFunctionServiceRoleDefaultPolicy5A58699B"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateProductFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateProductFunction8976831D"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateSessionFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateSessionFunctionServiceRoleCC993117"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateSessionFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateSessionFunctionServiceRoleDefaultPolicy2C3E2FF7"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateSessionFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateSessionFunction9708B1F5"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GenerateDesignFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGenerateDesignFunctionServiceRole2D880764"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GenerateDesignFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGenerateDesignFunctionServiceRoleDefaultPolicy0ACD9BE2"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GenerateDesignFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGenerateDesignFunction4341EBC1"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetSessionStatusFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetSessionStatusFunctionServiceRole0675B40F"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetSessionStatusFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetSessionStatusFunctionServiceRoleDefaultPolicy159DC24E"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetSessionStatusFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetSessionStatusFunction581E37DC"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/FinalizeDesignFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsFinalizeDesignFunctionServiceRole9C4A2608"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/FinalizeDesignFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsFinalizeDesignFunctionServiceRoleDefaultPolicy5EF589DF"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/FinalizeDesignFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsFinalizeDesignFunction964244F7"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/AIWorkerFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsAIWorkerFunctionServiceRole16DFCF9E"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/AIWorkerFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsAIWorkerFunctionServiceRoleDefaultPolicyD1DC9FEC"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/AIWorkerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsAIWorkerFunctionDEAE766F"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/AIWorkerFunction/SqsEventSource:EpicWeaveStackdevAIJobQueueD4CE4215/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsAIWorkerFunctionSqsEventSourceEpicWeaveStackdevAIJobQueueD4CE4215FCB152F0"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetCartFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetCartFunctionServiceRoleDE2CB368"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetCartFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetCartFunctionServiceRoleDefaultPolicyC081262F"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetCartFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetCartFunctionD1B62B0F"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/AddToCartFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsAddToCartFunctionServiceRole8930F1B6"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/AddToCartFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsAddToCartFunctionServiceRoleDefaultPolicyB690F5A0"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/AddToCartFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsAddToCartFunction0E3ADF3C"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateCartItemFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateCartItemFunctionServiceRole05A39DCE"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateCartItemFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateCartItemFunctionServiceRoleDefaultPolicyB91C0A34"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateCartItemFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateCartItemFunctionC53D526C"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/RemoveCartItemFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsRemoveCartItemFunctionServiceRoleBDBAC50F"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/RemoveCartItemFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsRemoveCartItemFunctionServiceRoleDefaultPolicyE46FE27D"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/RemoveCartItemFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsRemoveCartItemFunction30094603"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateOrderFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateOrderFunctionServiceRoleC1A74007"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateOrderFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateOrderFunctionServiceRoleDefaultPolicy22DCF070"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateOrderFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateOrderFunction190BD3D4"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/SendConfirmationFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsSendConfirmationFunctionServiceRole03941082"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/SendConfirmationFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsSendConfirmationFunctionServiceRoleDefaultPolicyEA7AED7D"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/SendConfirmationFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsSendConfirmationFunctionCBDC6A53"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetOrdersFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetOrdersFunctionServiceRole456A4881"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetOrdersFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetOrdersFunctionServiceRoleDefaultPolicy997E9083"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetOrdersFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetOrdersFunction9519D398"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetOrderDetailFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetOrderDetailFunctionServiceRoleE6D5B3A8"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetOrderDetailFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetOrderDetailFunctionServiceRoleDefaultPolicy03C6EAE3"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetOrderDetailFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetOrderDetailFunctionEA21401B"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetAdminOrdersFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetAdminOrdersFunctionServiceRole3C0664EE"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetAdminOrdersFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetAdminOrdersFunctionServiceRoleDefaultPolicyC147B452"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetAdminOrdersFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetAdminOrdersFunctionA17EA637"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateOrderStatusFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleF1092650"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateOrderStatusFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleDefaultPolicy3343BF72"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateOrderStatusFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateOrderStatusFunction6EDB7F06"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/ProcessRefundFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsProcessRefundFunctionServiceRoleFD357A2F"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/ProcessRefundFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsProcessRefundFunctionServiceRoleDefaultPolicy817BFBA5"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/ProcessRefundFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsProcessRefundFunctionFB8E6B71"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetConfigFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetConfigFunctionServiceRoleBC55371B"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetConfigFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetConfigFunctionServiceRoleDefaultPolicyA5B5FB0E"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetConfigFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetConfigFunction079F0FF6"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateConfigFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateConfigFunctionServiceRole066E5226"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateConfigFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateConfigFunctionServiceRoleDefaultPolicy959627BE"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/UpdateConfigFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsUpdateConfigFunction495CC040"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/ListProductsFunctionArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsListProductsFunctionArnA611F877"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/GetProductFunctionArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsGetProductFunctionArnE8CC20B3"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateProductFunctionArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateProductFunctionArnE321ADAD"
+          }
+        ],
+        "/EpicWeaveStack-dev/LambdaFunctions/CreateSessionFunctionArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaFunctionsCreateSessionFunctionArnA64EE451"
+          }
+        ],
+        "/EpicWeaveStack-dev/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/EpicWeaveStack-dev/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/EpicWeaveStack-dev/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "EpicWeaveStack-dev"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "aws-cdk-lib/feature-flag-report": {
+      "type": "cdk:feature-flag-report",
+      "properties": {
+        "module": "aws-cdk-lib",
+        "flags": {
+          "@aws-cdk/aws-signer:signingProfileNamePassedToCfn": {
+            "recommendedValue": true,
+            "explanation": "Pass signingProfileName to CfnSigningProfile"
+          },
+          "@aws-cdk/core:newStyleStackSynthesis": {
+            "recommendedValue": true,
+            "explanation": "Switch to new stack synthesis method which enables CI/CD",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/core:stackRelativeExports": {
+            "recommendedValue": true,
+            "explanation": "Name exports based on the construct paths relative to the stack, rather than the global construct path",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-ecs-patterns:secGroupsDisablesImplicitOpenListener": {
+            "recommendedValue": true,
+            "explanation": "Disable implicit openListener when custom security groups are provided"
+          },
+          "@aws-cdk/aws-rds:lowercaseDbIdentifier": {
+            "recommendedValue": true,
+            "explanation": "Force lowercasing of RDS Cluster names in CDK",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": {
+            "recommendedValue": true,
+            "explanation": "Allow adding/removing multiple UsagePlanKeys independently",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-lambda:recognizeVersionProps": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to opt in to the updated logical id calculation for Lambda Version created using the  `fn.currentVersion`.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-lambda:recognizeLayerVersion": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to opt in to the updated logical id calculation for Lambda Version created using the `fn.currentVersion`."
+          },
+          "@aws-cdk/aws-cloudfront:defaultSecurityPolicyTLSv1.2_2021": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to have cloudfront distributions use the security policy TLSv1.2_2021 by default.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/core:checkSecretUsage": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enable this flag to make it impossible to accidentally use SecretValues in unsafe locations"
+          },
+          "@aws-cdk/core:target-partitions": {
+            "userValue": [
+              "aws",
+              "aws-cn"
+            ],
+            "recommendedValue": [
+              "aws",
+              "aws-cn"
+            ],
+            "explanation": "What regions to include in lookup tables of environment agnostic stacks"
+          },
+          "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "ECS extensions will automatically add an `awslogs` driver if no logging is specified"
+          },
+          "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to have Launch Templates generated by the `InstanceRequireImdsv2Aspect` use unique names."
+          },
+          "@aws-cdk/aws-ecs:arnFormatIncludesClusterName": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "ARN format used by ECS. In the new ARN format, the cluster name is part of the resource ID."
+          },
+          "@aws-cdk/aws-iam:minimizePolicies": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Minimize IAM policies by combining Statements"
+          },
+          "@aws-cdk/core:validateSnapshotRemovalPolicy": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Error on snapshot removal policies on resources that do not support it."
+          },
+          "@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Generate key aliases that include the stack name"
+          },
+          "@aws-cdk/aws-s3:createDefaultLoggingPolicy": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to create an S3 bucket policy by default in cases where an AWS service would automatically create the Policy if one does not exist."
+          },
+          "@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Restrict KMS key policy for encrypted Queues a bit more"
+          },
+          "@aws-cdk/aws-apigateway:disableCloudWatchRole": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Make default CloudWatch Role behavior safe for multiple API Gateways in one environment"
+          },
+          "@aws-cdk/core:enablePartitionLiterals": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Make ARNs concrete if AWS partition is known"
+          },
+          "@aws-cdk/aws-events:eventsTargetQueueSameAccount": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Event Rules may only push to encrypted SQS queues in the same account"
+          },
+          "@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Avoid setting the \"ECS\" deployment controller when adding a circuit breaker"
+          },
+          "@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enable this feature to create default policy names for imported roles that depend on the stack the role is in."
+          },
+          "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Use S3 Bucket Policy instead of ACLs for Server Access Logging"
+          },
+          "@aws-cdk/aws-route53-patters:useCertificate": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Use the official `Certificate` resource instead of `DnsValidatedCertificate`"
+          },
+          "@aws-cdk/customresources:installLatestAwsSdkDefault": {
+            "userValue": false,
+            "recommendedValue": false,
+            "explanation": "Whether to install the latest SDK by default in AwsCustomResource"
+          },
+          "@aws-cdk/aws-rds:databaseProxyUniqueResourceName": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Use unique resource name for Database Proxy"
+          },
+          "@aws-cdk/aws-codedeploy:removeAlarmsFromDeploymentGroup": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Remove CloudWatch alarms from deployment group"
+          },
+          "@aws-cdk/aws-apigateway:authorizerChangeDeploymentLogicalId": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Include authorizer configuration in the calculation of the API deployment logical ID."
+          },
+          "@aws-cdk/aws-ec2:launchTemplateDefaultUserData": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Define user data for a launch template by default when a machine image is provided."
+          },
+          "@aws-cdk/aws-secretsmanager:useAttachedSecretResourcePolicyForSecretTargetAttachments": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "SecretTargetAttachments uses the ResourcePolicy of the attached Secret."
+          },
+          "@aws-cdk/aws-redshift:columnId": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Whether to use an ID to track Redshift column changes"
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enable AmazonEMRServicePolicy_v2 managed policies"
+          },
+          "@aws-cdk/aws-ec2:restrictDefaultSecurityGroup": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Restrict access to the VPC default security group"
+          },
+          "@aws-cdk/aws-apigateway:requestValidatorUniqueId": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Generate a unique id for each RequestValidator added to a method"
+          },
+          "@aws-cdk/aws-kms:aliasNameRef": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "KMS Alias name and keyArn will have implicit reference to KMS Key"
+          },
+          "@aws-cdk/aws-kms:applyImportedAliasPermissionsToPrincipal": {
+            "recommendedValue": true,
+            "explanation": "Enable grant methods on Aliases imported by name to use kms:ResourceAliases condition"
+          },
+          "@aws-cdk/aws-autoscaling:generateLaunchTemplateInsteadOfLaunchConfig": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Generate a launch template when creating an AutoScalingGroup"
+          },
+          "@aws-cdk/core:includePrefixInUniqueNameGeneration": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Include the stack prefix in the stack name generation process"
+          },
+          "@aws-cdk/aws-efs:denyAnonymousAccess": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "EFS denies anonymous clients accesses"
+          },
+          "@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enables support for Multi-AZ with Standby deployment for opensearch domains"
+          },
+          "@aws-cdk/aws-lambda-nodejs:useLatestRuntimeVersion": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enables aws-lambda-nodejs.Function to use the latest available NodeJs runtime as the default"
+          },
+          "@aws-cdk/aws-efs:mountTargetOrderInsensitiveLogicalId": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, mount targets will have a stable logicalId that is linked to the associated subnet."
+          },
+          "@aws-cdk/aws-rds:auroraClusterChangeScopeOfInstanceParameterGroupWithEachParameters": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, a scope of InstanceParameterGroup for AuroraClusterInstance with each parameters will change."
+          },
+          "@aws-cdk/aws-appsync:useArnForSourceApiAssociationIdentifier": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, will always use the arn for identifiers for CfnSourceApiAssociation in the GraphqlApi construct rather than id."
+          },
+          "@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, creating an RDS database cluster from a snapshot will only render credentials for snapshot credentials."
+          },
+          "@aws-cdk/aws-codepipeline-actions:useNewDefaultBranchForCodeCommitSource": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, the CodeCommit source action is using the default branch name 'main'."
+          },
+          "@aws-cdk/aws-cloudwatch-actions:changeLambdaPermissionLogicalIdForLambdaAction": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, the logical ID of a Lambda permission for a Lambda action includes an alarm ID."
+          },
+          "@aws-cdk/aws-codepipeline:crossAccountKeysDefaultValueToFalse": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enables Pipeline to set the default value for crossAccountKeys to false."
+          },
+          "@aws-cdk/aws-codepipeline:defaultPipelineTypeToV2": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "Enables Pipeline to set the default pipeline type to V2."
+          },
+          "@aws-cdk/aws-kms:reduceCrossAccountRegionPolicyScope": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, IAM Policy created from KMS key grant will reduce the resource scope to this key only."
+          },
+          "@aws-cdk/pipelines:reduceAssetRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "Remove the root account principal from PipelineAssetsFileRole trust policy",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-eks:nodegroupNameAttribute": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, nodegroupName attribute of the provisioned EKS NodeGroup will not have the cluster name prefix."
+          },
+          "@aws-cdk/aws-eks:useNativeOidcProvider": {
+            "recommendedValue": true,
+            "explanation": "When enabled, EKS V2 clusters will use the native OIDC provider resource AWS::IAM::OIDCProvider instead of creating the OIDCProvider with a custom resource (iam.OpenIDConnectProvider)."
+          },
+          "@aws-cdk/aws-ec2:ebsDefaultGp3Volume": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, the default volume type of the EBS volume will be GP3"
+          },
+          "@aws-cdk/aws-ecs:removeDefaultDeploymentAlarm": {
+            "userValue": true,
+            "recommendedValue": true,
+            "explanation": "When enabled, remove default deployment alarm settings"
+          },
+          "@aws-cdk/custom-resources:logApiResponseDataPropertyTrueDefault": {
+            "userValue": false,
+            "recommendedValue": false,
+            "explanation": "When enabled, the custom resource used for `AwsCustomResource` will configure the `logApiResponseData` property as true by default"
+          },
+          "@aws-cdk/aws-s3:keepNotificationInImportedBucket": {
+            "userValue": false,
+            "recommendedValue": false,
+            "explanation": "When enabled, Adding notifications to a bucket in the current stack will not remove notification from imported stack."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:useNewS3UriParametersForBedrockInvokeModelTask": {
+            "recommendedValue": true,
+            "explanation": "When enabled, use new props for S3 URI field in task definition of state machine for bedrock invoke model.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/core:explicitStackTags": {
+            "recommendedValue": true,
+            "explanation": "When enabled, stack tags need to be assigned explicitly on a Stack."
+          },
+          "@aws-cdk/aws-ecs:reduceEc2FargateCloudWatchPermissions": {
+            "recommendedValue": true,
+            "explanation": "When enabled, we will only grant the necessary permissions when users specify cloudwatch log group through logConfiguration"
+          },
+          "@aws-cdk/aws-dynamodb:resourcePolicyPerReplica": {
+            "recommendedValue": true,
+            "explanation": "When enabled will allow you to specify a resource policy per replica, and not copy the source table policy to all replicas"
+          },
+          "@aws-cdk/aws-ec2:ec2SumTImeoutEnabled": {
+            "recommendedValue": true,
+            "explanation": "When enabled, initOptions.timeout and resourceSignalTimeout values will be summed together."
+          },
+          "@aws-cdk/aws-appsync:appSyncGraphQLAPIScopeLambdaPermission": {
+            "recommendedValue": true,
+            "explanation": "When enabled, a Lambda authorizer Permission created when using GraphqlApi will be properly scoped with a SourceArn."
+          },
+          "@aws-cdk/aws-rds:setCorrectValueForDatabaseInstanceReadReplicaInstanceResourceId": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the value of property `instanceResourceId` in construct `DatabaseInstanceReadReplica` will be set to the correct value which is `DbiResourceId` instead of currently `DbInstanceArn`"
+          },
+          "@aws-cdk/core:cfnIncludeRejectComplexResourceUpdateCreatePolicyIntrinsics": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CFN templates added with `cfn-include` will error if the template contains Resource Update or Create policies with CFN Intrinsics that include non-primitive values."
+          },
+          "@aws-cdk/aws-lambda-nodejs:sdkV3ExcludeSmithyPackages": {
+            "recommendedValue": true,
+            "explanation": "When enabled, both `@aws-sdk` and `@smithy` packages will be excluded from the Lambda Node.js 18.x runtime to prevent version mismatches in bundled applications."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:fixRunEcsTaskPolicy": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the resource of IAM Run Ecs policy generated by SFN EcsRunTask will reference the definition, instead of constructing ARN."
+          },
+          "@aws-cdk/aws-ec2:bastionHostUseAmazonLinux2023ByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the BastionHost construct will use the latest Amazon Linux 2023 AMI, instead of Amazon Linux 2."
+          },
+          "@aws-cdk/core:aspectStabilization": {
+            "recommendedValue": true,
+            "explanation": "When enabled, a stabilization loop will be run when invoking Aspects during synthesis.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-route53-targets:userPoolDomainNameMethodWithoutCustomResource": {
+            "recommendedValue": true,
+            "explanation": "When enabled, use a new method for DNS Name of user pool domain target without creating a custom resource."
+          },
+          "@aws-cdk/aws-elasticloadbalancingV2:albDualstackWithoutPublicIpv4SecurityGroupRulesDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the default security group ingress rules will allow IPv6 ingress from anywhere"
+          },
+          "@aws-cdk/aws-iam:oidcRejectUnauthorizedConnections": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the default behaviour of OIDC provider will reject unauthorized connections"
+          },
+          "@aws-cdk/core:enableAdditionalMetadataCollection": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK will expand the scope of usage data collected to better inform CDK development and improve communication for security concerns and emerging issues."
+          },
+          "@aws-cdk/aws-lambda:createNewPoliciesWithAddToRolePolicy": {
+            "recommendedValue": false,
+            "explanation": "[Deprecated] When enabled, Lambda will create new inline policies with AddToRolePolicy instead of adding to the Default Policy Statement"
+          },
+          "@aws-cdk/aws-s3:setUniqueReplicationRoleName": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK will automatically generate a unique role name that is used for s3 object replication."
+          },
+          "@aws-cdk/pipelines:reduceStageRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "Remove the root account principal from Stage addActions trust policy",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-events:requireEventBusPolicySid": {
+            "recommendedValue": true,
+            "explanation": "When enabled, grantPutEventsTo() will use resource policies with Statement IDs for service principals."
+          },
+          "@aws-cdk/core:aspectPrioritiesMutating": {
+            "recommendedValue": true,
+            "explanation": "When set to true, Aspects added by the construct library on your behalf will be given a priority of MUTATING."
+          },
+          "@aws-cdk/aws-dynamodb:retainTableReplica": {
+            "recommendedValue": true,
+            "explanation": "When enabled, table replica will be default to the removal policy of source table unless specified otherwise."
+          },
+          "@aws-cdk/cognito:logUserPoolClientSecretValue": {
+            "recommendedValue": false,
+            "explanation": "When disabled, the value of the user pool client secret will not be logged in the custom resource lambda function logs."
+          },
+          "@aws-cdk/pipelines:reduceCrossAccountActionRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "When enabled, scopes down the trust policy for the cross-account action role",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-stepfunctions:useDistributedMapResultWriterV2": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the resultWriterV2 property of DistributedMap will be used insted of resultWriter"
+          },
+          "@aws-cdk/s3-notifications:addS3TrustKeyPolicyForSnsSubscriptions": {
+            "recommendedValue": true,
+            "explanation": "Add an S3 trust policy to a KMS key resource policy for SNS subscriptions."
+          },
+          "@aws-cdk/aws-ec2:requirePrivateSubnetsForEgressOnlyInternetGateway": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the EgressOnlyGateway resource is only created if private subnets are defined in the dual-stack VPC."
+          },
+          "@aws-cdk/aws-ec2-alpha:useResourceIdForVpcV2Migration": {
+            "recommendedValue": false,
+            "explanation": "When enabled, use resource IDs for VPC V2 migration"
+          },
+          "@aws-cdk/aws-s3:publicAccessBlockedByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, setting any combination of options for BlockPublicAccess will automatically set true for any options not defined."
+          },
+          "@aws-cdk/aws-lambda:useCdkManagedLogGroup": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK creates and manages loggroup for the lambda function"
+          },
+          "@aws-cdk/aws-elasticloadbalancingv2:networkLoadBalancerWithSecurityGroupByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, Network Load Balancer will be created with a security group by default."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:httpInvokeDynamicJsonPathEndpoint": {
+            "recommendedValue": true,
+            "explanation": "When enabled, allows using a dynamic apiEndpoint with JSONPath format in HttpInvoke tasks.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-ecs-patterns:uniqueTargetGroupId": {
+            "recommendedValue": true,
+            "explanation": "When enabled, ECS patterns will generate unique target group IDs to prevent conflicts during load balancer replacement"
+          },
+          "@aws-cdk/aws-route53-patterns:useDistribution": {
+            "recommendedValue": true,
+            "explanation": "Use the `Distribution` resource instead of `CloudFrontWebDistribution`"
+          },
+          "@aws-cdk/core:automaticL1Traits": {
+            "recommendedValue": true,
+            "explanation": "Automatically use the default L1 traits for L1 constructs`",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "minimumCliVersion": "2.1105.0"
+}

@@ -1,0 +1,5137 @@
+{
+ "Description": "EpicWeave E-Commerce Platform - Development",
+ "Resources": {
+  "EpicWeaveTableBDE9225D": {
+   "Type": "AWS::DynamoDB::Table",
+   "Properties": {
+    "AttributeDefinitions": [
+     {
+      "AttributeName": "PK",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "SK",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "GSI1PK",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "GSI1SK",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "GSI2PK",
+      "AttributeType": "S"
+     },
+     {
+      "AttributeName": "GSI2SK",
+      "AttributeType": "S"
+     }
+    ],
+    "BillingMode": "PAY_PER_REQUEST",
+    "GlobalSecondaryIndexes": [
+     {
+      "IndexName": "GSI1",
+      "KeySchema": [
+       {
+        "AttributeName": "GSI1PK",
+        "KeyType": "HASH"
+       },
+       {
+        "AttributeName": "GSI1SK",
+        "KeyType": "RANGE"
+       }
+      ],
+      "Projection": {
+       "ProjectionType": "ALL"
+      }
+     },
+     {
+      "IndexName": "GSI2",
+      "KeySchema": [
+       {
+        "AttributeName": "GSI2PK",
+        "KeyType": "HASH"
+       },
+       {
+        "AttributeName": "GSI2SK",
+        "KeyType": "RANGE"
+       }
+      ],
+      "Projection": {
+       "ProjectionType": "ALL"
+      }
+     }
+    ],
+    "KeySchema": [
+     {
+      "AttributeName": "PK",
+      "KeyType": "HASH"
+     },
+     {
+      "AttributeName": "SK",
+      "KeyType": "RANGE"
+     }
+    ],
+    "PointInTimeRecoverySpecification": {
+     "PointInTimeRecoveryEnabled": true
+    },
+    "TableName": "EpicWeaveTable-dev",
+    "TimeToLiveSpecification": {
+     "AttributeName": "expiresAt",
+     "Enabled": true
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/EpicWeaveTable/Resource"
+   }
+  },
+  "DesignsBucket6E20C4BA": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "BucketName": "epicweave-designs-364453382854-us-east-1",
+    "LifecycleConfiguration": {
+     "Rules": [
+      {
+       "ExpirationInDays": 90,
+       "Id": "DeleteOldDesigns",
+       "Status": "Enabled"
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "VersioningConfiguration": {
+     "Status": "Enabled"
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/DesignsBucket/Resource"
+   }
+  },
+  "DesignsBucketPolicy25C571F4": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "DesignsBucket6E20C4BA"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Principal": {
+        "CanonicalUser": {
+         "Fn::GetAtt": [
+          "AssetsDistributionOrigin2S3Origin24F3033E",
+          "S3CanonicalUserId"
+         ]
+        }
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "DesignsBucket6E20C4BA",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/DesignsBucket/Policy/Resource"
+   }
+  },
+  "ProductsBucket62395B91": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "BucketName": "epicweave-products-364453382854-us-east-1",
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ProductsBucket/Resource"
+   }
+  },
+  "ProductsBucketPolicyD15E4BC7": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "ProductsBucket62395B91"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Principal": {
+        "CanonicalUser": {
+         "Fn::GetAtt": [
+          "AssetsDistributionOrigin1S3Origin8A1E1785",
+          "S3CanonicalUserId"
+         ]
+        }
+       },
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "ProductsBucket62395B91",
+            "Arn"
+           ]
+          },
+          "/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ProductsBucket/Policy/Resource"
+   }
+  },
+  "AssetsDistributionOrigin1S3Origin8A1E1785": {
+   "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+   "Properties": {
+    "CloudFrontOriginAccessIdentityConfig": {
+     "Comment": "Identity for EpicWeaveStackdevAssetsDistributionOrigin1FEB1330A"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/AssetsDistribution/Origin1/S3Origin/Resource"
+   }
+  },
+  "AssetsDistributionOrigin2S3Origin24F3033E": {
+   "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+   "Properties": {
+    "CloudFrontOriginAccessIdentityConfig": {
+     "Comment": "Identity for EpicWeaveStackdevAssetsDistributionOrigin2DC74AD75"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/AssetsDistribution/Origin2/S3Origin/Resource"
+   }
+  },
+  "AssetsDistribution16B90841": {
+   "Type": "AWS::CloudFront::Distribution",
+   "Properties": {
+    "DistributionConfig": {
+     "CacheBehaviors": [
+      {
+       "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+       "Compress": true,
+       "PathPattern": "/designs/*",
+       "TargetOriginId": "EpicWeaveStackdevAssetsDistributionOrigin2DC74AD75",
+       "ViewerProtocolPolicy": "redirect-to-https"
+      }
+     ],
+     "DefaultCacheBehavior": {
+      "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+      "Compress": true,
+      "TargetOriginId": "EpicWeaveStackdevAssetsDistributionOrigin1FEB1330A",
+      "ViewerProtocolPolicy": "redirect-to-https"
+     },
+     "Enabled": true,
+     "HttpVersion": "http2",
+     "IPV6Enabled": true,
+     "Origins": [
+      {
+       "DomainName": {
+        "Fn::GetAtt": [
+         "ProductsBucket62395B91",
+         "RegionalDomainName"
+        ]
+       },
+       "Id": "EpicWeaveStackdevAssetsDistributionOrigin1FEB1330A",
+       "S3OriginConfig": {
+        "OriginAccessIdentity": {
+         "Fn::Join": [
+          "",
+          [
+           "origin-access-identity/cloudfront/",
+           {
+            "Ref": "AssetsDistributionOrigin1S3Origin8A1E1785"
+           }
+          ]
+         ]
+        }
+       }
+      },
+      {
+       "DomainName": {
+        "Fn::GetAtt": [
+         "DesignsBucket6E20C4BA",
+         "RegionalDomainName"
+        ]
+       },
+       "Id": "EpicWeaveStackdevAssetsDistributionOrigin2DC74AD75",
+       "S3OriginConfig": {
+        "OriginAccessIdentity": {
+         "Fn::Join": [
+          "",
+          [
+           "origin-access-identity/cloudfront/",
+           {
+            "Ref": "AssetsDistributionOrigin2S3Origin24F3033E"
+           }
+          ]
+         ]
+        }
+       }
+      }
+     ],
+     "PriceClass": "PriceClass_100"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/AssetsDistribution/Resource"
+   }
+  },
+  "UserPool6BA7E5F2": {
+   "Type": "AWS::Cognito::UserPool",
+   "Properties": {
+    "AccountRecoverySetting": {
+     "RecoveryMechanisms": [
+      {
+       "Name": "verified_email",
+       "Priority": 1
+      }
+     ]
+    },
+    "AdminCreateUserConfig": {
+     "AllowAdminCreateUserOnly": false
+    },
+    "AutoVerifiedAttributes": [
+     "email"
+    ],
+    "EmailVerificationMessage": "The verification code to your new account is {####}",
+    "EmailVerificationSubject": "Verify your new account",
+    "Policies": {
+     "PasswordPolicy": {
+      "MinimumLength": 8,
+      "RequireLowercase": true,
+      "RequireNumbers": true,
+      "RequireSymbols": true,
+      "RequireUppercase": true
+     }
+    },
+    "SmsVerificationMessage": "The verification code to your new account is {####}",
+    "UserPoolAddOns": {
+     "AdvancedSecurityMode": "ENFORCED"
+    },
+    "UserPoolName": "epicweave-users-dev",
+    "UsernameAttributes": [
+     "email"
+    ],
+    "VerificationMessageTemplate": {
+     "DefaultEmailOption": "CONFIRM_WITH_CODE",
+     "EmailMessage": "The verification code to your new account is {####}",
+     "EmailSubject": "Verify your new account",
+     "SmsMessage": "The verification code to your new account is {####}"
+    }
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/UserPool/Resource"
+   }
+  },
+  "UserPoolWebClient4C9370B0": {
+   "Type": "AWS::Cognito::UserPoolClient",
+   "Properties": {
+    "AllowedOAuthFlows": [
+     "code"
+    ],
+    "AllowedOAuthFlowsUserPoolClient": true,
+    "AllowedOAuthScopes": [
+     "email",
+     "openid",
+     "profile"
+    ],
+    "CallbackURLs": [
+     "http://localhost:3000/auth/callback"
+    ],
+    "ClientName": "epicweave-web-client",
+    "ExplicitAuthFlows": [
+     "ALLOW_USER_PASSWORD_AUTH",
+     "ALLOW_USER_SRP_AUTH",
+     "ALLOW_REFRESH_TOKEN_AUTH"
+    ],
+    "LogoutURLs": [
+     "http://localhost:3000"
+    ],
+    "SupportedIdentityProviders": [
+     "COGNITO"
+    ],
+    "UserPoolId": {
+     "Ref": "UserPool6BA7E5F2"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/UserPool/WebClient/Resource"
+   }
+  },
+  "UserPoolCognitoDomainD6C7F9FA": {
+   "Type": "AWS::Cognito::UserPoolDomain",
+   "Properties": {
+    "Domain": "epicweave-364453382854",
+    "UserPoolId": {
+     "Ref": "UserPool6BA7E5F2"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/UserPool/CognitoDomain/Resource"
+   }
+  },
+  "AIJobDLQ6BDBB71C": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "MessageRetentionPeriod": 1209600,
+    "QueueName": "epicweave-ai-jobs-dlq-dev"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/AIJobDLQ/Resource"
+   }
+  },
+  "AIJobQueue2EA29381": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "QueueName": "epicweave-ai-jobs-dev",
+    "RedrivePolicy": {
+     "deadLetterTargetArn": {
+      "Fn::GetAtt": [
+       "AIJobDLQ6BDBB71C",
+       "Arn"
+      ]
+     },
+     "maxReceiveCount": 3
+    },
+    "VisibilityTimeout": 300
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/AIJobQueue/Resource"
+   }
+  },
+  "SessionFee4BFD7D0D": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "AI design session fee in USD",
+    "Name": "/EpicWeave/pricing/session-fee",
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": "2.00"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/SessionFee/Resource"
+   }
+  },
+  "CustomTshirtBaseDEE0003C": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "Base price for custom t-shirt in USD",
+    "Name": "/EpicWeave/pricing/custom-tshirt-base",
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": "20.00"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/CustomTshirtBase/Resource"
+   }
+  },
+  "BothPlacementSurcharge4EB926F5": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "Surcharge for front+back printing in USD",
+    "Name": "/EpicWeave/pricing/both-placement-surcharge",
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": "8.00"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/BothPlacementSurcharge/Resource"
+   }
+  },
+  "MaxIterations896A0A36": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "Maximum design iterations per session",
+    "Name": "/EpicWeave/session/max-iterations",
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": "5"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/MaxIterations/Resource"
+   }
+  },
+  "SessionTTLA63DB56B": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "Session expiry in minutes",
+    "Name": "/EpicWeave/session/ttl-minutes",
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": "60"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/SessionTTL/Resource"
+   }
+  },
+  "ImageResolutionA503D03A": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "DALL-E output resolution",
+    "Name": "/EpicWeave/ai/image-resolution",
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": "1024x1024"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ImageResolution/Resource"
+   }
+  },
+  "ShippingFlatRateD841D03E": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "Base flat shipping rate in USD",
+    "Name": "/EpicWeave/shipping/flat-rate-base",
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": "5.99"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ShippingFlatRate/Resource"
+   }
+  },
+  "AllowedMythologies4F083964": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "Comma-separated allowed mythology types",
+    "Name": "/EpicWeave/mythology/allowed-types",
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": "hindu,greek"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/AllowedMythologies/Resource"
+   }
+  },
+  "StripeSecret80A38A68": {
+   "Type": "AWS::SecretsManager::Secret",
+   "Properties": {
+    "Description": "Stripe secret key for payment processing",
+    "GenerateSecretString": {},
+    "Name": "epicweave/stripe-api-key"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/StripeSecret/Resource"
+   }
+  },
+  "OpenAISecretAD3AE700": {
+   "Type": "AWS::SecretsManager::Secret",
+   "Properties": {
+    "Description": "OpenAI API key for DALL-E image generation",
+    "GenerateSecretString": {},
+    "Name": "epicweave/openai-api-key"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/OpenAISecret/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApi7F9ADE06": {
+   "Type": "AWS::ApiGatewayV2::Api",
+   "Properties": {
+    "CorsConfiguration": {
+     "AllowCredentials": true,
+     "AllowHeaders": [
+      "*"
+     ],
+     "AllowMethods": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE",
+      "OPTIONS"
+     ],
+     "AllowOrigins": [
+      "http://localhost:3000"
+     ],
+     "MaxAge": 86400
+    },
+    "Description": "EpicWeave E-Commerce API",
+    "Name": "epicweave-api-dev",
+    "ProtocolType": "HTTP"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiDefaultStageDC778B38": {
+   "Type": "AWS::ApiGatewayV2::Stage",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AutoDeploy": true,
+    "StageName": "$default"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/DefaultStage/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETproductsproductsGETIntegration61EF218B": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsListProductsFunctionDDFEFE76",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products/-products-GET-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETproductsproductsGETIntegrationPermissionA2CC7941": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsListProductsFunctionDDFEFE76",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/products"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products/-products-GET-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETproductsE1A0490F": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "NONE",
+    "RouteKey": "GET /products",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiGETproductsproductsGETIntegration61EF218B"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETproductsproductIdproductsproductIdGETIntegrationF6E5005B": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetProductFunction6CCFB82D",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products--{productId}/-products-{productId}-GET-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETproductsproductIdproductsproductIdGETIntegrationPermission30414ACE": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetProductFunction6CCFB82D",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/products/{productId}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products--{productId}/-products-{productId}-GET-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETproductsproductIdE209D6BD": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "NONE",
+    "RouteKey": "GET /products/{productId}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiGETproductsproductIdproductsproductIdGETIntegrationF6E5005B"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--products--{productId}/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTadminproductsadminproductsPOSTIntegration24D739BA": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateProductFunction8976831D",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--products/-admin-products-POST-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTadminproductsadminproductsPOSTIntegrationPermission6120C84F": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateProductFunction8976831D",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/admin/products"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--products/-admin-products-POST-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTadminproducts81E735DA": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "POST /admin/products",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPOSTadminproductsadminproductsPOSTIntegration24D739BA"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--products/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202": {
+   "Type": "AWS::ApiGatewayV2::Authorizer",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizerType": "JWT",
+    "IdentitySource": [
+     "$request.header.Authorization"
+    ],
+    "JwtConfiguration": {
+     "Audience": [
+      {
+       "Ref": "UserPoolWebClient4C9370B0"
+      }
+     ],
+     "Issuer": {
+      "Fn::Join": [
+       "",
+       [
+        "https://cognito-idp.us-east-1.amazonaws.com/",
+        {
+         "Ref": "UserPool6BA7E5F2"
+        }
+       ]
+      ]
+     }
+    },
+    "Name": "CognitoAuthorizer"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/CognitoAuthorizer/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionscreatesessionscreatePOSTIntegrationB3EEC73B": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateSessionFunction9708B1F5",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--create/-sessions-create-POST-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionscreatesessionscreatePOSTIntegrationPermission0C34CA51": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateSessionFunction9708B1F5",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/sessions/create"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--create/-sessions-create-POST-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionscreate2404142B": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "POST /sessions/create",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPOSTsessionscreatesessionscreatePOSTIntegrationB3EEC73B"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--create/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionssessionIdgeneratesessionssessionIdgeneratePOSTIntegration05D36238": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGenerateDesignFunction4341EBC1",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--generate/-sessions-{sessionId}-generate-POST-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionssessionIdgeneratesessionssessionIdgeneratePOSTIntegrationPermissionCCAA091C": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGenerateDesignFunction4341EBC1",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/sessions/{sessionId}/generate"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--generate/-sessions-{sessionId}-generate-POST-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionssessionIdgenerate7579869C": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "POST /sessions/{sessionId}/generate",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPOSTsessionssessionIdgeneratesessionssessionIdgeneratePOSTIntegration05D36238"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--generate/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETsessionssessionIdstatussessionssessionIdstatusGETIntegrationC42E3C3B": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetSessionStatusFunction581E37DC",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--sessions--{sessionId}--status/-sessions-{sessionId}-status-GET-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETsessionssessionIdstatussessionssessionIdstatusGETIntegrationPermission5837894D": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetSessionStatusFunction581E37DC",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/sessions/{sessionId}/status"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--sessions--{sessionId}--status/-sessions-{sessionId}-status-GET-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETsessionssessionIdstatusF05ACC9D": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "GET /sessions/{sessionId}/status",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiGETsessionssessionIdstatussessionssessionIdstatusGETIntegrationC42E3C3B"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--sessions--{sessionId}--status/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionssessionIdfinalizesessionssessionIdfinalizePOSTIntegrationB363EEBB": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsFinalizeDesignFunction964244F7",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--finalize/-sessions-{sessionId}-finalize-POST-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionssessionIdfinalizesessionssessionIdfinalizePOSTIntegrationPermission475A667F": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsFinalizeDesignFunction964244F7",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/sessions/{sessionId}/finalize"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--finalize/-sessions-{sessionId}-finalize-POST-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTsessionssessionIdfinalize781BC442": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "POST /sessions/{sessionId}/finalize",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPOSTsessionssessionIdfinalizesessionssessionIdfinalizePOSTIntegrationB363EEBB"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--sessions--{sessionId}--finalize/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETcartcartGETIntegrationE63D2153": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetCartFunctionD1B62B0F",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--cart/-cart-GET-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETcartcartGETIntegrationPermissionE4A2611D": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetCartFunctionD1B62B0F",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/cart"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--cart/-cart-GET-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETcartA6761343": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "GET /cart",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiGETcartcartGETIntegrationE63D2153"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--cart/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTcartitemscartitemsPOSTIntegration3D805DFB": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsAddToCartFunction0E3ADF3C",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--cart--items/-cart-items-POST-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTcartitemscartitemsPOSTIntegrationPermission5588FB55": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsAddToCartFunction0E3ADF3C",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/cart/items"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--cart--items/-cart-items-POST-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTcartitems90E4FC67": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "POST /cart/items",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPOSTcartitemscartitemsPOSTIntegration3D805DFB"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--cart--items/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPATCHcartitemsitemIdcartitemsitemIdPATCHIntegration6C4517C8": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateCartItemFunctionC53D526C",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--cart--items--{itemId}/-cart-items-{itemId}-PATCH-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPATCHcartitemsitemIdcartitemsitemIdPATCHIntegrationPermission1C05C7ED": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateCartItemFunctionC53D526C",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/cart/items/{itemId}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--cart--items--{itemId}/-cart-items-{itemId}-PATCH-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPATCHcartitemsitemId371C3380": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "PATCH /cart/items/{itemId}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPATCHcartitemsitemIdcartitemsitemIdPATCHIntegration6C4517C8"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--cart--items--{itemId}/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiDELETEcartitemsitemIdcartitemsitemIdDELETEIntegrationEC5E3731": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsRemoveCartItemFunction30094603",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/DELETE--cart--items--{itemId}/-cart-items-{itemId}-DELETE-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiDELETEcartitemsitemIdcartitemsitemIdDELETEIntegrationPermission5C3BA0C3": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsRemoveCartItemFunction30094603",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/cart/items/{itemId}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/DELETE--cart--items--{itemId}/-cart-items-{itemId}-DELETE-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiDELETEcartitemsitemId17EE8BD0": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "DELETE /cart/items/{itemId}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiDELETEcartitemsitemIdcartitemsitemIdDELETEIntegrationEC5E3731"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/DELETE--cart--items--{itemId}/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTordersordersPOSTIntegrationD2CAB03B": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateOrderFunction190BD3D4",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders/-orders-POST-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTordersordersPOSTIntegrationPermission33776D9A": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateOrderFunction190BD3D4",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/orders"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders/-orders-POST-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTordersDA03C51E": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "POST /orders",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPOSTordersordersPOSTIntegrationD2CAB03B"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTordersorderIdconfirmordersorderIdconfirmPOSTIntegrationED32D188": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsSendConfirmationFunctionCBDC6A53",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders--{orderId}--confirm/-orders-{orderId}-confirm-POST-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTordersorderIdconfirmordersorderIdconfirmPOSTIntegrationPermission9F472784": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsSendConfirmationFunctionCBDC6A53",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/orders/{orderId}/confirm"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders--{orderId}--confirm/-orders-{orderId}-confirm-POST-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTordersorderIdconfirm8AD5D628": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "POST /orders/{orderId}/confirm",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPOSTordersorderIdconfirmordersorderIdconfirmPOSTIntegrationED32D188"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--orders--{orderId}--confirm/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETordersordersGETIntegration2CA95947": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetOrdersFunction9519D398",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders/-orders-GET-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETordersordersGETIntegrationPermissionF54DCCCD": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetOrdersFunction9519D398",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/orders"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders/-orders-GET-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETordersB4B9D2FB": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "GET /orders",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiGETordersordersGETIntegration2CA95947"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETordersorderIdordersorderIdGETIntegrationE6CC2E44": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetOrderDetailFunctionEA21401B",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders--{orderId}/-orders-{orderId}-GET-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETordersorderIdordersorderIdGETIntegrationPermission27D9A01A": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetOrderDetailFunctionEA21401B",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/orders/{orderId}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders--{orderId}/-orders-{orderId}-GET-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETordersorderIdED7AFAD9": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "GET /orders/{orderId}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiGETordersorderIdordersorderIdGETIntegrationE6CC2E44"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--orders--{orderId}/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETadminordersadminordersGETIntegration266D7F89": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetAdminOrdersFunctionA17EA637",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--orders/-admin-orders-GET-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETadminordersadminordersGETIntegrationPermissionF61A0CC7": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetAdminOrdersFunctionA17EA637",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/admin/orders"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--orders/-admin-orders-GET-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETadminorders7BA36787": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "GET /admin/orders",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiGETadminordersadminordersGETIntegration266D7F89"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--orders/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPATCHadminordersorderIdadminordersorderIdPATCHIntegration3F55723C": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateOrderStatusFunction6EDB7F06",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--admin--orders--{orderId}/-admin-orders-{orderId}-PATCH-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPATCHadminordersorderIdadminordersorderIdPATCHIntegrationPermission720C10E3": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateOrderStatusFunction6EDB7F06",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/admin/orders/{orderId}"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--admin--orders--{orderId}/-admin-orders-{orderId}-PATCH-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPATCHadminordersorderIdD63E6915": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "PATCH /admin/orders/{orderId}",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPATCHadminordersorderIdadminordersorderIdPATCHIntegration3F55723C"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PATCH--admin--orders--{orderId}/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTadminordersorderIdrefundadminordersorderIdrefundPOSTIntegration7CF972AB": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsProcessRefundFunctionFB8E6B71",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--orders--{orderId}--refund/-admin-orders-{orderId}-refund-POST-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTadminordersorderIdrefundadminordersorderIdrefundPOSTIntegrationPermissionEA12577D": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsProcessRefundFunctionFB8E6B71",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/admin/orders/{orderId}/refund"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--orders--{orderId}--refund/-admin-orders-{orderId}-refund-POST-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPOSTadminordersorderIdrefund0D582E35": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "POST /admin/orders/{orderId}/refund",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPOSTadminordersorderIdrefundadminordersorderIdrefundPOSTIntegration7CF972AB"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/POST--admin--orders--{orderId}--refund/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETadminconfigadminconfigGETIntegration9FDA32FD": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetConfigFunction079F0FF6",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--config/-admin-config-GET-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETadminconfigadminconfigGETIntegrationPermissionBBFC116C": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetConfigFunction079F0FF6",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/admin/config"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--config/-admin-config-GET-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiGETadminconfig99324342": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "GET /admin/config",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiGETadminconfigadminconfigGETIntegration9FDA32FD"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/GET--admin--config/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPUTadminconfigadminconfigPUTIntegration65AAA8C8": {
+   "Type": "AWS::ApiGatewayV2::Integration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "IntegrationType": "AWS_PROXY",
+    "IntegrationUri": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateConfigFunction495CC040",
+      "Arn"
+     ]
+    },
+    "PayloadFormatVersion": "2.0"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PUT--admin--config/-admin-config-PUT-Integration/Resource"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPUTadminconfigadminconfigPUTIntegrationPermission3558D9A3": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateConfigFunction495CC040",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:364453382854:",
+       {
+        "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+       },
+       "/*/*/admin/config"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PUT--admin--config/-admin-config-PUT-Integration-Permission"
+   }
+  },
+  "ApiGatewayEpicWeaveApiPUTadminconfigD3D0AB95": {
+   "Type": "AWS::ApiGatewayV2::Route",
+   "Properties": {
+    "ApiId": {
+     "Ref": "ApiGatewayEpicWeaveApi7F9ADE06"
+    },
+    "AuthorizationType": "JWT",
+    "AuthorizerId": {
+     "Ref": "ApiGatewayEpicWeaveApiCognitoAuthorizer3D369202"
+    },
+    "RouteKey": "PUT /admin/config",
+    "Target": {
+     "Fn::Join": [
+      "",
+      [
+       "integrations/",
+       {
+        "Ref": "ApiGatewayEpicWeaveApiPUTadminconfigadminconfigPUTIntegration65AAA8C8"
+       }
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/ApiGateway/EpicWeaveApi/PUT--admin--config/Resource"
+   }
+  },
+  "LambdaFunctionsListProductsFunctionServiceRole3249FA08": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/ListProductsFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsListProductsFunctionServiceRoleDefaultPolicy4C564C2C": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:Scan"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsListProductsFunctionServiceRoleDefaultPolicy4C564C2C",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsListProductsFunctionServiceRole3249FA08"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/ListProductsFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsListProductsFunctionDDFEFE76": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "List products with mythology, style, price filters",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-list-products",
+    "Handler": "products/list-products.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsListProductsFunctionServiceRole3249FA08",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsListProductsFunctionServiceRoleDefaultPolicy4C564C2C",
+    "LambdaFunctionsListProductsFunctionServiceRole3249FA08"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/ListProductsFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsGetProductFunctionServiceRoleF56A1620": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetProductFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsGetProductFunctionServiceRoleDefaultPolicyCE721A82": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:Scan"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsGetProductFunctionServiceRoleDefaultPolicyCE721A82",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsGetProductFunctionServiceRoleF56A1620"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetProductFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsGetProductFunction6CCFB82D": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Get product details with variants",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-get-product",
+    "Handler": "products/get-product.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetProductFunctionServiceRoleF56A1620",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsGetProductFunctionServiceRoleDefaultPolicyCE721A82",
+    "LambdaFunctionsGetProductFunctionServiceRoleF56A1620"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetProductFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsCreateProductFunctionServiceRoleE0665B14": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateProductFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsCreateProductFunctionServiceRoleDefaultPolicy5A58699B": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchWriteItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsCreateProductFunctionServiceRoleDefaultPolicy5A58699B",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsCreateProductFunctionServiceRoleE0665B14"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateProductFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsCreateProductFunction8976831D": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Create new product with variants (Admin)",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-create-product",
+    "Handler": "admin/create-product.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateProductFunctionServiceRoleE0665B14",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsCreateProductFunctionServiceRoleDefaultPolicy5A58699B",
+    "LambdaFunctionsCreateProductFunctionServiceRoleE0665B14"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateProductFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsCreateSessionFunctionServiceRoleCC993117": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateSessionFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsCreateSessionFunctionServiceRoleDefaultPolicy2C3E2FF7": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "ssm:GetParameter",
+       "Effect": "Allow",
+       "Resource": "arn:aws:ssm:us-east-1:364453382854:parameter/EpicWeave/*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsCreateSessionFunctionServiceRoleDefaultPolicy2C3E2FF7",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsCreateSessionFunctionServiceRoleCC993117"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateSessionFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsCreateSessionFunction9708B1F5": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Create AI design session with Stripe payment",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production",
+      "STRIPE_SECRET_KEY": "{{resolve:secretsmanager:epicweave/stripe-api-key}}",
+      "SKIP_SESSION_FEE": "true"
+     }
+    },
+    "FunctionName": "epicweave-create-session",
+    "Handler": "sessions/create-session.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateSessionFunctionServiceRoleCC993117",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "LambdaFunctionsCreateSessionFunctionServiceRoleDefaultPolicy2C3E2FF7",
+    "LambdaFunctionsCreateSessionFunctionServiceRoleCC993117"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateSessionFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsGenerateDesignFunctionServiceRole2D880764": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GenerateDesignFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsGenerateDesignFunctionServiceRoleDefaultPolicy0ACD9BE2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "sqs:GetQueueAttributes",
+        "sqs:GetQueueUrl",
+        "sqs:SendMessage"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "AIJobQueue2EA29381",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "ssm:GetParameter",
+       "Effect": "Allow",
+       "Resource": "arn:aws:ssm:us-east-1:364453382854:parameter/EpicWeave/*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsGenerateDesignFunctionServiceRoleDefaultPolicy0ACD9BE2",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsGenerateDesignFunctionServiceRole2D880764"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GenerateDesignFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsGenerateDesignFunction4341EBC1": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Validate prompt, enforce content rules, enqueue to SQS",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production",
+      "AI_QUEUE_URL": {
+       "Ref": "AIJobQueue2EA29381"
+      }
+     }
+    },
+    "FunctionName": "epicweave-generate-design",
+    "Handler": "sessions/generate-design.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGenerateDesignFunctionServiceRole2D880764",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsGenerateDesignFunctionServiceRoleDefaultPolicy0ACD9BE2",
+    "LambdaFunctionsGenerateDesignFunctionServiceRole2D880764"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GenerateDesignFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsGetSessionStatusFunctionServiceRole0675B40F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetSessionStatusFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsGetSessionStatusFunctionServiceRoleDefaultPolicy159DC24E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:Scan"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsGetSessionStatusFunctionServiceRoleDefaultPolicy159DC24E",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsGetSessionStatusFunctionServiceRole0675B40F"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetSessionStatusFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsGetSessionStatusFunction581E37DC": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Get session status and message history",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-get-session-status",
+    "Handler": "sessions/get-session-status.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetSessionStatusFunctionServiceRole0675B40F",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsGetSessionStatusFunctionServiceRoleDefaultPolicy159DC24E",
+    "LambdaFunctionsGetSessionStatusFunctionServiceRole0675B40F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetSessionStatusFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsFinalizeDesignFunctionServiceRole9C4A2608": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/FinalizeDesignFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsFinalizeDesignFunctionServiceRoleDefaultPolicy5EF589DF": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "ssm:GetParameter",
+       "Effect": "Allow",
+       "Resource": "arn:aws:ssm:us-east-1:364453382854:parameter/EpicWeave/*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsFinalizeDesignFunctionServiceRoleDefaultPolicy5EF589DF",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsFinalizeDesignFunctionServiceRole9C4A2608"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/FinalizeDesignFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsFinalizeDesignFunction964244F7": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Calculate price from Parameter Store and finalize design",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-finalize-design",
+    "Handler": "sessions/finalize-design.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsFinalizeDesignFunctionServiceRole9C4A2608",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsFinalizeDesignFunctionServiceRoleDefaultPolicy5EF589DF",
+    "LambdaFunctionsFinalizeDesignFunctionServiceRole9C4A2608"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/FinalizeDesignFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsAIWorkerFunctionServiceRole16DFCF9E": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/AIWorkerFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsAIWorkerFunctionServiceRoleDefaultPolicyD1DC9FEC": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:Abort*",
+        "s3:DeleteObject*",
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*",
+        "s3:PutObject",
+        "s3:PutObjectLegalHold",
+        "s3:PutObjectRetention",
+        "s3:PutObjectTagging",
+        "s3:PutObjectVersionTagging"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "DesignsBucket6E20C4BA",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "DesignsBucket6E20C4BA",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "secretsmanager:GetSecretValue",
+       "Effect": "Allow",
+       "Resource": "arn:aws:secretsmanager:us-east-1:364453382854:secret:epicweave/*"
+      },
+      {
+       "Action": [
+        "sqs:ChangeMessageVisibility",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes",
+        "sqs:GetQueueUrl",
+        "sqs:ReceiveMessage"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "AIJobQueue2EA29381",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsAIWorkerFunctionServiceRoleDefaultPolicyD1DC9FEC",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsAIWorkerFunctionServiceRole16DFCF9E"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/AIWorkerFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsAIWorkerFunctionDEAE766F": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Process SQS messages: call DALL-E, upload to S3, update DynamoDB",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production",
+      "DESIGNS_BUCKET": {
+       "Ref": "DesignsBucket6E20C4BA"
+      }
+     }
+    },
+    "FunctionName": "epicweave-ai-worker",
+    "Handler": "sessions/ai-worker.handler",
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsAIWorkerFunctionServiceRole16DFCF9E",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 120
+   },
+   "DependsOn": [
+    "LambdaFunctionsAIWorkerFunctionServiceRoleDefaultPolicyD1DC9FEC",
+    "LambdaFunctionsAIWorkerFunctionServiceRole16DFCF9E"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/AIWorkerFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsAIWorkerFunctionSqsEventSourceEpicWeaveStackdevAIJobQueueD4CE4215FCB152F0": {
+   "Type": "AWS::Lambda::EventSourceMapping",
+   "Properties": {
+    "BatchSize": 1,
+    "EventSourceArn": {
+     "Fn::GetAtt": [
+      "AIJobQueue2EA29381",
+      "Arn"
+     ]
+    },
+    "FunctionName": {
+     "Ref": "LambdaFunctionsAIWorkerFunctionDEAE766F"
+    },
+    "ScalingConfig": {
+     "MaximumConcurrency": 5
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/AIWorkerFunction/SqsEventSource:EpicWeaveStackdevAIJobQueueD4CE4215/Resource"
+   }
+  },
+  "LambdaFunctionsGetCartFunctionServiceRoleDE2CB368": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetCartFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsGetCartFunctionServiceRoleDefaultPolicyC081262F": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:Scan"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsGetCartFunctionServiceRoleDefaultPolicyC081262F",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsGetCartFunctionServiceRoleDE2CB368"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetCartFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsGetCartFunctionD1B62B0F": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Get cart items for authenticated user",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-get-cart",
+    "Handler": "cart/get-cart.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetCartFunctionServiceRoleDE2CB368",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsGetCartFunctionServiceRoleDefaultPolicyC081262F",
+    "LambdaFunctionsGetCartFunctionServiceRoleDE2CB368"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetCartFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsAddToCartFunctionServiceRole8930F1B6": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/AddToCartFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsAddToCartFunctionServiceRoleDefaultPolicyB690F5A0": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsAddToCartFunctionServiceRoleDefaultPolicyB690F5A0",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsAddToCartFunctionServiceRole8930F1B6"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/AddToCartFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsAddToCartFunction0E3ADF3C": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Add item to cart (pre-designed or custom)",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-add-to-cart",
+    "Handler": "cart/add-to-cart.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsAddToCartFunctionServiceRole8930F1B6",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsAddToCartFunctionServiceRoleDefaultPolicyB690F5A0",
+    "LambdaFunctionsAddToCartFunctionServiceRole8930F1B6"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/AddToCartFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsUpdateCartItemFunctionServiceRole05A39DCE": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateCartItemFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsUpdateCartItemFunctionServiceRoleDefaultPolicyB91C0A34": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsUpdateCartItemFunctionServiceRoleDefaultPolicyB91C0A34",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsUpdateCartItemFunctionServiceRole05A39DCE"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateCartItemFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsUpdateCartItemFunctionC53D526C": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Update cart item quantity",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-update-cart-item",
+    "Handler": "cart/update-cart-item.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateCartItemFunctionServiceRole05A39DCE",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsUpdateCartItemFunctionServiceRoleDefaultPolicyB91C0A34",
+    "LambdaFunctionsUpdateCartItemFunctionServiceRole05A39DCE"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateCartItemFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsRemoveCartItemFunctionServiceRoleBDBAC50F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/RemoveCartItemFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsRemoveCartItemFunctionServiceRoleDefaultPolicyE46FE27D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsRemoveCartItemFunctionServiceRoleDefaultPolicyE46FE27D",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsRemoveCartItemFunctionServiceRoleBDBAC50F"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/RemoveCartItemFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsRemoveCartItemFunction30094603": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Remove item from cart",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-remove-cart-item",
+    "Handler": "cart/remove-cart-item.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsRemoveCartItemFunctionServiceRoleBDBAC50F",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsRemoveCartItemFunctionServiceRoleDefaultPolicyE46FE27D",
+    "LambdaFunctionsRemoveCartItemFunctionServiceRoleBDBAC50F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/RemoveCartItemFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsCreateOrderFunctionServiceRoleC1A74007": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateOrderFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsCreateOrderFunctionServiceRoleDefaultPolicy22DCF070": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "ssm:GetParameter",
+       "Effect": "Allow",
+       "Resource": "arn:aws:ssm:us-east-1:364453382854:parameter/EpicWeave/*"
+      },
+      {
+       "Action": "secretsmanager:GetSecretValue",
+       "Effect": "Allow",
+       "Resource": "arn:aws:secretsmanager:us-east-1:364453382854:secret:epicweave/*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsCreateOrderFunctionServiceRoleDefaultPolicy22DCF070",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsCreateOrderFunctionServiceRoleC1A74007"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateOrderFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsCreateOrderFunction190BD3D4": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Create order: validate stock, Stripe payment, DynamoDB transaction",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-create-order",
+    "Handler": "checkout/create-order.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsCreateOrderFunctionServiceRoleC1A74007",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "LambdaFunctionsCreateOrderFunctionServiceRoleDefaultPolicy22DCF070",
+    "LambdaFunctionsCreateOrderFunctionServiceRoleC1A74007"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/CreateOrderFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsSendConfirmationFunctionServiceRole03941082": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/SendConfirmationFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsSendConfirmationFunctionServiceRoleDefaultPolicyEA7AED7D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:Scan"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "ses:SendEmail",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsSendConfirmationFunctionServiceRoleDefaultPolicyEA7AED7D",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsSendConfirmationFunctionServiceRole03941082"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/SendConfirmationFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsSendConfirmationFunctionCBDC6A53": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Send order confirmation email via SES",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production",
+      "FROM_EMAIL": "orders@epicweave.com"
+     }
+    },
+    "FunctionName": "epicweave-send-confirmation",
+    "Handler": "checkout/send-confirmation.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsSendConfirmationFunctionServiceRole03941082",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsSendConfirmationFunctionServiceRoleDefaultPolicyEA7AED7D",
+    "LambdaFunctionsSendConfirmationFunctionServiceRole03941082"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/SendConfirmationFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsGetOrdersFunctionServiceRole456A4881": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetOrdersFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsGetOrdersFunctionServiceRoleDefaultPolicy997E9083": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:Scan"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsGetOrdersFunctionServiceRoleDefaultPolicy997E9083",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsGetOrdersFunctionServiceRole456A4881"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetOrdersFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsGetOrdersFunction9519D398": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Get order history for authenticated user",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-get-orders",
+    "Handler": "orders/get-orders.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetOrdersFunctionServiceRole456A4881",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsGetOrdersFunctionServiceRoleDefaultPolicy997E9083",
+    "LambdaFunctionsGetOrdersFunctionServiceRole456A4881"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetOrdersFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsGetOrderDetailFunctionServiceRoleE6D5B3A8": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetOrderDetailFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsGetOrderDetailFunctionServiceRoleDefaultPolicy03C6EAE3": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:Scan"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsGetOrderDetailFunctionServiceRoleDefaultPolicy03C6EAE3",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsGetOrderDetailFunctionServiceRoleE6D5B3A8"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetOrderDetailFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsGetOrderDetailFunctionEA21401B": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Get order detail with items",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-get-order-detail",
+    "Handler": "orders/get-order-detail.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetOrderDetailFunctionServiceRoleE6D5B3A8",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsGetOrderDetailFunctionServiceRoleDefaultPolicy03C6EAE3",
+    "LambdaFunctionsGetOrderDetailFunctionServiceRoleE6D5B3A8"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetOrderDetailFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsGetAdminOrdersFunctionServiceRole3C0664EE": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetAdminOrdersFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsGetAdminOrdersFunctionServiceRoleDefaultPolicyC147B452": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:Query",
+        "dynamodb:Scan"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsGetAdminOrdersFunctionServiceRoleDefaultPolicyC147B452",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsGetAdminOrdersFunctionServiceRole3C0664EE"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetAdminOrdersFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsGetAdminOrdersFunctionA17EA637": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Admin: list orders filtered by status via GSI2",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-get-admin-orders",
+    "Handler": "admin/get-admin-orders.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetAdminOrdersFunctionServiceRole3C0664EE",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsGetAdminOrdersFunctionServiceRoleDefaultPolicyC147B452",
+    "LambdaFunctionsGetAdminOrdersFunctionServiceRole3C0664EE"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetAdminOrdersFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleF1092650": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateOrderStatusFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleDefaultPolicy3343BF72": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "ses:SendEmail",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleDefaultPolicy3343BF72",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleF1092650"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateOrderStatusFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsUpdateOrderStatusFunction6EDB7F06": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Admin: update order status with transition validation",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production",
+      "FROM_EMAIL": "orders@epicweave.com"
+     }
+    },
+    "FunctionName": "epicweave-update-order-status",
+    "Handler": "admin/update-order-status.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleF1092650",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleDefaultPolicy3343BF72",
+    "LambdaFunctionsUpdateOrderStatusFunctionServiceRoleF1092650"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateOrderStatusFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsProcessRefundFunctionServiceRoleFD357A2F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/ProcessRefundFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsProcessRefundFunctionServiceRoleDefaultPolicy817BFBA5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "secretsmanager:GetSecretValue",
+       "Effect": "Allow",
+       "Resource": "arn:aws:secretsmanager:us-east-1:364453382854:secret:epicweave/*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsProcessRefundFunctionServiceRoleDefaultPolicy817BFBA5",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsProcessRefundFunctionServiceRoleFD357A2F"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/ProcessRefundFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsProcessRefundFunctionFB8E6B71": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Admin: process Stripe refund, restore stock",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-process-refund",
+    "Handler": "admin/process-refund.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsProcessRefundFunctionServiceRoleFD357A2F",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 60
+   },
+   "DependsOn": [
+    "LambdaFunctionsProcessRefundFunctionServiceRoleDefaultPolicy817BFBA5",
+    "LambdaFunctionsProcessRefundFunctionServiceRoleFD357A2F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/ProcessRefundFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsGetConfigFunctionServiceRoleBC55371B": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetConfigFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsGetConfigFunctionServiceRoleDefaultPolicyA5B5FB0E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "ssm:GetParameter",
+       "Effect": "Allow",
+       "Resource": "arn:aws:ssm:us-east-1:364453382854:parameter/EpicWeave/*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsGetConfigFunctionServiceRoleDefaultPolicyA5B5FB0E",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsGetConfigFunctionServiceRoleBC55371B"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetConfigFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsGetConfigFunction079F0FF6": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Admin: read Parameter Store values grouped by category",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-get-config",
+    "Handler": "admin/get-config.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsGetConfigFunctionServiceRoleBC55371B",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsGetConfigFunctionServiceRoleDefaultPolicyA5B5FB0E",
+    "LambdaFunctionsGetConfigFunctionServiceRoleBC55371B"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/GetConfigFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaFunctionsUpdateConfigFunctionServiceRole066E5226": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateConfigFunction/ServiceRole/Resource"
+   }
+  },
+  "LambdaFunctionsUpdateConfigFunctionServiceRoleDefaultPolicy959627BE": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "EpicWeaveTableBDE9225D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "EpicWeaveTableBDE9225D",
+             "Arn"
+            ]
+           },
+           "/index/*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParametersByPath",
+        "ssm:PutParameter"
+       ],
+       "Effect": "Allow",
+       "Resource": "arn:aws:ssm:us-east-1:364453382854:parameter/EpicWeave/*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaFunctionsUpdateConfigFunctionServiceRoleDefaultPolicy959627BE",
+    "Roles": [
+     {
+      "Ref": "LambdaFunctionsUpdateConfigFunctionServiceRole066E5226"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateConfigFunction/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaFunctionsUpdateConfigFunction495CC040": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-364453382854-us-east-1",
+     "S3Key": "96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d.zip"
+    },
+    "Description": "Admin: update Parameter Store value with validation and audit log",
+    "Environment": {
+     "Variables": {
+      "TABLE_NAME": {
+       "Ref": "EpicWeaveTableBDE9225D"
+      },
+      "NODE_ENV": "production"
+     }
+    },
+    "FunctionName": "epicweave-update-config",
+    "Handler": "admin/update-config.handler",
+    "MemorySize": 256,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaFunctionsUpdateConfigFunctionServiceRole066E5226",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "LambdaFunctionsUpdateConfigFunctionServiceRoleDefaultPolicy959627BE",
+    "LambdaFunctionsUpdateConfigFunctionServiceRole066E5226"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/LambdaFunctions/UpdateConfigFunction/Resource",
+    "aws:asset:path": "asset.96aedeaa4ac4f6d4a4b2e7209140d3ec59741588d7da984a7dc1f6c947e0d66d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/3VSTW/bMAz9Lb0rWpCedkzTFethaJZu54KRWY+NLXkilSIz/N8nSvnCigEG+N7jIyXRXNjF7Wc7v4F3nrlmN+toa8dnAbczWXoZm4OHPjRZ/AHbDs3q1RcwGb61411yOxQVj6iGdejIHS7ykVdyB5yrXRdS8xqDFzveE0ukbRIK3jxFaskvnUPmxwa9kJROKy140IL/Oa7b5ANC60mCHX8yxnUInVrO+ARWHeUG16mjcqL3oQfy14aq5Pf/Zjt+T5jKUArIIvc6vki+XUOEHgWjps8kW9BFFO7BQ4sxuwtXU0WTgYFaEHyHw35hx68iw3IgNWhQmv9PW06tQKVNSFLRoxdsI5RhZss/9OJbJvkVIv2pF7ywyXTQbxuwo94bY0/MWvyQvDt1OeMv+zys55Ciw28wDPnZmv6oToYgT2YT6gqVeNmSinSlXoA5D8cuNUxmg1y6qOkpyZDElIy+u3T1oUH7xp/2i7nN3/zmjYlmMeWl6NFuavwLtl3nQ+QCAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "EpicWeaveStack-dev/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "TableName": {
+   "Description": "DynamoDB table name",
+   "Value": {
+    "Ref": "EpicWeaveTableBDE9225D"
+   },
+   "Export": {
+    "Name": "EpicWeaveTableName"
+   }
+  },
+  "UserPoolId": {
+   "Description": "Cognito User Pool ID",
+   "Value": {
+    "Ref": "UserPool6BA7E5F2"
+   },
+   "Export": {
+    "Name": "EpicWeaveUserPoolId"
+   }
+  },
+  "UserPoolClientId": {
+   "Description": "Cognito User Pool Client ID",
+   "Value": {
+    "Ref": "UserPoolWebClient4C9370B0"
+   },
+   "Export": {
+    "Name": "EpicWeaveUserPoolClientId"
+   }
+  },
+  "DesignsBucketName": {
+   "Description": "S3 bucket for AI-generated designs",
+   "Value": {
+    "Ref": "DesignsBucket6E20C4BA"
+   },
+   "Export": {
+    "Name": "EpicWeaveDesignsBucket"
+   }
+  },
+  "ProductsBucketName": {
+   "Description": "S3 bucket for product images",
+   "Value": {
+    "Ref": "ProductsBucket62395B91"
+   },
+   "Export": {
+    "Name": "EpicWeaveProductsBucket"
+   }
+  },
+  "CloudFrontDomain": {
+   "Description": "CloudFront distribution domain",
+   "Value": {
+    "Fn::GetAtt": [
+     "AssetsDistribution16B90841",
+     "DomainName"
+    ]
+   },
+   "Export": {
+    "Name": "EpicWeaveCloudFrontDomain"
+   }
+  },
+  "AIJobQueueUrl": {
+   "Description": "SQS queue URL for AI job processing",
+   "Value": {
+    "Ref": "AIJobQueue2EA29381"
+   },
+   "Export": {
+    "Name": "EpicWeaveAIJobQueueUrl"
+   }
+  },
+  "ApiGatewayApiEndpoint015055E7": {
+   "Description": "HTTP API Gateway endpoint",
+   "Value": {
+    "Fn::GetAtt": [
+     "ApiGatewayEpicWeaveApi7F9ADE06",
+     "ApiEndpoint"
+    ]
+   },
+   "Export": {
+    "Name": "EpicWeaveApiEndpoint"
+   }
+  },
+  "LambdaFunctionsListProductsFunctionArnA611F877": {
+   "Description": "List Products Lambda Function ARN",
+   "Value": {
+    "Fn::GetAtt": [
+     "LambdaFunctionsListProductsFunctionDDFEFE76",
+     "Arn"
+    ]
+   }
+  },
+  "LambdaFunctionsGetProductFunctionArnE8CC20B3": {
+   "Description": "Get Product Lambda Function ARN",
+   "Value": {
+    "Fn::GetAtt": [
+     "LambdaFunctionsGetProductFunction6CCFB82D",
+     "Arn"
+    ]
+   }
+  },
+  "LambdaFunctionsCreateProductFunctionArnE321ADAD": {
+   "Description": "Create Product Lambda Function ARN (Admin)",
+   "Value": {
+    "Fn::GetAtt": [
+     "LambdaFunctionsCreateProductFunction8976831D",
+     "Arn"
+    ]
+   }
+  },
+  "LambdaFunctionsCreateSessionFunctionArnA64EE451": {
+   "Description": "Create Session Lambda Function ARN",
+   "Value": {
+    "Fn::GetAtt": [
+     "LambdaFunctionsCreateSessionFunction9708B1F5",
+     "Arn"
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

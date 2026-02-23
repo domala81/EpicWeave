@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { toast } from 'sonner';
+import { ProductModal } from '@/components/product-modal';
 
 interface Message {
   messageId: string;
@@ -42,6 +43,7 @@ export default function DesignSessionPage() {
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
   const [polling, setPolling] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const pollingRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -156,7 +158,7 @@ export default function DesignSessionPage() {
 
   const handleFinalize = () => {
     if (session?.latestImageUrl) {
-      router.push(`/design/${sessionId}/finalize`);
+      setModalOpen(true);
     }
   };
 
@@ -315,6 +317,19 @@ export default function DesignSessionPage() {
           Tips: Include mythology names like &quot;Shiva&quot;, &quot;Zeus&quot;, &quot;Ganesha&quot;, or &quot;Athena&quot; for best results.
         </p>
       </div>
+      <ProductModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        design={session?.latestImageUrl ? {
+          id: sessionId,
+          sessionId,
+          name: `AI Design — ${session.artStyleChoice} style`,
+          imageUrl: session.latestImageUrl,
+          basePrice: 29.99,
+          type: 'custom',
+          artStyle: session.artStyleChoice,
+        } : null}
+      />
     </div>
   );
 }

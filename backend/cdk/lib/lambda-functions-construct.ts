@@ -120,6 +120,7 @@ export class LambdaFunctionsConstruct extends Construct {
           ...commonEnvironment,
           STRIPE_SECRET_KEY:
             "{{resolve:secretsmanager:epicweave/stripe-api-key}}",
+          SKIP_SESSION_FEE: "true",
         },
         timeout: cdk.Duration.seconds(60),
       },
