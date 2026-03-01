@@ -67,6 +67,12 @@ export default function AuthPage() {
     setLoading(true);
     try {
       await signUp(email, password);
+      // In local mode, signUp auto-logs in (no email confirm needed)
+      if (process.env.NEXT_PUBLIC_LOCAL_MODE === 'true') {
+        toast.success('Account created! Redirecting...');
+        router.push(redirectTo);
+        return;
+      }
       setPendingEmail(email);
       setView('confirm');
       toast.success('Account created! Check your email for the confirmation code.');

@@ -202,18 +202,35 @@ export default function CheckoutPage() {
             </CardContent>
           </Card>
 
-          {/* Payment (placeholder for Stripe Elements) */}
+          {/* Payment */}
           <Card>
             <CardHeader>
               <CardTitle>Payment</CardTitle>
-              <p className="text-sm text-muted-foreground">Secure payment via Stripe</p>
+              <p className="text-sm text-muted-foreground">
+                {process.env.NEXT_PUBLIC_LOCAL_MODE === 'true'
+                  ? 'Local testing mode'
+                  : 'Secure payment via Stripe'}
+              </p>
             </CardHeader>
             <CardContent>
-              <div className="bg-muted p-6 rounded-md text-center text-sm text-muted-foreground">
-                <p className="font-medium mb-1">Stripe Elements Integration</p>
-                <p>Card number, expiry, and CVC fields will be rendered here by Stripe.js</p>
-                <p className="mt-2 text-xs">For testing, orders will use a test payment method.</p>
-              </div>
+              {process.env.NEXT_PUBLIC_LOCAL_MODE === 'true' ? (
+                <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 p-5 rounded-lg flex items-start gap-3">
+                  <span className="text-green-600 text-xl mt-0.5">✅</span>
+                  <div>
+                    <p className="font-semibold text-green-800 dark:text-green-300">No payment required in local mode</p>
+                    <p className="text-sm text-green-700 dark:text-green-400 mt-1">
+                      Your order will be placed instantly without any charge.
+                      Stripe is bypassed for local testing.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-muted p-6 rounded-md text-center text-sm text-muted-foreground">
+                  <p className="font-medium mb-1">Stripe Elements Integration</p>
+                  <p>Card number, expiry, and CVC fields will be rendered here by Stripe.js</p>
+                  <p className="mt-2 text-xs">For testing, orders will use a test payment method.</p>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
@@ -270,7 +287,11 @@ export default function CheckoutPage() {
                 onClick={handlePlaceOrder}
                 disabled={placing || !isFormValid()}
               >
-                {placing ? 'Placing Order...' : `Place Order — $${total.toFixed(2)}`}
+                {placing
+                  ? 'Placing Order...'
+                  : process.env.NEXT_PUBLIC_LOCAL_MODE === 'true'
+                    ? `Place Order — $${total.toFixed(2)} (Local)`
+                    : `Place Order — $${total.toFixed(2)}`}
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">

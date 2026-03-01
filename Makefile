@@ -11,7 +11,7 @@ export PATH := /opt/homebrew/opt/node@20/bin:$(PATH)
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install dev build deploy destroy \
+.PHONY: help install local local-api local-fe dev build deploy destroy \
         test test-unit test-bdd test-e2e test-load test-coverage \
         lint clean logs
 
@@ -21,7 +21,11 @@ help:
 	@echo "  EpicWeave — Available Commands"
 	@echo "  ─────────────────────────────────────────────────────────"
 	@echo "  make install        Install all workspace dependencies"
-	@echo "  make dev            Run Next.js frontend locally (port 3000)"
+	@echo "  make local          LOCAL testing — API (3001) + Next.js (3000), NO AWS"
+	@echo "  make local-api      Start only the local API server (port 3001)"
+	@echo "  make local-fe       Start only Next.js frontend (port 3000)"
+	@echo "  make dev            Run Next.js frontend locally (port 3000) with AWS-connected backend"
+	@echo ""
 	@echo "  make build          Build Lambda + frontend"
 	@echo ""
 	@echo "  make deploy         Full AWS deploy (Lambda + CDK + frontend)"
@@ -47,10 +51,26 @@ help:
 install:
 	@echo "→ Installing workspace dependencies..."
 	npm install
+	npm install --prefix local
 	@echo "✅ Done"
 
-# ── Local Development ─────────────────────────────────────────────────────────
-dev: install
+# ── Local Development (NO AWS) ───────────────────────────────────────────────
+# Single command: starts local API (3001) + Next.js (3000). No AWS needed.
+local:
+	@bash scripts/local.sh
+
+# Start only the local API server (port 3001)
+local-api:
+	@echo "→ Starting local API server on http://localhost:3001 ..."
+	@cd local && npx ts-node-dev --respawn --transpile-only server.ts
+
+# Start only the Next.js frontend (port 3000, assumes local-api is running)
+local-fe:
+	@echo "→ Starting Next.js on http://localhost:3000 ..."
+	@npm run dev --prefix frontend
+
+# ── AWS-connected Dev (requires deployed backend) ─────────────────────────────
+dev:
 	@bash scripts/dev.sh
 
 # ── Build ─────────────────────────────────────────────────────────────────────
